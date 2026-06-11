@@ -21,7 +21,7 @@ window.kindergartenData = {
             "name": "Trần Quốc Bảo",
             "nickname": "ICT",
             "class": "Koala",
-            "image": "images/img.jpg",
+            "image": "images/img_1781166511024.jpg",
             "sound": "",
             "isBus": true,
             "busRoute": ""
