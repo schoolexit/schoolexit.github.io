@@ -6,180 +6,38 @@
   <meta name="referrer" content="no-referrer">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no, maximum-scale=1.0, shrink-to-fit=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  
   <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-32x32.png">
   <link rel="stylesheet" href="css/w3.css">
   <link rel="stylesheet" href="css/css.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-
   <script src="database.js"></script>
-
 <style>
   .highlight { background-color: yellow; }
-  
-  body {
-      -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
-      background-color: #f8fafc;
-  }
+  body { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-color: #f8fafc; }
   * { box-sizing: border-box; }
-
-  /* CSS GRID CHỐNG LỆCH DÒNG THẺ HỌC SINH */
-  .student-list {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 10px;
-  }
-  .responsive {
-      width: 100% !important; float: none !important; padding: 0 !important; margin: 0 !important; display: flex; height: 100%;
-  }
-  div.gallery {
-      border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #fff;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; width: 100%; transition: 0.2s;
-  }
+  .student-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 10px; }
+  .responsive { width: 100% !important; float: none !important; padding: 0 !important; margin: 0 !important; display: flex; height: 100%; }
+  div.gallery { border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; width: 100%; transition: 0.2s; }
   div.gallery:hover { border: 1px solid #a5b4fc; transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
   div.gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-bottom: 2px solid #f1f5f9; }
-  
-  div.desc {
-      padding: 14px 8px; text-align: center; font-weight: bold; font-size: 14px; color: #4f46e5;
-      flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.4;
-  }
+  div.desc { padding: 14px 8px; text-align: center; font-weight: bold; font-size: 14px; color: #4f46e5; flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.4; }
   .nick-title { font-size: 12px; color: #64748b; font-weight: normal; margin-top: 2px; }
-
   @media only screen and (max-width: 1024px) { .student-list { grid-template-columns: repeat(3, 1fr); } }
   @media only screen and (max-width: 768px) { .student-list { grid-template-columns: repeat(2, 1fr); } }
 </style>
-<!--Block Copy-->
-<style>
-  body{
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  }
-  div.gallery {
-  border: 1px solid #ccc;
-  }
-
-  div.gallery:hover {
-  border: 1px solid #777;
-  }
-
-  div.gallery img {
-  width: 100%;
-  height: auto;
-  }
-
-  div.desc {
-  padding: 15px;
-  text-align: center;
-  }
-
-  * {
-  box-sizing: border-box;
-  }
-
-  .responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-  }
-
-  @media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-  }
-
-  @media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%;
-  }
-  }
-
-  .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-  }
-  </style>
-<script type=”text/JavaScript”>
-  function killCopy(e){
-  return false
-  }
-  function reEnable(){
-  return true
-  }
-  document.onselectstart=new Function (“return false”)
-  if (window.sidebar){
-  document.onmousedown=killCopy
-  document.onclick=reEnable
-  }
-</script>
-<script language="JavaScript">
-  window.onload = function() {
-      document.addEventListener("contextmenu", function(e) {
-          e.preventDefault();
-      }, false);
-      document.addEventListener("keydown", function(e) {
-          //document.onkeydown = function(e) {
-          // "I" key
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-              disabledEvent(e);
-          }
-          // "J" key
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-              disabledEvent(e);
-          }
-          // "S" key + macOS
-          if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-              disabledEvent(e);
-          }
-          // "U" key
-          if (e.ctrlKey && e.keyCode == 85) {
-              disabledEvent(e);
-          }
-          // "F12" key
-          if (event.keyCode == 123) {
-              disabledEvent(e);
-          }
-      }, false);
-
-      function disabledEvent(e) {
-          if (e.stopPropagation) {
-              e.stopPropagation();
-          } else if (window.event) {
-              window.event.cancelBubble = true;
-          }
-          e.preventDefault();
-          return false;
-      }
-  };
-</script>
+<script type="text/JavaScript">function killCopy(e){return!1}function reEnable(){return!0}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
+<script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},!1);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&e.keyCode==73)_0xdb(e);if(e.ctrlKey&&e.shiftKey&&e.keyCode==74)_0xdb(e);if(e.keyCode==83&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey))_0xdb(e);if(e.ctrlKey&&e.keyCode==85)_0xdb(e);if(event.keyCode==123)_0xdb(e)},!1);function _0xdb(e){if(e.stopPropagation)e.stopPropagation();else if(window.event)window.event.cancelBubble=!0;e.preventDefault();return!1}};</script>
 </head>
 <body>
-
   <noscript>
-        <style>
-            body > *:not(noscript) { display: none !important; }
-            .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; }
-            .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }
-        </style>
-        <div class="no-js-overlay">
-            <div class="no-js-box">
-                <div style="font-size: 50px; margin-bottom: 15px;">⚠️</div>
-                <h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2>
-                <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p>
-            </div>
-        </div>
-    </noscript>
-
-<div class="w3-top ">
+        <style>body > *:not(noscript) { display: none !important; } .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; } .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }</style>
+        <div class="no-js-overlay"><div class="no-js-box"><div style="font-size: 50px; margin-bottom: 15px;">⚠️</div><h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2><p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p></div></div>
+  </noscript>
+<div class="w3-top">
   <div class="top-round-rainbow w3-white w3-xlarge" style="max-width:1200px;margin:auto">
     <div class="w3-center w3-padding-16">
       <a onclick="openCity(event, 'koala')" class="w3-bar-item w3-button"><img src="images/icon/koala.png" style="width: 6rem; height: 6rem;"></a>
@@ -201,169 +59,16 @@
 
 <section class="call-buton" onclick="window.location.reload();">
     <a class="cc-calto-action-ripple">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16">
-            <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06M6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/>
-        </svg>
-        <span class="num"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16"><path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06M6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/></svg><span class="num"></span>
     </a>
 </section>
 
 <section class="bus-buton" onclick="playClickBus()">
   <a class="cc-calto-action-ripple" style="text-align: center;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16">
-      <path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/>
-      <path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16"><path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/><path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/></svg>
   </a>
 </section>
 
-<script>
-    const trinhPhatAmThanh = new Audio();
-
-    document.addEventListener("DOMContentLoaded", () => {
-        veGiaoDienHocSinhDong();
-        document.body.addEventListener('click', () => {
-            trinhPhatAmThanh.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
-            trinhPhatAmThanh.play().catch(()=>{});
-        }, { once: true });
-    });
-
-    function veGiaoDienHocSinhDong() {
-        if (!window.kindergartenData || !window.kindergartenData.students) return;
-        const data = window.kindergartenData;
-
-        data.classes.forEach(c => { const el = document.getElementById(`container-${c}`); if (el) el.innerHTML = ''; });
-
-        data.students.forEach(student => {
-            const container = document.getElementById(`container-${student.class}`);
-            if (!container) return; 
-
-            const cardWrapper = document.createElement('div');
-            cardWrapper.className = 'responsive'; 
-
-            const nickHtml = student.nickname ? `<span class="nick-title">Nick name: ${student.nickname}</span>` : '';
-            cardWrapper.innerHTML = `
-                <div class="gallery">
-                    <img src="${student.image}" alt="${student.name}" loading="lazy">
-                    <div class="desc">
-                        <span>${student.name}</span>
-                        ${nickHtml}
-                    </div>
-                </div>
-            `;
-
-            cardWrapper.addEventListener('click', () => {
-                let cauThongBao = `Mời học sinh ${student.name}`;
-                if (student.nickname) {
-                    cauThongBao += `, , , ${student.nickname}`;
-                }
-                cauThongBao += `, lớp ${student.class} ra về`;
-
-                playClickSound(student.sound, cauThongBao);
-            });
-
-            container.appendChild(cardWrapper);
-        });
-    }
-
-    // =========================================================================
-    // TÍNH NĂNG MỚI: PHÁT THANH GỌI DANH SÁCH XE BUÝT TẬP TRUNG KHI BẤM NÚT NỔI
-    // =========================================================================
-    function playClickBus() {
-        if (!window.kindergartenData || !window.kindergartenData.students) return;
-        
-        // Lọc ra toàn bộ danh sách các bé được chọn đi xe buýt trường (isBus === true)
-        const danhSachXeBuyt = window.kindergartenData.students.filter(student => student.isBus === true);
-        
-        if (danhSachXeBuyt.length === 0) {
-            phatThanhAIGiongNu("Hiện tại không có học sinh nào đăng ký về bằng xe buýt.");
-            return;
-        }
-
-        // Xây dựng câu phát thanh chuẩn theo cấu trúc yêu cầu
-        let cauThongBaoTongHop = "Mời các bạn có tên sau về xe buýt: ";
-        
-        danhSachXeBuyt.forEach((student, index) => {
-            cauThongBaoTongHop += `${student.name} lớp ${student.class}`;
-            // Thêm dấu phẩy nghỉ nhịp giữa các bé, ngoại trừ bé cuối cùng
-            if (index < danhSachXeBuyt.length - 1) {
-                cauThongBaoTongHop += ", ";
-            }
-        });
-
-        // Kích hoạt AI giọng nữ đọc danh sách tập trung
-        phatThanhAIGiongNu(cauThongBaoTongHop);
-    }
-
-    function playClickSound(soundUrl, textBackup) {
-        let cleanUrl = soundUrl ? soundUrl.trim().replace(/\\/g, '/') : '';
-        const coFileMP3 = cleanUrl !== "" && cleanUrl !== "sound/" && !cleanUrl.endsWith('/');
-
-        if (coFileMP3) {
-            trinhPhatAmThanh.src = cleanUrl;
-            trinhPhatAmThanh.play().catch(() => phatThanhAIGiongNu(textBackup));
-        } else {
-            phatThanhAIGiongNu(textBackup);
-        }
-    }
-
-    // THUẬT TOÁN QUÉT VÀ ÉP BUỘC ĐỌC GIỌNG NỮ TIẾNG VIỆT CHUẨN XÁC DI ĐỘNG
-    let giongNoiHeThong = [];
-    function capNhatHeThongGiong() {
-        giongNoiHeThong = window.speechSynthesis.getVoices();
-    }
-    
-    if ('speechSynthesis' in window) {
-        capNhatHeThongGiong();
-        window.speechSynthesis.onvoiceschanged = capNhatHeThongGiong;
-    }
-
-    function phatThanhAIGiongNu(text) {
-        let thanhCongGiongCucBo = false;
-
-        if ('speechSynthesis' in window) {
-            if (window.speechSynthesis.speaking) {
-                window.speechSynthesis.cancel();
-            }
-
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'vi-VN';
-            utterance.rate = 0.99; 
-
-            if (giongNoiHeThong.length === 0) {
-                giongNoiHeThong = window.speechSynthesis.getVoices();
-            }
-
-            const giongTiengViet = giongNoiHeThong.filter(voice => voice.lang.includes('vi') || voice.lang.includes('VN'));
-
-            if (giongTiengViet.length > 0) {
-                const locGiongNu = giongTiengViet.filter(voice => !voice.name.includes(' An'));
-                
-                let giongNuChuan = locGiongNu.find(voice => 
-                    voice.name.toLowerCase().includes('hoaimy') || 
-                    voice.name.toLowerCase().includes('linh') ||
-                    voice.name.toLowerCase().includes('google')
-                );
-
-                if (!giongNuChuan && locGiongNu.length > 0) giongNuChuan = locGiongNu[0];
-                if (!giongNuChuan) giongNuChuan = giongTiengViet[0];
-
-                if (giongNuChuan) {
-                    utterance.voice = giongNuChuan;
-                    setTimeout(() => {
-                        window.speechSynthesis.speak(utterance);
-                    }, 50);
-                    thanhCongGiongCucBo = true;
-                }
-            }
-        }
-
-        if (!thanhCongGiongCucBo) {
-            const urlCloudTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(text)}`;
-            trinhPhatAmThanh.src = urlCloudTTS;
-            trinhPhatAmThanh.play().catch(err => console.error("Lỗi phát âm thanh Cloud:", err));
-        }
-    }
-</script>
+<script>const trinhPhatAmThanh=new Audio;document.addEventListener(atob("RE9NQ29udGVudExvYWRlZA=="),()=>{veGiaoDienHocSinhDong();document.body.addEventListener(atob("Y2xpY2s="),()=>{trinhPhatAmThanh.src=atob("ZGF0YTphdWRpby93YXY7YmFzZTY0LFVrbEdSMWdBQUFCWFFWVkZaMTFwSUJJQUFBQUJBQUVBS3duaU9OWWFRQUNBQkFBQUFCa1lYUmhBZ0FBQUFFQQ==");trinhPhatAmThanh.play().catch(()=>{})},{once:!0})});function veGiaoDienHocSinhDong(){if(!window.kindergartenData||!window.kindergartenData.students)return;const _0x1=window.kindergartenData;_0x1.classes.forEach(c=>{const _0x2=document.getElementById(`container-${c}`);if(_0x2)_0x2.innerHTML=""});_0x1.students.forEach(s=>{const _0x3=document.getElementById(`container-${s.class}`);if(!_0x3)return;const _0x4=document.createElement(atob("ZGl2"));_0x4.className=atob("cmVzcG9uc2l2ZQ==");const _0x5=s.nickname?`<span class="nick-title">Nick name: ${s.nickname}</span>`:"";_0x4.innerHTML=`<div class="gallery"><img src="${s.image}" alt="${s.name}" loading="lazy"><div class="desc"><span>${s.name}</span>${_0x5}</div></div>`;_0x4.addEventListener(atob("Y2xpY2s="),()=>{let _0x6=`Mời học sinh ${s.name}`;if(s.nickname){_0x6+=`, , , ${s.nickname}`}_0x6+=`, lớp ${s.class} ra về`;playClickSound(s.sound,_0x6)});_0x3.appendChild(_0x4)})}function playClickBus(){if(!window.kindergartenData||!window.kindergartenData.students)return;const _0x7=window.kindergartenData.students.filter(s=>s.isBus===!0);if(_0x7.length===0){phatThanhAIGiongNu(atob("SGnhu4duIHThuqFpIGtow7RuZyBjw7MgaOG7jWMgc2luaCBuw6BvIMSRxINuZyBrw70gduG7gSBi4bqxbmcgeGUgYnXw7XQu"));return}let _0x8=atob("TeG7nWkgY8OhYyBi4bqhbiBjw7MgdMOqbiBzYXUgduG7gSB4ZSBideG7m3Q6IA==");_0x7.forEach((s,i)=>{_0x8+=`${s.name} lớp ${s.class}`;if(i<_0x7.length-1){_0x8+=", "}});phatThanhAIGiongNu(_0x8)}function playClickSound(_0x9,_0xa){let _0xb=_0x9?_0x9.trim().replace(/\\/g,"/"):"";const _0xc=_0xb!==""&&_0xb!==atob("c291bmQv")&&!_0xb.endsWith("/");if(_0xc){trinhPhatAmThanh.src=_0xb;trinhPhatAmThanh.play().catch(()=>phatThanhAIGiongNu(_0xa))}else{phatThanhAIGiongNu(_0xa)}}let giongNoiHeThong=[];function capNhatHeThongGiong(){giongNoiHeThong=window.speechSynthesis.getVoices()}if(atob("c3BlZWNoU3ludGhlc2lz")in window){capNhatHeThongGiong();window.speechSynthesis.onvoiceschanged=capNhatHeThongGiong}function phatThanhAIGiongNu(_0xd){let _0xe=!1;if(atob("c3BlZWNoU3ludGhlc2lz")in window){if(window.speechSynthesis.speaking){window.speechSynthesis.cancel()}const _0xf=new SpeechSynthesisUtterance(_0xd);_0xf.lang=atob("dmktVk4=");_0xf.rate=.99;if(giongNoiHeThong.length===0){giongNoiHeThong=window.speechSynthesis.getVoices()}const _0x10=giongNoiHeThong.filter(v=>v.lang.includes(atob("dmk="))||v.lang.includes(atob("Vk4=")));if(_0x10.length>0){const _0x11=_0x10.filter(v=>!v.name.includes(atob("IEFu")));let _0x12=_0x11.find(v=>v.name.toLowerCase().includes(atob("aG9haW15"))||v.name.toLowerCase().includes(atob("bGluaA=="))||v.name.toLowerCase().includes(atob("Z29vZ2xl")));if(!_0x12&&_0x11.length>0)_0x12=_0x11[0];if(!_0x12)_0x12=_0x10[0];if(_0x12){_0xf.voice=_0x12;setTimeout(()=>{window.speechSynthesis.speak(_0xf)},50);_0xe=!0}}}if(!_0xe){const _0x13=`https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(_0xd)}`;trinhPhatAmThanh.src=_0x13;trinhPhatAmThanh.play().catch(e=>console.error(e))}}</script>
 </body>
 </html>
