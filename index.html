@@ -11,10 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="512x512" href="images/icon/favicon-512x512.png">
   <link rel="icon" type="image/png" sizes="1024x1024" href="images/icon/1024.png">
+  
   <link rel="stylesheet" href="css/w3.css">
   <link rel="stylesheet" href="css/css.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
@@ -22,6 +24,7 @@
 
 <style>
   .highlight { background-color: yellow; }
+  
   body {
       -webkit-touch-callout: none;
       -webkit-user-select: none;
@@ -30,9 +33,12 @@
       user-select: none;
       background-color: #f8fafc;
   }
+  
   * { box-sizing: border-box; }
 
-  /* CSS GRID MỚI CHỐNG LỆCH DÒNG */
+  /* =========================================
+     CÔNG NGHỆ CSS GRID CHỐNG LỆCH DÒNG THẺ
+     ========================================= */
   .student-list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -59,6 +65,7 @@
       flex-direction: column;
       width: 100%;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 0 !important; 
   }
 
   div.gallery:hover {
@@ -81,7 +88,7 @@
       font-size: 14px;
       color: #4f46e5;
       text-transform: capitalize;
-      flex-grow: 1;
+      flex-grow: 1; /* Ép các thẻ phải cao bằng nhau */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -90,15 +97,24 @@
 
   .clearfix { display: none !important; }
 
-  @media only screen and (max-width: 1024px) { .student-list { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
-  @media only screen and (max-width: 768px) { .student-list { grid-template-columns: repeat(2, 1fr); gap: 14px; } div.desc { font-size: 13px; } }
-  @media only screen and (max-width: 480px) { .student-list { grid-template-columns: repeat(2, 1fr); gap: 10px; } div.desc { font-size: 12px; } }
+  /* Reponsive cho Di động & Tablet */
+  @media only screen and (max-width: 1024px) {
+      .student-list { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  }
+  @media only screen and (max-width: 768px) {
+      .student-list { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      div.desc { font-size: 13px; padding: 12px 6px; }
+  }
+  @media only screen and (max-width: 480px) {
+      .student-list { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      div.desc { font-size: 12px; padding: 10px 4px; }
+  }
 </style>
 
 <script type="text/JavaScript">
   function killCopy(e){ return false; }
   function reEnable(){ return true; }
-  document.onselectstart=new Function ("return false");
+  document.onselectstart=new Function ("return false")
   if (window.sidebar){ document.onmousedown=killCopy; document.onclick=reEnable; }
 </script>
 <script language="JavaScript">
@@ -119,24 +135,28 @@
 </head>
 <body>
 
-<noscript>
-    <style>
-        body > *:not(noscript) { display: none !important; }
-        .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; }
-        .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }
-    </style>
-    <div class="no-js-overlay">
-        <div class="no-js-box">
-            <div style="font-size: 50px; margin-bottom: 15px;">⚠️</div>
-            <h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2>
-            <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p>
+  <noscript>
+        <style>
+            body > *:not(noscript) { display: none !important; }
+            .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; }
+            .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }
+        </style>
+        <div class="no-js-overlay">
+            <div class="no-js-box">
+                <div style="font-size: 50px; margin-bottom: 15px;">⚠️</div>
+                <h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2>
+                <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p>
+            </div>
         </div>
-    </div>
-</noscript>
+    </noscript>
 
 <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-  <a onclick="downloadApk();w3_close()" class="w3-bar-item w3-button" style="text-align: center;"><img src="images/icon/download.png"></a>
-  <a onclick="w3_close()" class="w3-bar-item w3-button"><img src="images/icon/bus.png" onclick="playClickBus()"></a>
+  <a onclick="downloadApk();w3_close()" class="w3-bar-item w3-button" style="text-align: center;">
+    <img src="images/icon/download.png">
+  </a>
+  <a onclick="w3_close()" class="w3-bar-item w3-button">
+    <img src="images/icon/bus.png" onclick="playClickBus()">
+  </a>
 </nav>
 
 <div class="w3-top ">
@@ -151,30 +171,58 @@
 </div>
 
 <div id="content" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-   <div class="w3-row-padding w3-padding-16 w3-center city" id="koala"><div class="class-wrapper"><div class="student-list" id="container-Koala"></div></div></div>
-   <div class="w3-row-padding w3-padding-16 w3-center city" id="panda"><div class="class-wrapper"><div class="student-list" id="container-Panda"></div></div></div>
-   <div class="w3-row-padding w3-padding-16 w3-center city" id="dolphin"><div class="class-wrapper"><div class="student-list" id="container-Dolphin"></div></div></div>
-   <div class="w3-row-padding w3-padding-16 w3-center city" id="giraffe"><div class="class-wrapper"><div class="student-list" id="container-Giraffe"></div></div></div>
+   <div class="w3-row-padding w3-padding-16 w3-center city" id="koala">
+    <div class="class-wrapper">
+      <div class="student-list" id="container-Koala"></div>
+    </div>
+   </div>
+   <div class="w3-row-padding w3-padding-16 w3-center city" id="panda">
+    <div class="class-wrapper">
+      <div class="student-list" id="container-Panda"></div>
+    </div>
+   </div>
+   <div class="w3-row-padding w3-padding-16 w3-center city" id="dolphin">
+    <div class="class-wrapper">
+      <div class="student-list" id="container-Dolphin"></div>
+    </div>
+   </div>
+   <div class="w3-row-padding w3-padding-16 w3-center city" id="giraffe">
+    <div class="class-wrapper">
+      <div class="student-list" id="container-Giraffe"></div>
+    </div>
+   </div>
+
    <audio id="sound0" src="sound/"></audio>
 </div>
 
+<script src="js/koala.js"></script>
+<script src="js/panda.js"></script>
+<script src="js/dolphin.js"></script>
+<script src="js/giraffe.js"></script>
 <script src="js/bus.js"></script>
 <script src="js/scripts.js"></script>
 
 <script>
-  function downloadApk() { window.location.href = 'https://navigationcode.github.io/page/update.apk'; }
+  function downloadApk() {
+      window.location.href = 'https://navigationcode.github.io/page/update.apk';
+  }
 </script>
 
 <section class="call-buton" onclick="window.location.reload();">
-  <a class="cc-calto-action-ripple">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16"><path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06M6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/></svg>
-    <span class="num"></span>
-  </a>
+    <a class="cc-calto-action-ripple">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16">
+            <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06M6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/>
+        </svg>
+        <span class="num"></span>
+    </a>
 </section>
 
 <section class="bus-buton" onclick="playClickBus()">
   <a class="cc-calto-action-ripple" style="text-align: center;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16"><path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/><path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16">
+      <path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/>
+      <path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/>
+    </svg>
   </a>
 </section>
 
@@ -187,27 +235,32 @@
         let daMoKhoaAI = false;
         document.body.addEventListener('click', function() {
             if (!daMoKhoaAI) {
+                // Kích hoạt loa tàng hình trên điện thoại
                 trinhPhatAmThanh.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
                 trinhPhatAmThanh.play().catch(()=>{});
+                
                 if ('speechSynthesis' in window) {
                     let utterance = new SpeechSynthesisUtterance(''); 
                     window.speechSynthesis.speak(utterance);
                 }
                 daMoKhoaAI = true;
-                console.log("🔓 Đã mở khóa âm thanh");
+                console.log("🔓 Trình duyệt di động đã mở khóa hệ thống AI");
             }
         }, { once: true });
     });
 
     function veGiaoDienHocSinhDong() {
         if (!window.kindergartenData || !window.kindergartenData.students) return;
+        
         const data = window.kindergartenData;
 
+        // Xóa sạch thùng chứa cũ
         data.classes.forEach(className => {
             const container = document.getElementById(`container-${className}`);
             if (container) container.innerHTML = '';
         });
 
+        // Vẽ thẻ học sinh mới
         data.students.forEach(student => {
             const container = document.getElementById(`container-${student.class}`);
             if (!container) return; 
@@ -230,6 +283,7 @@
         });
     }
 
+    // HỆ THỐNG ÂM THANH
     function playClickSound(soundUrl, studentName, className) {
         let cleanUrl = soundUrl ? soundUrl.trim().replace(/\\/g, '/') : '';
         const coFileAmThanh = cleanUrl !== "" && cleanUrl !== "sound/" && !cleanUrl.endsWith('/');
@@ -237,7 +291,7 @@
         if (coFileAmThanh) {
             trinhPhatAmThanh.src = cleanUrl;
             trinhPhatAmThanh.play().catch(error => {
-                console.warn("Lỗi phát MP3, dùng AI thay thế");
+                console.warn("Lỗi tệp MP3 gốc, kích hoạt AI dự phòng:", error);
                 phatThanhAIGiongNu(`Mời học sinh ${studentName} lớp ${className} ra về`);
             });
         } else {
@@ -259,7 +313,10 @@
         let thanhCongGiongCucBo = false;
 
         if ('speechSynthesis' in window) {
-            if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'vi-VN';
             utterance.rate = 0.99; 
@@ -272,26 +329,34 @@
 
             if (giongTiengViet.length > 0) {
                 const locGiongNu = giongTiengViet.filter(voice => !voice.name.includes(' An'));
+                
                 let giongNuChuan = locGiongNu.find(voice => 
                     voice.name.toLowerCase().includes('hoaimy') || 
                     voice.name.toLowerCase().includes('linh') ||
                     voice.name.toLowerCase().includes('google')
                 );
+
                 if (!giongNuChuan && locGiongNu.length > 0) giongNuChuan = locGiongNu[0];
                 if (!giongNuChuan) giongNuChuan = giongTiengViet[0];
 
                 if (giongNuChuan) {
                     utterance.voice = giongNuChuan;
-                    setTimeout(() => { window.speechSynthesis.speak(utterance); }, 50);
+                    setTimeout(() => {
+                        window.speechSynthesis.speak(utterance);
+                    }, 50);
                     thanhCongGiongCucBo = true;
+                    console.log("🔊 Phát bằng giọng AI:", giongNuChuan.name);
                 }
             }
         }
 
         if (!thanhCongGiongCucBo) {
+            console.log("🚀 Chuyển sang AI Cloud TTS Giọng Nữ...");
             const urlCloudTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(text)}`;
             trinhPhatAmThanh.src = urlCloudTTS;
-            trinhPhatAmThanh.play().catch(err => console.error("Lỗi âm thanh đám mây"));
+            trinhPhatAmThanh.play().catch(err => {
+                console.error("Lỗi phát âm thanh Cloud:", err);
+            });
         }
     }
 </script>
