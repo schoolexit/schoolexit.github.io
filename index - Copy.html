@@ -20,15 +20,13 @@
   <script src="database.js"></script>
 
 <style>
-  .highlight { background-color: yellow; }
-  
   body {
       -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
       background-color: #f8fafc;
   }
   * { box-sizing: border-box; }
 
-  /* CSS GRID CHỐNG LỆCH DÒNG THẺ HỌC SINH */
+  /* CSS GRID CHỐNG LỆCH DÒNG THÈ */
   .student-list {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 10px;
   }
@@ -53,27 +51,35 @@
 </style>
 </head>
 <body>
-
-  <noscript>
+    
+<noscript>
         <style>
-            body > *:not(noscript) { display: none !important; }
-            .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; }
-            .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }
+            /* 1. Ẩn tuyệt đối toàn bộ các thành phần giao diện khác của web */
+            body > *:not(noscript) {
+                display: none !important;
+            }
+            /* 2. Thiết kế giao diện báo lỗi full màn hình */
+            .no-js-overlay {
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background-color: #f8fafc; display: flex; align-items: center;
+                justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px;
+            }
+            .no-js-box {
+                background: white; padding: 40px; border-radius: 16px;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+                text-align: center; max-width: 440px; border: 1px solid #e2e8f0;
+            }
         </style>
         <div class="no-js-overlay">
             <div class="no-js-box">
                 <div style="font-size: 50px; margin-bottom: 15px;">⚠️</div>
                 <h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2>
-                <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p>
+                <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">
+                    Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác các tính năng nạp học sinh tự động và gọi bus.
+                </p>
             </div>
         </div>
     </noscript>
-
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-  <a onclick="downloadApk();w3_close()" class="w3-bar-item w3-button" style="text-align: center;">
-    <img src="images/icon/download.png">
-  </a>
-</nav>
 
 <div class="w3-top ">
   <div class="top-round-rainbow w3-white w3-xlarge" style="max-width:1200px;margin:auto">
@@ -92,34 +98,6 @@
    <div class="w3-row-padding w3-padding-16 w3-center city" id="dolphin"><div class="class-wrapper"><div class="student-list" id="container-Dolphin"></div></div></div>
    <div class="w3-row-padding w3-padding-16 w3-center city" id="giraffe"><div class="class-wrapper"><div class="student-list" id="container-Giraffe"></div></div></div>
 </div>
-
-<script src="js/koala.js"></script>
-<script src="js/panda.js"></script>
-<script src="js/dolphin.js"></script>
-<script src="js/giraffe.js"></script>
-<script src="js/scripts.js"></script>
-
-<script>
-  function downloadApk() { window.location.href = 'https://navigationcode.github.io/page/update.apk'; }
-</script>
-
-<section class="call-buton" onclick="window.location.reload();">
-    <a class="cc-calto-action-ripple">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16">
-            <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06M6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/>
-        </svg>
-        <span class="num"></span>
-    </a>
-</section>
-
-<section class="bus-buton" onclick="playClickBus()">
-  <a class="cc-calto-action-ripple" style="text-align: center;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16">
-      <path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/>
-      <path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/>
-    </svg>
-  </a>
-</section>
 
 <script>
     const trinhPhatAmThanh = new Audio();
@@ -145,7 +123,8 @@
             const cardWrapper = document.createElement('div');
             cardWrapper.className = 'responsive'; 
 
-            const nickHtml = student.nickname ? `<span class="nick-title">Nick name: ${student.nickname}</span>` : '';
+            // Giao diện hiển thị tên học sinh kèm biệt danh
+            const nickHtml = student.nickname ? `<span class="nick-title">Nhà gọi: ${student.nickname}</span>` : '';
             cardWrapper.innerHTML = `
                 <div class="gallery">
                     <img src="${student.image}" alt="${student.name}" loading="lazy">
@@ -157,6 +136,7 @@
             `;
 
             cardWrapper.addEventListener('click', () => {
+                // Xây dựng câu thông báo có đầy đủ: Họ tên, biệt danh, lớp
                 let cauThongBao = `Mời học sinh ${student.name}`;
                 if (student.nickname) {
                     cauThongBao += `, , , ${student.nickname}`;
@@ -168,35 +148,6 @@
 
             container.appendChild(cardWrapper);
         });
-    }
-
-    // =========================================================================
-    // TÍNH NĂNG MỚI: PHÁT THANH GỌI DANH SÁCH XE BUÝT TẬP TRUNG KHI BẤM NÚT NỔI
-    // =========================================================================
-    function playClickBus() {
-        if (!window.kindergartenData || !window.kindergartenData.students) return;
-        
-        // Lọc ra toàn bộ danh sách các bé được chọn đi xe buýt trường (isBus === true)
-        const danhSachXeBuyt = window.kindergartenData.students.filter(student => student.isBus === true);
-        
-        if (danhSachXeBuyt.length === 0) {
-            phatThanhAIGiongNu("Hiện tại không có học sinh nào đăng ký về bằng xe buýt.");
-            return;
-        }
-
-        // Xây dựng câu phát thanh chuẩn theo cấu trúc yêu cầu
-        let cauThongBaoTongHop = "Mời các bạn có tên sau về xe buýt: ";
-        
-        danhSachXeBuyt.forEach((student, index) => {
-            cauThongBaoTongHop += `${student.name} lớp ${student.class}`;
-            // Thêm dấu phẩy nghỉ nhịp giữa các bé, ngoại trừ bé cuối cùng
-            if (index < danhSachXeBuyt.length - 1) {
-                cauThongBaoTongHop += ", ";
-            }
-        });
-
-        // Kích hoạt AI giọng nữ đọc danh sách tập trung
-        phatThanhAIGiongNu(cauThongBaoTongHop);
     }
 
     function playClickSound(soundUrl, textBackup) {
@@ -211,7 +162,9 @@
         }
     }
 
-    // THUẬT TOÁN QUÉT VÀ ÉP BUỘC ĐỌC GIỌNG NỮ TIẾNG VIỆT CHUẨN XÁC DI ĐỘNG
+    // =========================================================================
+    // THUẬT TOÁN QUÉT VÀ ÉP BUỘC ĐỌC GIỌNG NỮ TIẾNG VIỆT ĐÃ ĐƯỢC KHÔI PHỤC LẠI
+    // =========================================================================
     let giongNoiHeThong = [];
     function capNhatHeThongGiong() {
         giongNoiHeThong = window.speechSynthesis.getVoices();
@@ -219,6 +172,7 @@
     
     if ('speechSynthesis' in window) {
         capNhatHeThongGiong();
+        // Lắng nghe sự kiện trình duyệt nạp xong gói ngôn ngữ
         window.speechSynthesis.onvoiceschanged = capNhatHeThongGiong;
     }
 
@@ -232,17 +186,21 @@
 
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'vi-VN';
-            utterance.rate = 0.99; 
+            utterance.rate = 0.95; 
 
+            // Đảm bảo dữ liệu giọng đã được tải
             if (giongNoiHeThong.length === 0) {
                 giongNoiHeThong = window.speechSynthesis.getVoices();
             }
 
+            // Lọc ra các giọng có hỗ trợ Tiếng Việt
             const giongTiengViet = giongNoiHeThong.filter(voice => voice.lang.includes('vi') || voice.lang.includes('VN'));
 
             if (giongTiengViet.length > 0) {
+                // Loại bỏ giọng nam bị lỗi (thường chứa chữ ' An' trên trình duyệt Edge/Chrome)
                 const locGiongNu = giongTiengViet.filter(voice => !voice.name.includes(' An'));
                 
+                // Ưu tiên chọn giọng nữ chuẩn (hoaimy, linh, hoặc google)
                 let giongNuChuan = locGiongNu.find(voice => 
                     voice.name.toLowerCase().includes('hoaimy') || 
                     voice.name.toLowerCase().includes('linh') ||
@@ -258,16 +216,23 @@
                         window.speechSynthesis.speak(utterance);
                     }, 50);
                     thanhCongGiongCucBo = true;
+                    console.log("🔊 Phát bằng giọng AI:", giongNuChuan.name);
                 }
             }
         }
 
+        // Bức tường bảo vệ cuối cùng: Nếu máy tính/điện thoại lỗi không có giọng vi-VN, 
+        // Gọi thẳng lên máy chủ Google Translate để tải file ghi âm về đọc.
         if (!thanhCongGiongCucBo) {
+            console.log("🚀 Chuyển sang AI Cloud TTS Giọng Nữ...");
             const urlCloudTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(text)}`;
             trinhPhatAmThanh.src = urlCloudTTS;
-            trinhPhatAmThanh.play().catch(err => console.error("Lỗi phát âm thanh Cloud:", err));
+            trinhPhatAmThanh.play().catch(err => {
+                console.error("Lỗi phát âm thanh Cloud:", err);
+            });
         }
     }
 </script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
