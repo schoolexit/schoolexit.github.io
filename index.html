@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ĐÓN BÉ HL | TRƯỜNG MẦM NON QUỐC TẾ KINDYCITY</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="database.js"></script>
+    <style>
+        body { background-color: #f8fafc; font-family: sans-serif; }
+        .student-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            cursor: pointer;
+            border: 1px solid #e2e8f0;
+        }
+        .gallery:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        .gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+        .desc { padding: 10px; text-align: center; font-weight: bold; color: #4f46e5; }
+    </style>
+</head>
+<body>
+
+<div class="w3-padding" style="max-width:1200px; margin:auto">
+    <div id="container-Koala" class="student-list"></div>
+    <div id="container-Panda" class="student-list"></div>
+    <div id="container-Dolphin" class="student-list"></div>
+    <div id="container-Giraffe" class="student-list"></div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const data = window.kindergartenData;
+        data.students.forEach(student => {
+            const container = document.getElementById(`container-${student.class}`);
+            if (container) {
+                const div = document.createElement('div');
+                div.className = 'gallery';
+                div.innerHTML = `<img src="${student.image}" alt="${student.name}"><div class="desc">${student.name}</div>`;
+                div.onclick = () => playSound(student.sound, student.name, student.class);
+                container.appendChild(div);
+            }
+        });
+    });
+
+    function playSound(url, name, className) {
+        if (url) {
+            new Audio(url).play().catch(() => speak(`Mời học sinh ${name} lớp ${className} ra về`));
+        } else {
+            speak(`Mời học sinh ${name} lớp ${className} ra về`);
+        }
+    }
+
+    function speak(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'vi-VN';
+        window.speechSynthesis.speak(utterance);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Quản Lý</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="database.js"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow">
+        <h1 class="text-2xl font-bold mb-4">Quản lý Học sinh</h1>
+        <button onclick="saveToGitHub()" id="save-btn" class="bg-blue-600 text-white px-4 py-2 rounded">Lưu lên GitHub</button>
+        </div>
+
+<script>
+    // CẤU HÌNH GITHUB (NHẬP ĐÚNG THÔNG TIN CỦA BẠN)
+    const GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"; // Token từ GitHub
+    const GITHUB_USER = "navigationcode";
+    const GITHUB_REPO = "page"; // Tên repository của bạn
+    const FILE_PATH = "database.js";
+
+    async function saveToGitHub() {
+        const btn = document.getElementById('save-btn');
+        btn.innerText = "Đang lưu...";
+        
+        const content = "window.kindergartenData = " + JSON.stringify(window.kindergartenData, null, 4) + ";";
+        const encodedContent = btoa(unescape(encodeURIComponent(content)));
+
+        try {
+            // 1. Lấy SHA file cũ
+            const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${FILE_PATH}`, {
+                headers: { "Authorization": `Bearer ${GITHUB_TOKEN}` }
+            });
+            const data = await res.json();
+
+            // 2. Cập nhật file mới
+            await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${FILE_PATH}`, {
+                method: "PUT",
+                headers: { 
+                    "Authorization": `Bearer ${GITHUB_TOKEN}`,
+                    "Content-Type": "application/json" 
+                },
+                body: JSON.stringify({
+                    message: "Cập nhật dữ liệu từ Dashboard",
+                    content: encodedContent,
+                    sha: data.sha // Bắt buộc phải có SHA mới lưu được
+                })
+            });
+            alert("Lưu thành công!");
+            btn.innerText = "Lưu lên GitHub";
+        } catch (err) {
+            alert("Lỗi: " + err.message);
+            btn.innerText = "Lưu lên GitHub";
+        }
+    }
+</script>
+</body>
+</html>

