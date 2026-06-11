@@ -9,9 +9,6 @@
   
   <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/icon/favicon-512x512.png">
-  <link rel="icon" type="image/png" sizes="1024x1024" href="images/icon/1024.png">
-  
   <link rel="stylesheet" href="css/w3.css">
   <link rel="stylesheet" href="css/css.css">
   <link rel="stylesheet" href="css/style.css">
@@ -23,244 +20,73 @@
   <script src="database.js"></script>
 
 <style>
-  .highlight { background-color: yellow; }
-  
   body {
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+      -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
       background-color: #f8fafc;
   }
-  
   * { box-sizing: border-box; }
 
-  /* =========================================
-     CÔNG NGHỆ CSS GRID CHỐNG LỆCH DÒNG THẺ
-     ========================================= */
+  /* CSS GRID CHỐNG LỆCH DÒNG THÈ */
   .student-list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 10px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 10px;
   }
-
   .responsive {
-      width: 100% !important;
-      float: none !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      display: flex;
-      height: 100%;
+      width: 100% !important; float: none !important; padding: 0 !important; margin: 0 !important; display: flex; height: 100%;
   }
-
   div.gallery {
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      margin-bottom: 0 !important; 
+      border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; width: 100%; transition: 0.2s;
   }
-
-  div.gallery:hover {
-      border: 1px solid #a5b4fc;
-      transform: translateY(-4px);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-  }
-
-  div.gallery img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border-bottom: 2px solid #f1f5f9;
-  }
-
+  div.gallery:hover { border: 1px solid #a5b4fc; transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+  div.gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-bottom: 2px solid #f1f5f9; }
+  
   div.desc {
-      padding: 14px 8px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 14px;
-      color: #4f46e5;
-      text-transform: capitalize;
-      flex-grow: 1; /* Ép các thẻ phải cao bằng nhau */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1.4;
+      padding: 14px 8px; text-align: center; font-weight: bold; font-size: 14px; color: #4f46e5;
+      flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.4;
   }
+  .nick-title { font-size: 12px; color: #64748b; font-weight: normal; margin-top: 2px; }
 
-  .clearfix { display: none !important; }
-
-  /* Reponsive cho Di động & Tablet */
-  @media only screen and (max-width: 1024px) {
-      .student-list { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  }
-  @media only screen and (max-width: 768px) {
-      .student-list { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-      div.desc { font-size: 13px; padding: 12px 6px; }
-  }
-  @media only screen and (max-width: 480px) {
-      .student-list { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      div.desc { font-size: 12px; padding: 10px 4px; }
-  }
+  @media only screen and (max-width: 1024px) { .student-list { grid-template-columns: repeat(3, 1fr); } }
+  @media only screen and (max-width: 768px) { .student-list { grid-template-columns: repeat(2, 1fr); } }
 </style>
-
-<script type="text/JavaScript">
-  function killCopy(e){ return false; }
-  function reEnable(){ return true; }
-  document.onselectstart=new Function ("return false")
-  if (window.sidebar){ document.onmousedown=killCopy; document.onclick=reEnable; }
-</script>
-<script language="JavaScript">
-  window.onload = function() {
-      document.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
-      document.addEventListener("keydown", function(e) {
-          if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) disabledEvent(e);
-          if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) disabledEvent(e);
-          if (e.ctrlKey && e.keyCode == 85) disabledEvent(e);
-          if (e.keyCode == 123) disabledEvent(e);
-      }, false);
-      function disabledEvent(e) {
-          if (e.stopPropagation) e.stopPropagation(); else if (window.event) window.event.cancelBubble = true;
-          e.preventDefault(); return false;
-      }
-  };
-</script>
 </head>
 <body>
-
-  <noscript>
-        <style>
-            body > *:not(noscript) { display: none !important; }
-            .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; }
-            .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }
-        </style>
-        <div class="no-js-overlay">
-            <div class="no-js-box">
-                <div style="font-size: 50px; margin-bottom: 15px;">⚠️</div>
-                <h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2>
-                <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p>
-            </div>
-        </div>
-    </noscript>
-
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-  <a onclick="downloadApk();w3_close()" class="w3-bar-item w3-button" style="text-align: center;">
-    <img src="images/icon/download.png">
-  </a>
-  <a onclick="w3_close()" class="w3-bar-item w3-button">
-    <img src="images/icon/bus.png" onclick="playClickBus()">
-  </a>
-</nav>
 
 <div class="w3-top ">
   <div class="top-round-rainbow w3-white w3-xlarge" style="max-width:1200px;margin:auto">
     <div class="w3-center w3-padding-16">
-      <a onclick="openCity(event, 'koala');w3_close()" class="w3-bar-item w3-button"><img src="images/icon/koala.png" style="width: 6rem; height: 6rem;"></a>
-      <a onclick="openCity(event, 'panda');w3_close()" class="w3-bar-item w3-button"><img src="images/icon/panda.png" style="width: 6rem; height: 6rem;"></a>
-      <a onclick="openCity(event, 'dolphin');w3_close()" class="w3-bar-item w3-button"><img src="images/icon/dolphin.png" style="width: 6rem; height: 6rem;"></a>
-      <a onclick="openCity(event, 'giraffe');w3_close()" class="w3-bar-item w3-button"><img src="images/icon/giraffe.png" style="width: 6rem; height: 6rem;"></a>
+      <a onclick="openCity(event, 'koala')" class="w3-bar-item w3-button"><img src="images/icon/koala.png" style="width: 6rem; height: 6rem;"></a>
+      <a onclick="openCity(event, 'panda')" class="w3-bar-item w3-button"><img src="images/icon/panda.png" style="width: 6rem; height: 6rem;"></a>
+      <a onclick="openCity(event, 'dolphin')" class="w3-bar-item w3-button"><img src="images/icon/dolphin.png" style="width: 6rem; height: 6rem;"></a>
+      <a onclick="openCity(event, 'giraffe')" class="w3-bar-item w3-button"><img src="images/icon/giraffe.png" style="width: 6rem; height: 6rem;"></a>
     </div>
   </div>
 </div>
 
 <div id="content" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-   <div class="w3-row-padding w3-padding-16 w3-center city" id="koala">
-    <div class="class-wrapper">
-      <div class="student-list" id="container-Koala"></div>
-    </div>
-   </div>
-   <div class="w3-row-padding w3-padding-16 w3-center city" id="panda">
-    <div class="class-wrapper">
-      <div class="student-list" id="container-Panda"></div>
-    </div>
-   </div>
-   <div class="w3-row-padding w3-padding-16 w3-center city" id="dolphin">
-    <div class="class-wrapper">
-      <div class="student-list" id="container-Dolphin"></div>
-    </div>
-   </div>
-   <div class="w3-row-padding w3-padding-16 w3-center city" id="giraffe">
-    <div class="class-wrapper">
-      <div class="student-list" id="container-Giraffe"></div>
-    </div>
-   </div>
-
-   <audio id="sound0" src="sound/"></audio>
+   <div class="w3-row-padding w3-padding-16 w3-center city" id="koala"><div class="class-wrapper"><div class="student-list" id="container-Koala"></div></div></div>
+   <div class="w3-row-padding w3-padding-16 w3-center city" id="panda"><div class="class-wrapper"><div class="student-list" id="container-Panda"></div></div></div>
+   <div class="w3-row-padding w3-padding-16 w3-center city" id="dolphin"><div class="class-wrapper"><div class="student-list" id="container-Dolphin"></div></div></div>
+   <div class="w3-row-padding w3-padding-16 w3-center city" id="giraffe"><div class="class-wrapper"><div class="student-list" id="container-Giraffe"></div></div></div>
 </div>
-
-<script src="js/koala.js"></script>
-<script src="js/panda.js"></script>
-<script src="js/dolphin.js"></script>
-<script src="js/giraffe.js"></script>
-<script src="js/bus.js"></script>
-<script src="js/scripts.js"></script>
-
-<script>
-  function downloadApk() {
-      window.location.href = 'https://navigationcode.github.io/page/update.apk';
-  }
-</script>
-
-<section class="call-buton" onclick="window.location.reload();">
-    <a class="cc-calto-action-ripple">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16">
-            <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06M6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/>
-        </svg>
-        <span class="num"></span>
-    </a>
-</section>
-
-<section class="bus-buton" onclick="playClickBus()">
-  <a class="cc-calto-action-ripple" style="text-align: center;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16">
-      <path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/>
-      <path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/>
-    </svg>
-  </a>
-</section>
 
 <script>
     const trinhPhatAmThanh = new Audio();
 
     document.addEventListener("DOMContentLoaded", () => {
         veGiaoDienHocSinhDong();
-        
-        let daMoKhoaAI = false;
-        document.body.addEventListener('click', function() {
-            if (!daMoKhoaAI) {
-                // Kích hoạt loa tàng hình trên điện thoại
-                trinhPhatAmThanh.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
-                trinhPhatAmThanh.play().catch(()=>{});
-                
-                if ('speechSynthesis' in window) {
-                    let utterance = new SpeechSynthesisUtterance(''); 
-                    window.speechSynthesis.speak(utterance);
-                }
-                daMoKhoaAI = true;
-                console.log("🔓 Trình duyệt di động đã mở khóa hệ thống AI");
-            }
+        document.body.addEventListener('click', () => {
+            trinhPhatAmThanh.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
+            trinhPhatAmThanh.play().catch(()=>{});
         }, { once: true });
     });
 
     function veGiaoDienHocSinhDong() {
         if (!window.kindergartenData || !window.kindergartenData.students) return;
-        
         const data = window.kindergartenData;
 
-        // Xóa sạch thùng chứa cũ
-        data.classes.forEach(className => {
-            const container = document.getElementById(`container-${className}`);
-            if (container) container.innerHTML = '';
-        });
+        data.classes.forEach(c => { const el = document.getElementById(`container-${c}`); if (el) el.innerHTML = ''; });
 
-        // Vẽ thẻ học sinh mới
         data.students.forEach(student => {
             const container = document.getElementById(`container-${student.class}`);
             if (!container) return; 
@@ -268,97 +94,66 @@
             const cardWrapper = document.createElement('div');
             cardWrapper.className = 'responsive'; 
 
+            // Giao diện hiển thị tên học sinh kèm biệt danh (nếu có)
+            const nickHtml = student.nickname ? `<span class="nick-title">Nhà gọi: ${student.nickname}</span>` : '';
             cardWrapper.innerHTML = `
                 <div class="gallery">
                     <img src="${student.image}" alt="${student.name}" loading="lazy">
-                    <div class="desc">${student.name}</div>
+                    <div class="desc">
+                        <span>${student.name}</span>
+                        ${nickHtml}
+                    </div>
                 </div>
             `;
 
             cardWrapper.addEventListener('click', () => {
-                playClickSound(student.sound, student.name, student.class);
+                // Xây dựng câu thông báo có đầy đủ: Họ tên, biệt danh, lớp
+                let cauThongBao = `Mời học sinh ${student.name}`;
+                if (student.nickname) {
+                    cauThongBao += `, , , ${student.nickname}`;
+                }
+                cauThongBao += `, lớp ${student.class} ra về`;
+
+                playClickSound(student.sound, cauThongBao);
             });
 
             container.appendChild(cardWrapper);
         });
     }
 
-    // HỆ THỐNG ÂM THANH
-    function playClickSound(soundUrl, studentName, className) {
+    function playClickSound(soundUrl, textBackup) {
         let cleanUrl = soundUrl ? soundUrl.trim().replace(/\\/g, '/') : '';
-        const coFileAmThanh = cleanUrl !== "" && cleanUrl !== "sound/" && !cleanUrl.endsWith('/');
+        const coFileMP3 = cleanUrl !== "" && cleanUrl !== "sound/" && !cleanUrl.endsWith('/');
 
-        if (coFileAmThanh) {
+        if (coFileMP3) {
             trinhPhatAmThanh.src = cleanUrl;
-            trinhPhatAmThanh.play().catch(error => {
-                console.warn("Lỗi tệp MP3 gốc, kích hoạt AI dự phòng:", error);
-                phatThanhAIGiongNu(`Mời học sinh ${studentName} lớp ${className} ra về`);
-            });
+            trinhPhatAmThanh.play().catch(() => phatThanhAIGiongNu(textBackup));
         } else {
-            phatThanhAIGiongNu(`Mời học sinh ${studentName} lớp ${className} ra về`);
+            phatThanhAIGiongNu(textBackup);
         }
-    }
-
-    let giongNoiHeThong = [];
-    function capNhatHeThongGiong() {
-        giongNoiHeThong = window.speechSynthesis.getVoices();
-    }
-    
-    if (window.speechSynthesis) {
-        capNhatHeThongGiong();
-        window.speechSynthesis.onvoiceschanged = capNhatHeThongGiong;
     }
 
     function phatThanhAIGiongNu(text) {
-        let thanhCongGiongCucBo = false;
-
+        let thanhCong = false;
         if ('speechSynthesis' in window) {
-            if (window.speechSynthesis.speaking) {
-                window.speechSynthesis.cancel();
-            }
-
+            window.speechSynthesis.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'vi-VN';
-            utterance.rate = 0.99; 
+            utterance.rate = 0.95; 
 
-            if (giongNoiHeThong.length === 0) {
-                giongNoiHeThong = window.speechSynthesis.getVoices();
-            }
+            const voices = window.speechSynthesis.getVoices();
+            const giongNu = voices.find(v => (v.lang.includes('vi') || v.lang.includes('VN')) && !v.name.includes(' An'));
+            if (giongNu) utterance.voice = giongNu;
 
-            const giongTiengViet = giongNoiHeThong.filter(voice => voice.lang.includes('vi') || voice.lang.includes('VN'));
-
-            if (giongTiengViet.length > 0) {
-                const locGiongNu = giongTiengViet.filter(voice => !voice.name.includes(' An'));
-                
-                let giongNuChuan = locGiongNu.find(voice => 
-                    voice.name.toLowerCase().includes('hoaimy') || 
-                    voice.name.toLowerCase().includes('linh') ||
-                    voice.name.toLowerCase().includes('google')
-                );
-
-                if (!giongNuChuan && locGiongNu.length > 0) giongNuChuan = locGiongNu[0];
-                if (!giongNuChuan) giongNuChuan = giongTiengViet[0];
-
-                if (giongNuChuan) {
-                    utterance.voice = giongNuChuan;
-                    setTimeout(() => {
-                        window.speechSynthesis.speak(utterance);
-                    }, 50);
-                    thanhCongGiongCucBo = true;
-                    console.log("🔊 Phát bằng giọng AI:", giongNuChuan.name);
-                }
-            }
+            window.speechSynthesis.speak(utterance);
+            thanhCong = true;
         }
-
-        if (!thanhCongGiongCucBo) {
-            console.log("🚀 Chuyển sang AI Cloud TTS Giọng Nữ...");
-            const urlCloudTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(text)}`;
-            trinhPhatAmThanh.src = urlCloudTTS;
-            trinhPhatAmThanh.play().catch(err => {
-                console.error("Lỗi phát âm thanh Cloud:", err);
-            });
+        if (!thanhCong) {
+            trinhPhatAmThanh.src = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(text)}`;
+            trinhPhatAmThanh.play().catch(()=>{});
         }
     }
 </script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
