@@ -57,10 +57,10 @@ window.kindergartenData = {
             "busRoute": "Xe bus"
         },
         {
-            "id": "st-1781164701287",
-            "name": "Trần Quốc Bảo",
-            "nickname": "he he",
-            "class": "Panda",
+            "id": "st-1781164837815",
+            "name": "Bùi Thanh Vân",
+            "nickname": "Vân Vân",
+            "class": "Giraffe",
             "image": "images/user.jpg",
             "sound": "",
             "isBus": false,
