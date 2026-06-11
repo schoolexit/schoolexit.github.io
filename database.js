@@ -53,8 +53,8 @@ window.kindergartenData = {
             "class": "Koala",
             "image": "images/user.jpg",
             "sound": "",
-            "isBus": true,
-            "busRoute": "Xe bus"
+            "isBus": false,
+            "busRoute": ""
         },
         {
             "id": "st-1781164837815",
