@@ -18,6 +18,7 @@ window.kindergartenData = {
         {
             "id": "st-1781152929814",
             "name": "Trần Quốc Bảo",
+            "nickname": "Dog Bull",
             "class": "Koala",
             "image": "images/user.jpg",
             "sound": "",
