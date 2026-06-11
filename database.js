@@ -14,6 +14,15 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": ""
+        },
+        {
+            "id": "st-1781152779044",
+            "name": "Trần Quốc Bảo",
+            "class": "Koala",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
         }
     ]
 };
