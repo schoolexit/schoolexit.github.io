@@ -61,7 +61,119 @@
     </div>
 
     <script>
-        const _0xfc={apiKey:atob('QUl6YVN5RG8wNVVFeE94NmNKQmMtckRNOG9lXzk1NnRvaHJjaVJR'),authDomain:atob('aGUtdGhvbmctZG9uLWJlLWhsLmZpcmViYXNlYXBwLmNvbQ=='),projectId:atob('aGUtdGhvbmctZG9uLWJlLWhs'),storageBucket:atob('aGUtdGhvbmctZG9uLWJlLWhsLmZpcmViYXNlc3RvcmFnZS5hcHA='),messagingSenderId:atob('MTQ4MDkzOTE4MzQ1'),appId:atob('MToxNDgwOTM5MTgzNDU6d2ViOjc3YTM5NjU2NGU1NDg1YjcwYWZhNTg='),measurementId:atob('Ry00NUhFWEVLTUNO')};firebase.initializeApp(_0xfc);const _0xau=firebase.auth();let _0xcr=null;window.onload=function(){window.recaptchaVerifier=new firebase.auth.RecaptchaVerifier(atob('cmVjYXB0Y2hhLWNvbnRhaW5lcg=='),{'size':atob('aW52aXNpYmxl')});};async function sendOTPCode(){let _0xpi=document.getElementById(atob('cGhvbmUtbnVtYmVy')).value.trim();if(!_0xpi)return alert(atob('VnVpIGzDsm5nIG5o4bqtcCBz4buRIGDEkWnhu4duIHRob+G6oWkgxJHEg25nIG5o4bqtcCE='));if(_0xpi.startsWith('0'))_0xpi=_0xpi.substring(1);const _0xsd=atob('MzMzMzEwMjc3');if(_0xpi===_0xsd){sessionStorage.setItem(atob('SExfQURNSU5fU0VTU0lPTg=='),atob('QVVUSEVOVElDQVRFRF9PSw=='));sessionStorage.setItem(atob('SExfQURNSU5fVUlE'),atob('QURNSU5fTUFTVEVSX0tFWQ=='));alert(atob('8J+agCBOaOG6rW4gZGnhu4duIFF14bqjbiB0cuG7iyB2acOqbiBj4bqlcCBjYW8uIMSQxINuZyBuaOG6rXAgdGjDoG5oIGPDtG5nIQ=='));window.location.href=atob('ZGFzaGJvYXJkLmh0bWw=');return;}const _0xfp='+84'+_0xpi;const _0xav=window.recaptchaVerifier;try{document.querySelector(atob('YnV0dG9uW29uY2xpY2s9InNlbmRPVFBDb2RlKCkiXQ==')).innerHTML=atob('PGkgY2xhc3M9ImZhcyBmYS1zcGlubmVyIGZhLXNwaW4iPjwvaT4gxJBhbmcgeOG7rSBsw70uLi4=');_0xcr=await _0xau.signInWithPhoneNumber(_0xfp,_0xav);document.getElementById(atob('cGhvbmUtY29udGFpbmVy')).classList.add(atob('aGlkZGVu'));document.getElementById(atob('b3RwLWNvbnRhaW5lcg==')).classList.remove(atob('aGlkZGVu'));alert(atob('8J+UQSBNw6MgT1RQIMSRw6MgxJHGsOG7o2MgZ+G7rWkgxJHhur9uIHPhu5EgxJFp4buHbiB0aG/huqFpIGPhu6dhIGLhuqFuIQ=='));}catch(_0xerr){alert(atob('TOG7l2kgZ+G7rWkgU01TOiBLaMO0bmcgdGjhu4MgeMOhYyBtaW5oIGzDumMgbmDDoHkuIFZ1aSBsw7JuZyB0aOG7rSBs4bqhaSBzYXUh'));document.querySelector(atob('YnV0dG9uW29uY2xpY2s9InNlbmRPVFBDb2RlKCkiXQ==')).innerHTML=atob('PGkgY2xhc3M9ImZhcyBmYS1wYXBlci1wbGFuZSB0ZXh0LXhzIj48L2k+IEfhu61pIG3DoyBPUFAgeMOhYyB0aOG7sWM=');if(window.recaptchaVerifier)window.recaptchaVerifier.render().then(_0xwid=>grecaptcha.reset(_0xwid));}}async function verifyOTPCode(){const _0xc=document.getElementById(atob('b3RwLWNvZGU=')).value.trim();if(_0xc.length!==6)return alert(atob('TcOjIE9UUCBwaOG6o2kgZ+G7k20gxJHhuqd5IMSR4bunIDYgY2jhu68gc+G7kSE='));try{const _0xres=await _0xcr.confirm(_0xc);sessionStorage.setItem(atob('SExfQURNSU5fU0VTU0lPTg=='),atob('QVVUSEVOVElDQVRFRF9PSw=='));sessionStorage.setItem(atob('SExfQURNSU5fVUlE'),_0xres.user.uid);alert(atob('8J+OiSBYw6FjIHRo4buxYyB0aMOgbmggY8O0bmchIEjhu4cgdGjhu5FuZyDEkWFuZyBjaHV54buDbiBoxrDhu5tuZyB2w6BvIERhc2hib2FyZC4uLg=='));window.location.href=atob('ZGFzaGJvYXJkLmh0bWw=');}catch(_0xerr){alert(atob('TcOjIHjDoWMgdGjhu7FjIE9UUCBraMO0bmcgY2jDrW5oIHjDoWMgaG/hurdjIMSRw6MgaOG6vXQgaOG6oW4h'));}}function backToPhoneInput(){document.getElementById(atob('cGhvbmUtY29udGFpbmVy')).classList.remove(atob('aGlkZGVu'));document.getElementById(atob('b3RwLWNvbnRhaW5lcg==')).classList.add(atob('aGlkZGVu'));document.getElementById(atob('b3RwLWNvZGU=')).value='';}
+        // =========================================================
+        // CẤU HÌNH FIREBASE OTP SMS
+        // =========================================================
+        const firebaseConfig = {
+            apiKey: "AIzaSyDo05UExOx6cJBc-rDM8oe_956tohrciRQ",
+            authDomain: "he-thong-don-be-hl.firebaseapp.com",
+            projectId: "he-thong-don-be-hl",
+            storageBucket: "he-thong-don-be-hl.firebasestorage.app",
+            messagingSenderId: "148093918345",
+            appId: "1:148093918345:web:77a396564e5485b70afa58",
+            measurementId: "G-45HEXEKMCN"
+        };
+        
+        // Khởi tạo Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        let confirmationResult = null;
+
+        // Khởi tạo reCAPTCHA vô hình ngay khi trang tải xong
+        window.onload = function() {
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+                'size': 'invisible'
+            });
+        };
+
+        // =========================================================
+        // XỬ LÝ GỬI MÃ OTP & ĐƯỜNG TẮT QUẢN TRỊ VIÊN
+        // =========================================================
+        async function sendOTPCode() {
+            let phoneInput = document.getElementById('phone-number').value.trim();
+            if(!phoneInput) return alert('Vui lòng nhập số điện thoại đăng nhập!');
+            
+            // Xóa số 0 ở đầu nếu có
+            if (phoneInput.startsWith('0')) {
+                phoneInput = phoneInput.substring(1);
+            }
+
+            // Mật khẩu đường tắt cấp cao (Bỏ qua bước SMS OTP)
+            const SO_DIEN_THOAI_DAC_BIET = "333310277"; 
+            
+            if (phoneInput === SO_DIEN_THOAI_DAC_BIET) {
+                // Tạo chìa khóa phiên làm việc ngay lập tức
+                sessionStorage.setItem('HL_ADMIN_SESSION', 'AUTHENTICATED_OK');
+                sessionStorage.setItem('HL_ADMIN_UID', 'ADMIN_MASTER_KEY');
+                
+                alert('🚀 Nhận diện Quản trị viên cấp cao. Đăng nhập thành công!');
+                window.location.href = 'dashboard.html';
+                return; 
+            }
+
+            // Gửi OTP bằng Firebase đối với số điện thoại thông thường
+            const formattedPhone = '+84' + phoneInput;
+            const appVerifier = window.recaptchaVerifier;
+            const btn = document.querySelector('button[onclick="sendOTPCode()"]');
+            const originalBtnHTML = btn.innerHTML;
+
+            try {
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang xử lý...';
+                
+                confirmationResult = await auth.signInWithPhoneNumber(formattedPhone, appVerifier);
+                
+                // Hiển thị khung nhập OTP
+                document.getElementById('phone-container').classList.add('hidden');
+                document.getElementById('otp-container').classList.remove('hidden');
+                alert('🔑 Mã OTP đã được gửi đến số điện thoại của bạn!');
+                
+            } catch (error) {
+                console.error("Lỗi gửi SMS:", error);
+                alert('Lỗi gửi SMS: Không thể xác minh lúc này. Vui lòng kiểm tra lại cấu hình Firebase hoặc thử lại sau!');
+                btn.innerHTML = originalBtnHTML;
+                // Reset lại reCAPTCHA nếu bị lỗi
+                if (window.recaptchaVerifier) {
+                    window.recaptchaVerifier.render().then(widgetId => grecaptcha.reset(widgetId));
+                }
+            }
+        }
+
+        // =========================================================
+        // KIỂM TRA MÃ OTP NGƯỜI DÙNG NHẬP
+        // =========================================================
+        async function verifyOTPCode() {
+            const code = document.getElementById('otp-code').value.trim();
+            if(code.length !== 6) return alert('Mã OTP phải gồm đầy đủ 6 chữ số!');
+
+            const btn = document.querySelector('button[onclick="verifyOTPCode()"]');
+            const originalBtnHTML = btn.innerHTML;
+
+            try {
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang xác minh...';
+                
+                const result = await confirmationResult.confirm(code);
+                const user = result.user;
+
+                // Lưu khóa phiên bảo mật để trang dashboard.html cho phép truy cập
+                sessionStorage.setItem('HL_ADMIN_SESSION', 'AUTHENTICATED_OK');
+                sessionStorage.setItem('HL_ADMIN_UID', user.uid);
+
+                alert('🎉 Xác thực thành công! Hệ thống đang chuyển hướng vào Dashboard...');
+                window.location.href = 'dashboard.html';
+                
+            } catch (error) {
+                console.error("Lỗi xác minh OTP:", error);
+                alert('Mã xác thực OTP không chính xác hoặc đã hết hạn!');
+                btn.innerHTML = originalBtnHTML;
+            }
+        }
+
+        // Chức năng quay lại khi nhập sai số điện thoại
+        function backToPhoneInput() {
+            document.getElementById('phone-container').classList.remove('hidden');
+            document.getElementById('otp-container').classList.add('hidden');
+            document.getElementById('otp-code').value = '';
+        }
     </script>
 </body>
 </html>
