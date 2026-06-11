@@ -25,8 +25,8 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-1781158475487",
-            "name": "Nguyễn Văn Thái",
+            "id": "st-1781158835902",
+            "name": "Thái Duy Bảo",
             "class": "Koala",
             "image": "images/user.jpg",
             "sound": "",
