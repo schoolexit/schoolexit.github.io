@@ -13,7 +13,7 @@ window.kindergartenData = {
             "class": "Koala",
             "image": "images/img_1781161727925.jpg",
             "sound": "",
-            "isBus": false,
+            "isBus": true,
             "busRoute": ""
         },
         {
@@ -23,7 +23,7 @@ window.kindergartenData = {
             "class": "Koala",
             "image": "images/user.jpg",
             "sound": "",
-            "isBus": false,
+            "isBus": true,
             "busRoute": ""
         },
         {
