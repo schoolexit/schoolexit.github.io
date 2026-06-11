@@ -45,6 +45,16 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": ""
+        },
+        {
+            "id": "st-1781164535551",
+            "name": "HUỲNH TRẦN THIÊN AN",
+            "nickname": "suboi",
+            "class": "Koala",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": true,
+            "busRoute": "Xe bus"
         }
     ]
 };
