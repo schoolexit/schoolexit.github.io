@@ -94,7 +94,7 @@
             const cardWrapper = document.createElement('div');
             cardWrapper.className = 'responsive'; 
 
-            // Giao diện hiển thị tên học sinh kèm biệt danh (nếu có)
+            // Giao diện hiển thị tên học sinh kèm biệt danh
             const nickHtml = student.nickname ? `<span class="nick-title">Nhà gọi: ${student.nickname}</span>` : '';
             cardWrapper.innerHTML = `
                 <div class="gallery">
@@ -110,7 +110,7 @@
                 // Xây dựng câu thông báo có đầy đủ: Họ tên, biệt danh, lớp
                 let cauThongBao = `Mời học sinh ${student.name}`;
                 if (student.nickname) {
-                    cauThongBao += `, , , ${student.nickname}`;
+                    cauThongBao += `, biệt danh ${student.nickname}`;
                 }
                 cauThongBao += `, lớp ${student.class} ra về`;
 
@@ -133,24 +133,74 @@
         }
     }
 
+    // =========================================================================
+    // THUẬT TOÁN QUÉT VÀ ÉP BUỘC ĐỌC GIỌNG NỮ TIẾNG VIỆT ĐÃ ĐƯỢC KHÔI PHỤC LẠI
+    // =========================================================================
+    let giongNoiHeThong = [];
+    function capNhatHeThongGiong() {
+        giongNoiHeThong = window.speechSynthesis.getVoices();
+    }
+    
+    if ('speechSynthesis' in window) {
+        capNhatHeThongGiong();
+        // Lắng nghe sự kiện trình duyệt nạp xong gói ngôn ngữ
+        window.speechSynthesis.onvoiceschanged = capNhatHeThongGiong;
+    }
+
     function phatThanhAIGiongNu(text) {
-        let thanhCong = false;
+        let thanhCongGiongCucBo = false;
+
         if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'vi-VN';
             utterance.rate = 0.95; 
 
-            const voices = window.speechSynthesis.getVoices();
-            const giongNu = voices.find(v => (v.lang.includes('vi') || v.lang.includes('VN')) && !v.name.includes(' An'));
-            if (giongNu) utterance.voice = giongNu;
+            // Đảm bảo dữ liệu giọng đã được tải
+            if (giongNoiHeThong.length === 0) {
+                giongNoiHeThong = window.speechSynthesis.getVoices();
+            }
 
-            window.speechSynthesis.speak(utterance);
-            thanhCong = true;
+            // Lọc ra các giọng có hỗ trợ Tiếng Việt
+            const giongTiengViet = giongNoiHeThong.filter(voice => voice.lang.includes('vi') || voice.lang.includes('VN'));
+
+            if (giongTiengViet.length > 0) {
+                // Loại bỏ giọng nam bị lỗi (thường chứa chữ ' An' trên trình duyệt Edge/Chrome)
+                const locGiongNu = giongTiengViet.filter(voice => !voice.name.includes(' An'));
+                
+                // Ưu tiên chọn giọng nữ chuẩn (hoaimy, linh, hoặc google)
+                let giongNuChuan = locGiongNu.find(voice => 
+                    voice.name.toLowerCase().includes('hoaimy') || 
+                    voice.name.toLowerCase().includes('linh') ||
+                    voice.name.toLowerCase().includes('google')
+                );
+
+                if (!giongNuChuan && locGiongNu.length > 0) giongNuChuan = locGiongNu[0];
+                if (!giongNuChuan) giongNuChuan = giongTiengViet[0];
+
+                if (giongNuChuan) {
+                    utterance.voice = giongNuChuan;
+                    setTimeout(() => {
+                        window.speechSynthesis.speak(utterance);
+                    }, 50);
+                    thanhCongGiongCucBo = true;
+                    console.log("🔊 Phát bằng giọng AI:", giongNuChuan.name);
+                }
+            }
         }
-        if (!thanhCong) {
-            trinhPhatAmThanh.src = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(text)}`;
-            trinhPhatAmThanh.play().catch(()=>{});
+
+        // Bức tường bảo vệ cuối cùng: Nếu máy tính/điện thoại lỗi không có giọng vi-VN, 
+        // Gọi thẳng lên máy chủ Google Translate để tải file ghi âm về đọc.
+        if (!thanhCongGiongCucBo) {
+            console.log("🚀 Chuyển sang AI Cloud TTS Giọng Nữ...");
+            const urlCloudTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(text)}`;
+            trinhPhatAmThanh.src = urlCloudTTS;
+            trinhPhatAmThanh.play().catch(err => {
+                console.error("Lỗi phát âm thanh Cloud:", err);
+            });
         }
     }
 </script>
