@@ -9,6 +9,7 @@ window.kindergartenData = {
         {
             "id": "st-1781142550605",
             "name": "Nguyễn Thanh Như",
+            "nickname": "IT",
             "class": "Koala",
             "image": "images/user.jpg",
             "sound": "",
@@ -18,7 +19,7 @@ window.kindergartenData = {
         {
             "id": "st-1781152929814",
             "name": "Trần Quốc Bảo",
-            "nickname": "Dog Bull",
+            "nickname": "ICT",
             "class": "Koala",
             "image": "images/user.jpg",
             "sound": "",
@@ -28,6 +29,7 @@ window.kindergartenData = {
         {
             "id": "st-1781158835902",
             "name": "Thái Duy Bảo",
+            "nickname": "Dog Bull",
             "class": "Koala",
             "image": "images/user.jpg",
             "sound": "",
@@ -37,6 +39,7 @@ window.kindergartenData = {
         {
             "id": "st-1781159858228",
             "name": "Trần Thị Thu Hà",
+            "nickname": "Chiwawa",
             "class": "Koala",
             "image": "images/user.jpg",
             "sound": "",
