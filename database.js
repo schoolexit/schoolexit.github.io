@@ -56,6 +56,16 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": ""
+        },
+        {
+            "id": "st-1781584029404",
+            "name": "Thái Duy Thanh",
+            "nickname": "Duy Thanh",
+            "class": "Koala 1",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
         }
     ]
 };
