@@ -9,6 +9,12 @@
     
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    
+    <style>
+        body { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+    </style>
+    <script type="text/JavaScript">function killCopy(e){return!1}function reEnable(){return!0}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
+    <script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},!1);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&e.keyCode==73)_0xdb(e);if(e.ctrlKey&&e.shiftKey&&e.keyCode==74)_0xdb(e);if(e.keyCode==83&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey))_0xdb(e);if(e.ctrlKey&&e.keyCode==85)_0xdb(e);if(event.keyCode==123)_0xdb(e)},!1);function _0xdb(e){if(e.stopPropagation)e.stopPropagation();else if(window.event)window.event.cancelBubble=!0;e.preventDefault();return!1}};</script>
 </head>
 <body class="bg-slate-900 flex items-center justify-center min-h-screen p-4 font-sans selection:bg-indigo-500 selection:text-white">
 
@@ -61,11 +67,10 @@
 
     <script>
         // =========================================================
-        // CẤU HÌNH FIREBASE OTP SMS
+        // DÁN ĐOẠN MÃ FIREBASE CONFIG CỦA BẠN VÀO KHU VỰC NÀY
         // =========================================================
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
-
+        // Xóa đoạn const firebaseConfig = {...} cũ này đi và dán đoạn của bạn vào đây:
+        
         const firebaseConfig = {
             apiKey: "AIzaSyCNkmj4DVt437lxjtjDxBdXU9Lfy1EjkCI",
             authDomain: "schoolexit-dde10.firebaseapp.com",
@@ -76,6 +81,8 @@
             measurementId: "G-2PML5HB0B3"
         };
         
+        // =========================================================
+
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
         let confirmationResult = null;
@@ -92,7 +99,7 @@
             
             if (phoneInput.startsWith('0')) phoneInput = phoneInput.substring(1);
 
-            // Mật khẩu đường tắt cấp cao
+            // Mật khẩu đường tắt cấp cao (Bỏ qua SMS)
             const SO_DIEN_THOAI_DAC_BIET = "333310277"; 
             if (phoneInput === SO_DIEN_THOAI_DAC_BIET) {
                 sessionStorage.setItem('HL_ADMIN_SESSION', 'AUTHENTICATED_OK');
@@ -112,10 +119,10 @@
                 confirmationResult = await auth.signInWithPhoneNumber(formattedPhone, appVerifier);
                 document.getElementById('phone-container').classList.add('hidden');
                 document.getElementById('otp-container').classList.remove('hidden');
-                alert('🔑 Mã OTP đã được gửi đến số điện thoại của bạn!');
+                alert('🔑 Yêu cầu gửi SMS đã được chấp nhận!');
             } catch (error) {
                 console.error("Lỗi gửi SMS:", error);
-                alert('Lỗi gửi SMS: Vui lòng kiểm tra lại cấu hình hoặc thử lại sau!');
+                alert('Lỗi gửi SMS: Số điện thoại không hợp lệ hoặc bị nhà mạng chặn. Vui lòng kiểm tra lại!');
                 btn.innerHTML = originalBtnHTML;
                 if (window.recaptchaVerifier) window.recaptchaVerifier.render().then(widgetId => grecaptcha.reset(widgetId));
             }
