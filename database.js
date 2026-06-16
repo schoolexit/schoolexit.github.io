@@ -7,16 +7,6 @@ window.kindergartenData = {
     ],
     "students": [
         {
-            "id": "st-1781142550605",
-            "name": "Nguyễn Thanh Như",
-            "nickname": "IT",
-            "class": "Koala",
-            "image": "images/img_1781166488727.jpg",
-            "sound": "",
-            "isBus": true,
-            "busRoute": ""
-        },
-        {
             "id": "st-1781152929814",
             "name": "Trần Quốc Bảo",
             "nickname": "ICT",
