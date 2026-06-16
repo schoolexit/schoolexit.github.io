@@ -97,12 +97,12 @@ window.kindergartenData = {
             "id": "st-1781584029404",
             "name": "Thái Duy Thanh",
             "nickname": "Duy Thanh",
-            "class": "Koala 1",
+            "branch": "HimLam Campus",
+            "class": "Koala 1.1",
             "image": "images/user.jpg",
             "sound": "",
-            "isBus": false,
-            "busRoute": "",
-            "branch": "TanQuy Campus"
+            "isBus": true,
+            "busRoute": ""
         },
         {
             "id": "st-1781585644915",
