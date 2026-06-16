@@ -17,26 +17,6 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-1781158835902",
-            "name": "Thái Duy Bảo",
-            "nickname": "Dog Bull",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1781159858228",
-            "name": "Trần Thị Thu Hà",
-            "nickname": "Chiwawa",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": true,
-            "busRoute": ""
-        },
-        {
             "id": "st-1781164535551",
             "name": "HUỲNH TRẦN THIÊN AN",
             "nickname": "suboi",
@@ -51,6 +31,16 @@ window.kindergartenData = {
             "name": "Bùi Thanh Vân",
             "nickname": "Vân Vân",
             "class": "Giraffe",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-1781580399492",
+            "name": "Bùi Thị Hồng Đào",
+            "nickname": "Báo đè",
+            "class": "Dolphin",
             "image": "images/user.jpg",
             "sound": "",
             "isBus": false,
