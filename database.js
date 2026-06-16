@@ -27,8 +27,8 @@ window.kindergartenData = {
         {
             "id": "cl-1781590377934692",
             "name": "Giraffe",
-            "image": "",
-            "branch": "Cơ sở chính"
+            "branch": "Cơ sở chính",
+            "image": "images/img_1781590497434.jpg"
         }
     ],
     "students": [
