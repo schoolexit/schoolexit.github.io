@@ -1,7 +1,7 @@
 window.kindergartenData = {
     "classes": [
-        "Koala",
         "Koala 1",
+        "Koala",
         "Panda",
         "Dolphin",
         "Giraffe"
@@ -44,7 +44,7 @@ window.kindergartenData = {
             "class": "Dolphin",
             "image": "images/user.jpg",
             "sound": "",
-            "isBus": true,
+            "isBus": false,
             "busRoute": ""
         },
         {
@@ -64,6 +64,16 @@ window.kindergartenData = {
             "class": "Koala 1",
             "image": "images/user.jpg",
             "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-1781585644915",
+            "name": "Đoàn Nguyễn Minh Khôi",
+            "nickname": "Bơ",
+            "class": "Koala 1",
+            "image": "images/user.jpg",
+            "sound": "sounds/audio_1781585637216.mp3",
             "isBus": false,
             "busRoute": ""
         }
