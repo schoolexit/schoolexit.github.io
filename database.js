@@ -3,14 +3,14 @@ window.kindergartenData = {
         {
             "id": "cl-1781590377934293",
             "name": "Koala 1",
-            "image": "",
-            "branch": "TanQuy Campus"
+            "branch": "TanQuy Campus",
+            "image": "images/img_1781594482576.jpg"
         },
         {
             "id": "cl-1781590377934325",
             "name": "Koala",
-            "image": "",
-            "branch": "TanQuy Campus"
+            "branch": "TanQuy Campus",
+            "image": "images/img_1781594462709.jpg"
         },
         {
             "id": "cl-1781590377934729",
