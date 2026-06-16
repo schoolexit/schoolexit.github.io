@@ -230,8 +230,9 @@
         // =========================================================
         // Điền số điện thoại Firebase (+84) của giáo viên và Cơ sở họ được phép quản lý
         const PHAN_QUYEN_CO_SO = {
-            '+84868462396': 'Tân Quy', // Ví dụ: Tân Quy
-            '+84329080195': 'Him Lam',     // Ví dụ: Him Lam
+            '+84868462396': 'TanQuy Campus', // Ví dụ: Tân Quy
+            '+84329080195': 'Cơ sở 2',     // Ví dụ: Him Lam
+            '+84123456789': 'Cơ sở 3'      // Ví dụ: NDD
         };
 
         // =========================================================
@@ -265,7 +266,7 @@
         })();
 
         let localData = window.kindergartenData || { branches: [], classes: [], students: [] };
-        if (!localData.branches || localData.branches.length === 0) localData.branches = ["Cơ sở chính"];
+        if (!localData.branches || localData.branches.length === 0) localData.branches = ["TanQuy Campus"];
 
         // =========================================================
         // 4. KHỞI CHẠY GIAO DIỆN THEO QUYỀN HẠN
@@ -302,7 +303,7 @@
                     list.innerHTML += `
                         <div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
                             <span class="text-sm font-bold text-slate-700">${b}</span>
-                            ${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">Cơ sở chính</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}
+                            ${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}
                         </div>`;
                     classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
                     studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
@@ -476,7 +477,7 @@
             
             localData.branches.forEach((b, index) => {
                 const isDefault = index === 0;
-                list.innerHTML += `<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${b}</span>${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">Cơ sở chính</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;
+                list.innerHTML += `<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${b}</span>${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;
                 classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
                 studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
             });
@@ -497,7 +498,7 @@
             
             localData.branches.forEach((b, index) => {
                 const isDefault = index === 0;
-                list.innerHTML += `<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${b}</span>${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">Cơ sở chính</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;
+                list.innerHTML += `<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${b}</span>${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;
                 classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
                 studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
             });
