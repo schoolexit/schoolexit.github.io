@@ -1,10 +1,35 @@
 window.kindergartenData = {
     "classes": [
-        "Koala 1",
-        "Koala",
-        "Panda",
-        "Dolphin",
-        "Giraffe"
+        {
+            "id": "cl-1781590377934293",
+            "name": "Koala 1",
+            "image": "",
+            "branch": "Cơ sở chính"
+        },
+        {
+            "id": "cl-1781590377934325",
+            "name": "Koala",
+            "image": "",
+            "branch": "Cơ sở chính"
+        },
+        {
+            "id": "cl-1781590377934729",
+            "name": "Panda",
+            "image": "",
+            "branch": "Cơ sở chính"
+        },
+        {
+            "id": "cl-1781590377934328",
+            "name": "Dolphin",
+            "image": "",
+            "branch": "Cơ sở chính"
+        },
+        {
+            "id": "cl-1781590377934692",
+            "name": "Giraffe",
+            "image": "",
+            "branch": "Cơ sở chính"
+        }
     ],
     "students": [
         {
@@ -18,11 +43,41 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
+            "id": "st-1781164535551",
+            "name": "HUỲNH TRẦN THIÊN AN",
+            "nickname": "suboi",
+            "class": "Koala",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-1781164837815",
+            "name": "Bùi Thanh Vân",
+            "nickname": "Vân Vân",
+            "class": "Giraffe",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
             "id": "st-1781580399492",
             "name": "Bùi Thị Hồng Đào",
             "nickname": "Báo đè",
             "class": "Dolphin",
             "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-1781580563385",
+            "name": "Hà Duy AN",
+            "nickname": "Duy Duy",
+            "class": "Panda",
+            "image": "images/img_1781580557563.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -47,5 +102,9 @@ window.kindergartenData = {
             "isBus": false,
             "busRoute": ""
         }
+    ],
+    "branches": [
+        "Cơ sở chính",
+        "HimLam Campus"
     ]
 };
