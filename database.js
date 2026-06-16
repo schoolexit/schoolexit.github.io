@@ -1,10 +1,10 @@
 window.kindergartenData = {
     "classes": [
         "Koala",
+        "Koala 1",
         "Panda",
         "Dolphin",
-        "Giraffe",
-        "Koala 1"
+        "Giraffe"
     ],
     "students": [
         {
