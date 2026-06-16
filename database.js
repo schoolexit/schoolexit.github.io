@@ -3,31 +3,31 @@ window.kindergartenData = {
         {
             "id": "cl-1781590377934293",
             "name": "Koala 1",
-            "branch": "Tân Quy Campus",
+            "branch": "TanQuy Campus",
             "image": "images/img_1781594482576.jpg"
         },
         {
             "id": "cl-1781590377934325",
             "name": "Koala",
-            "branch": "Tân Quy Campus",
+            "branch": "TanQuy Campus",
             "image": "images/img_1781594462709.jpg"
         },
         {
             "id": "cl-1781590377934729",
             "name": "Panda",
-            "branch": "Tân Quy Campus",
+            "branch": "TanQuy Campus",
             "image": "images/img_1781594622803.jpg"
         },
         {
             "id": "cl-1781590377934328",
             "name": "Dolphin",
-            "branch": "Tân Quy Campus",
+            "branch": "TanQuy Campus",
             "image": "images/img_1781594690908.jpg"
         },
         {
             "id": "cl-1781590377934692",
             "name": "Giraffe",
-            "branch": "Tân Quy Campus",
+            "branch": "TanQuy Campus",
             "image": "images/img_1781594600632.jpg"
         },
         {
@@ -58,18 +58,18 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "Tân Quy Campus"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781164837815",
             "name": "Bùi Thanh Vân",
             "nickname": "Vân Vân",
-            "branch": "Tân Quy Campus",
             "class": "Giraffe",
             "image": "images/user.jpg",
             "sound": "",
-            "isBus": true,
-            "busRoute": ""
+            "isBus": false,
+            "busRoute": "",
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781580399492",
@@ -80,18 +80,18 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "Tân Quy Campus"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781580563385",
             "name": "Hà Duy AN",
             "nickname": "Duy Duy",
-            "branch": "Tân Quy Campus",
             "class": "Panda",
             "image": "images/img_1781580557563.jpg",
             "sound": "",
-            "isBus": true,
-            "busRoute": ""
+            "isBus": false,
+            "busRoute": "",
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781584029404",
@@ -102,7 +102,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "Tân Quy Campus"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781585644915",
@@ -113,11 +113,11 @@ window.kindergartenData = {
             "sound": "sounds/audio_1781585637216.mp3",
             "isBus": false,
             "busRoute": "",
-            "branch": "Tân Quy Campus"
+            "branch": "TanQuy Campus"
         }
     ],
     "branches": [
-        "Tân Quy Campus",
+        "TanQuy Campus",
         "HimLam Campus"
     ]
 };
