@@ -3,31 +3,31 @@ window.kindergartenData = {
         {
             "id": "cl-1781590377934293",
             "name": "Koala 1",
-            "branch": "TanQuy Campus",
+            "branch": "Tân Quy Campus",
             "image": "images/img_1781594482576.jpg"
         },
         {
             "id": "cl-1781590377934325",
             "name": "Koala",
-            "branch": "TanQuy Campus",
+            "branch": "Tân Quy Campus",
             "image": "images/img_1781594462709.jpg"
         },
         {
             "id": "cl-1781590377934729",
             "name": "Panda",
-            "branch": "TanQuy Campus",
+            "branch": "Tân Quy Campus",
             "image": "images/img_1781594622803.jpg"
         },
         {
             "id": "cl-1781590377934328",
             "name": "Dolphin",
-            "branch": "TanQuy Campus",
+            "branch": "Tân Quy Campus",
             "image": "images/img_1781594690908.jpg"
         },
         {
             "id": "cl-1781590377934692",
             "name": "Giraffe",
-            "branch": "TanQuy Campus",
+            "branch": "Tân Quy Campus",
             "image": "images/img_1781594600632.jpg"
         },
         {
@@ -58,7 +58,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "TanQuy Campus"
+            "branch": "Tân Quy Campus"
         },
         {
             "id": "st-1781164837815",
@@ -69,7 +69,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "TanQuy Campus"
+            "branch": "Tân Quy Campus"
         },
         {
             "id": "st-1781580399492",
@@ -80,7 +80,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "TanQuy Campus"
+            "branch": "Tân Quy Campus"
         },
         {
             "id": "st-1781580563385",
@@ -91,7 +91,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "TanQuy Campus"
+            "branch": "Tân Quy Campus"
         },
         {
             "id": "st-1781584029404",
@@ -102,7 +102,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "TanQuy Campus"
+            "branch": "Tân Quy Campus"
         },
         {
             "id": "st-1781585644915",
@@ -113,11 +113,11 @@ window.kindergartenData = {
             "sound": "sounds/audio_1781585637216.mp3",
             "isBus": false,
             "busRoute": "",
-            "branch": "TanQuy Campus"
+            "branch": "Tân Quy Campus"
         }
     ],
     "branches": [
-        "TanQuy Campus",
+        "Tân Quy Campus",
         "HimLam Campus"
     ]
 };
