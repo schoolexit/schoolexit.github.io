@@ -11,149 +11,9 @@
     <style>
         body { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
     </style>
-    <script type="text/JavaScript">function killCopy(e){return!1}function reEnable(){return!0}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
-    <script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},!1);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&(73==e.keyCode||74==e.keyCode))_0xdb(e);if(83==e.keyCode&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey))_0xdb(e);if(e.ctrlKey&&85==e.keyCode)_0xdb(e);if(123==e.keyCode)_0xdb(e)},!1);function _0xdb(e){if(e.stopPropagation)e.stopPropagation();else if(window.event)window.event.cancelBubble=!0;e.preventDefault();return!1}};</script>
-<style>
-  body{
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  }
-  div.gallery {
-  border: 1px solid #ccc;
-  }
-
-  div.gallery:hover {
-  border: 1px solid #777;
-  }
-
-  div.gallery img {
-  width: 100%;
-  height: auto;
-  }
-
-  div.desc {
-  padding: 15px;
-  text-align: center;
-  }
-
-  * {
-  box-sizing: border-box;
-  }
-
-  .responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-  }
-
-  @media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-  }
-
-  @media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%;
-  }
-  }
-
-  .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-  }
-  </style>
-<script type=”text/JavaScript”>
-  function killCopy(e){
-  return false
-  }
-  function reEnable(){
-  return true
-  }
-  document.onselectstart=new Function (“return false”)
-  if (window.sidebar){
-  document.onmousedown=killCopy
-  document.onclick=reEnable
-  }
-</script>
-<script language="JavaScript">
-  window.onload = function() {
-      document.addEventListener("contextmenu", function(e) {
-          e.preventDefault();
-      }, false);
-      document.addEventListener("keydown", function(e) {
-          //document.onkeydown = function(e) {
-          // "I" key
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-              disabledEvent(e);
-          }
-          // "J" key
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-              disabledEvent(e);
-          }
-          // "S" key + macOS
-          if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-              disabledEvent(e);
-          }
-          // "U" key
-          if (e.ctrlKey && e.keyCode == 85) {
-              disabledEvent(e);
-          }
-          // "F12" key
-          if (event.keyCode == 123) {
-              disabledEvent(e);
-          }
-      }, false);
-
-      function disabledEvent(e) {
-          if (e.stopPropagation) {
-              e.stopPropagation();
-          } else if (window.event) {
-              window.event.cancelBubble = true;
-          }
-          e.preventDefault();
-          return false;
-      }
-  };
-</script>
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 flex min-h-screen">
 
-    <noscript>
-        <style>
-            /* 1. Ẩn tuyệt đối toàn bộ các thành phần giao diện khác của web */
-            body > *:not(noscript) {
-                display: none !important;
-            }
-            /* 2. Thiết kế giao diện báo lỗi full màn hình */
-            .no-js-overlay {
-                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-                background-color: #f8fafc; display: flex; align-items: center;
-                justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px;
-            }
-            .no-js-box {
-                background: white; padding: 40px; border-radius: 16px;
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-                text-align: center; max-width: 440px; border: 1px solid #e2e8f0;
-            }
-        </style>
-        <div class="no-js-overlay">
-            <div class="no-js-box">
-                <div style="font-size: 50px; margin-bottom: 15px;">⚠️</div>
-                <h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2>
-                <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">
-                    Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác các tính năng nạp học sinh tự động và gọi bus.
-                </p>
-            </div>
-        </div>
-    </noscript>
-    
     <aside class="w-20 bg-slate-900 text-slate-400 flex flex-col items-center py-6 gap-6 shadow-xl shrink-0 h-screen sticky top-0 z-50">
         <div class="text-white text-2xl mb-4 bg-indigo-600 p-3 rounded-xl shadow-lg shadow-indigo-600/30">
             <i class="fas fa-school"></i>
@@ -170,20 +30,22 @@
         <header class="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-40">
             <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div>
-                    <h1 class="text-xl font-bold text-slate-900 tracking-tight">HỆ THỐNG ĐÓN BÉ KINDYCITY</h1>
-                    <p class="text-xs text-slate-500">Trang quản lý dữ liệu tập trung</p>
+                    <h1 class="text-xl font-bold text-slate-900 tracking-tight">
+                        HỆ THỐNG ĐÓN BÉ KINDYCITY
+                        <span id="dashboard-title-branch" class="text-indigo-600 font-bold ml-2 text-base"></span>
+                    </h1>
+                    <p class="text-xs text-slate-500">Trang quản lý dữ liệu đồng bộ GitHub API</p>
                 </div>
                 <button onclick="saveToGitHub()" id="save-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-lg font-medium shadow transition-all flex items-center gap-2 text-sm">
-                    <i class="fas fa-cloud-upload-alt"></i> Đồng bộ lên server
+                    <i class="fas fa-cloud-upload-alt"></i> Đồng bộ lên GitHub
                 </button>
             </div>
         </header>
 
         <main id="view-general" class="max-w-7xl w-full mx-auto px-6 py-8 grid grid-cols-1 xl:grid-cols-3 gap-8">
-            <!-- CỘT TRÁI: QUẢN LÝ CHI NHÁNH & LỚP HỌC -->
             <div class="space-y-6 xl:col-span-1">
                 
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                <div id="branch-management-block" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                     <h2 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
                         <i class="fas fa-building text-indigo-500"></i> Quản Lý Chi Nhánh (Cơ Sở)
                     </h2>
@@ -221,7 +83,6 @@
                 </div>
             </div>
 
-            <!-- CỘT PHẢI: QUẢN LÝ HỌC SINH -->
             <div class="xl:col-span-2 space-y-6">
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                     <h2 id="form-title" class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
@@ -238,7 +99,6 @@
                             <input type="text" id="student-nickname" placeholder="Ví dụ: Su, Bin, Thỏ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
                         </div>
                         
-                        <!-- CẬP NHẬT MỚI: CHỌN CƠ SỞ & LỚP -->
                         <div>
                             <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Cơ sở (Chi nhánh)</label>
                             <select id="student-branch" onchange="updateStudentClassDropdown()" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-indigo-700 bg-indigo-50"></select>
@@ -247,7 +107,6 @@
                             <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Xếp vào Lớp học</label>
                             <select id="student-class" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></select>
                         </div>
-                        <!-- =============================== -->
 
                         <div class="md:col-span-2 p-3 bg-slate-50 border border-slate-200 rounded-lg">
                             <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Ảnh đại diện của bé</label>
@@ -352,7 +211,6 @@
         </main>
     </div>
 
-    <!-- MÃ NGUỒN CHÍNH -->
     <script>
         // =========================================================
         // 1. CẤU HÌNH GITHUB 
@@ -366,37 +224,100 @@
         const UPLOAD_FOLDER_AUDIO_API = "sounds"; 
         const AUDIO_PATH_WEB = "sounds";
 
+
         // =========================================================
-        // 2. KHỞI TẠO VÀ CHUẨN HÓA DỮ LIỆU CŨ LÊN CẤU TRÚC MỚI
+        // 2. CẤU HÌNH BẢNG PHÂN QUYỀN (RBAC) - VÔ CÙNG QUAN TRỌNG
         // =========================================================
-        let localData = window.kindergartenData || { branches: [], classes: [], students: [] };
+        // Điền số điện thoại Firebase (+84) của giáo viên và Cơ sở họ được phép quản lý
+        const PHAN_QUYEN_CO_SO = {
+            '+84868462396': 'Cơ sở chính', // Ví dụ: Tân Quy
+            '+84329080195': 'Cơ sở 2',     // Ví dụ: Him Lam
+            '+84123456789': 'Cơ sở 3'      // Ví dụ: NDD
+        };
 
-        if (!localData.branches || localData.branches.length === 0) localData.branches = ["TanQuy Campus"];
+        // =========================================================
+        // 3. KIỂM TRA BẢO MẬT VÀ PHÂN QUYỀN
+        // =========================================================
+        let isMasterAdmin = false;
+        let assignedBranch = null;
 
-        if (localData.classes.length > 0 && typeof localData.classes[0] === 'string') {
-            localData.classes = localData.classes.map(c => ({
-                id: 'cl-' + Date.now() + Math.floor(Math.random() * 1000),
-                name: c, image: '', branch: localData.branches[0]
-            }));
-        }
+        (function checkSecurity() {
+            const sessionToken = sessionStorage.getItem('HL_ADMIN_SESSION');
+            const adminPhone = sessionStorage.getItem('HL_ADMIN_PHONE'); // Lấy số ĐT vừa đăng nhập
 
-        // Tự động gán cơ sở cho các học sinh cũ (Dựa vào lớp học)
-        localData.students.forEach(s => {
-            if (!s.branch) {
-                const foundClass = localData.classes.find(c => c.name === s.class);
-                s.branch = foundClass ? foundClass.branch : localData.branches[0];
+            if (sessionToken !== 'AUTHENTICATED_OK' || !adminPhone) {
+                alert('Cảnh báo bảo mật: Vui lòng đăng nhập để truy cập.');
+                window.location.replace('login.html');
+                return;
             }
-        });
 
+            // Kiểm tra: Có phải là Vua (Quản trị viên tối cao) không?
+            if (adminPhone === 'MASTER_KEY') {
+                isMasterAdmin = true;
+            } else {
+                // Nếu là giáo viên thường, tìm xem họ được cấp quyền quản lý cơ sở nào
+                assignedBranch = PHAN_QUYEN_CO_SO[adminPhone];
+                if (!assignedBranch) {
+                    alert(`Tài khoản có số điện thoại ${adminPhone} chưa được phân quyền quản lý cơ sở nào! Hãy liên hệ Quản trị viên cấp cao.`);
+                    sessionStorage.clear();
+                    window.location.replace('login.html');
+                }
+            }
+        })();
+
+        let localData = window.kindergartenData || { branches: [], classes: [], students: [] };
+        if (!localData.branches || localData.branches.length === 0) localData.branches = ["Cơ sở chính"];
+
+        // =========================================================
+        // 4. KHỞI CHẠY GIAO DIỆN THEO QUYỀN HẠN
+        // =========================================================
         document.addEventListener('DOMContentLoaded', () => {
-            renderBranches();
+            
+            // XÓA BỎ CÁC QUYỀN HẠN NẾU LÀ GIÁO VIÊN THƯỜNG (CHỈ QUẢN LÝ 1 CHI NHÁNH)
+            if (!isMasterAdmin) {
+                // 1. Ẩn hoàn toàn tính năng thêm/xóa Chi nhánh
+                document.getElementById('branch-management-block').style.display = 'none';
+                
+                // 2. Hiện thông báo tên Cơ sở đang quản lý lên Tiêu đề
+                document.getElementById('dashboard-title-branch').innerText = `(Chỉ hiển thị dữ liệu của: ${assignedBranch})`;
+
+                // 3. Khóa cứng Dropdown chọn Chi nhánh ở form Lớp học và Học sinh
+                const classBranchSelect = document.getElementById('class-branch');
+                const studentBranchSelect = document.getElementById('student-branch');
+                
+                classBranchSelect.innerHTML = `<option value="${assignedBranch}">${assignedBranch}</option>`;
+                classBranchSelect.disabled = true;
+
+                studentBranchSelect.innerHTML = `<option value="${assignedBranch}">${assignedBranch}</option>`;
+                studentBranchSelect.disabled = true;
+            } else {
+                // NẾU LÀ MASTER ADMIN -> VẼ ĐẦY ĐỦ DROPDOWN CHI NHÁNH
+                const list = document.getElementById('branch-list');
+                const classBranchSelect = document.getElementById('class-branch');
+                const studentBranchSelect = document.getElementById('student-branch');
+                
+                list.innerHTML = ''; classBranchSelect.innerHTML = ''; studentBranchSelect.innerHTML = '';
+                
+                localData.branches.forEach((b, index) => {
+                    const isDefault = index === 0;
+                    list.innerHTML += `
+                        <div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
+                            <span class="text-sm font-bold text-slate-700">${b}</span>
+                            ${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">Cơ sở chính</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}
+                        </div>`;
+                    classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
+                    studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
+                });
+            }
+
             renderClasses();
             renderStudents();
             renderBusStudents();
         });
 
+
         // =========================================================
-        // UPLOADS: ẢNH VÀ ÂM THANH
+        // CÁC HÀM UPLOAD (GIỮ NGUYÊN)
         // =========================================================
         async function handleImageUpload(event, type) {
             const file = event.target.files[0];
@@ -495,9 +416,6 @@
             document.getElementById('btn-clear-audio').classList.add('hidden');
         }
 
-        // =========================================================
-        // ĐỒNG BỘ LÊN GITHUB
-        // =========================================================
         async function saveToGitHub() {
             const fileContent = "window.kindergartenData = " + JSON.stringify(localData, null, 4) + ";";
             const encodedContent = btoa(unescape(encodeURIComponent(fileContent)));
@@ -525,31 +443,12 @@
         }
 
         // =========================================================
-        // QUẢN LÝ CHI NHÁNH VÀ LỚP HỌC (Dropdown Tự động)
+        // QUẢN LÝ LỚP & SẮP XẾP
         // =========================================================
-        function renderBranches() {
-            const list = document.getElementById('branch-list');
-            const classBranchSelect = document.getElementById('class-branch');
-            const studentBranchSelect = document.getElementById('student-branch');
-            
-            list.innerHTML = ''; classBranchSelect.innerHTML = ''; studentBranchSelect.innerHTML = '';
-            
-            localData.branches.forEach((b, index) => {
-                const isDefault = index === 0;
-                list.innerHTML += `
-                    <div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
-                        <span class="text-sm font-bold text-slate-700">${b}</span>
-                        ${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}
-                    </div>`;
-                classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
-                studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
-            });
-            updateStudentClassDropdown(); // Tự động load danh sách lớp cho chi nhánh đầu tiên
-        }
-
-        // HÀM LỌC TỰ ĐỘNG: Cập nhật Dropdown Lớp dựa trên Chi nhánh được chọn
         function updateStudentClassDropdown(selectedClass = '') {
-            const currentBranch = document.getElementById('student-branch').value;
+            // Xác định xem đang lấy giá trị của Select hay giá trị Phân quyền
+            const currentBranch = isMasterAdmin ? document.getElementById('student-branch').value : assignedBranch;
+            
             const classSelect = document.getElementById('student-class');
             classSelect.innerHTML = '';
             
@@ -558,26 +457,52 @@
             if (branchClasses.length === 0) {
                 classSelect.innerHTML = '<option value="">-- Chưa có lớp --</option>';
             } else {
-                branchClasses.forEach(c => {
-                    classSelect.innerHTML += `<option value="${c.name}">${c.name}</option>`;
-                });
+                branchClasses.forEach(c => { classSelect.innerHTML += `<option value="${c.name}">${c.name}</option>`; });
                 if (selectedClass) classSelect.value = selectedClass;
             }
         }
 
         function addBranch() {
+            if (!isMasterAdmin) return;
             const val = document.getElementById('new-branch-input').value.trim();
             if (!val) return alert("Vui lòng nhập tên chi nhánh!");
             if (localData.branches.includes(val)) return alert("Đã tồn tại!");
             localData.branches.push(val); document.getElementById('new-branch-input').value = '';
-            renderBranches(); renderClasses();
+            
+            // Xóa đi vẽ lại phần Master
+            const list = document.getElementById('branch-list');
+            const classBranchSelect = document.getElementById('class-branch');
+            const studentBranchSelect = document.getElementById('student-branch');
+            list.innerHTML = ''; classBranchSelect.innerHTML = ''; studentBranchSelect.innerHTML = '';
+            
+            localData.branches.forEach((b, index) => {
+                const isDefault = index === 0;
+                list.innerHTML += `<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${b}</span>${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">Cơ sở chính</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;
+                classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
+                studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
+            });
+            renderClasses();
         }
 
         function deleteBranch(branchName) {
+            if (!isMasterAdmin) return;
             if (localData.classes.some(c => c.branch === branchName)) return alert("Không thể xóa do đang chứa lớp học!");
             if (!confirm(`Xóa chi nhánh ${branchName}?`)) return;
             localData.branches = localData.branches.filter(b => b !== branchName);
-            renderBranches(); renderClasses();
+            
+            // Xóa đi vẽ lại
+            const list = document.getElementById('branch-list');
+            const classBranchSelect = document.getElementById('class-branch');
+            const studentBranchSelect = document.getElementById('student-branch');
+            list.innerHTML = ''; classBranchSelect.innerHTML = ''; studentBranchSelect.innerHTML = '';
+            
+            localData.branches.forEach((b, index) => {
+                const isDefault = index === 0;
+                list.innerHTML += `<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${b}</span>${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">Cơ sở chính</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;
+                classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
+                studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
+            });
+            renderClasses();
         }
 
         function renderClasses() {
@@ -588,10 +513,16 @@
             filterClassSelect.innerHTML = '<option value="all">Tất cả học sinh</option>';
             
             localData.classes.forEach((cls, index) => {
-                const upDisabled = index === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100 cursor-pointer';
-                const downDisabled = index === localData.classes.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100 cursor-pointer';
-                const upClick = index === 0 ? '' : `onclick="moveClass(${index}, -1)"`;
-                const downClick = index === localData.classes.length - 1 ? '' : `onclick="moveClass(${index}, 1)"`;
+                // NẾU LÀ GIÁO VIÊN THƯỜNG -> CHỈ VẼ CÁC LỚP CỦA HỌ, ẨN CÁC LỚP KHÁC
+                if (!isMasterAdmin && cls.branch !== assignedBranch) return;
+
+                // NÚT SẮP XẾP CHỈ DÀNH CHO MASTER ADMIN (Tránh lỗi đảo lộn mảng)
+                const sortButtons = isMasterAdmin ? `
+                    <div class="w-px h-4 bg-slate-200 mx-1"></div>
+                    <button type="button" onclick="moveClass(${index}, -1)" class="text-indigo-500 p-2 rounded transition ${index === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100'}"><i class="fas fa-chevron-up text-xs"></i></button>
+                    <button type="button" onclick="moveClass(${index}, 1)" class="text-indigo-500 p-2 rounded transition ${index === localData.classes.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100'}"><i class="fas fa-chevron-down text-xs"></i></button>
+                ` : '';
+
                 const logoSrc = cls.image || 'images/user.jpg';
 
                 classList.innerHTML += `
@@ -605,9 +536,7 @@
                         </div>
                         <div class="flex items-center gap-1">
                             <button type="button" onclick="editClass('${cls.id}')" class="text-indigo-500 hover:text-indigo-700 hover:bg-indigo-50 p-2 rounded transition"><i class="fas fa-edit text-xs"></i></button>
-                            <div class="w-px h-4 bg-slate-200 mx-1"></div>
-                            <button type="button" ${upClick} class="text-indigo-500 p-2 rounded transition ${upDisabled}"><i class="fas fa-chevron-up text-xs"></i></button>
-                            <button type="button" ${downClick} class="text-indigo-500 p-2 rounded transition ${downDisabled}"><i class="fas fa-chevron-down text-xs"></i></button>
+                            ${sortButtons}
                             <div class="w-px h-4 bg-slate-200 mx-1"></div>
                             <button type="button" onclick="deleteClass('${cls.id}')" class="text-rose-500 hover:text-rose-700 hover:bg-rose-50 p-2 rounded transition"><i class="fas fa-trash-alt text-xs"></i></button>
                         </div>
@@ -615,10 +544,12 @@
                 
                 filterClassSelect.innerHTML += `<option value="${cls.branch}|${cls.name}">${cls.name} (${cls.branch})</option>`;
             });
+
             updateStudentClassDropdown();
         }
 
         function moveClass(index, direction) {
+            if (!isMasterAdmin) return;
             const newIndex = index + direction;
             if (newIndex < 0 || newIndex >= localData.classes.length) return;
             const temp = localData.classes[index];
@@ -631,7 +562,7 @@
             e.preventDefault();
             const id = document.getElementById('class-id').value;
             const name = document.getElementById('class-name').value.trim();
-            const branch = document.getElementById('class-branch').value;
+            const branch = isMasterAdmin ? document.getElementById('class-branch').value : assignedBranch;
             const image = document.getElementById('class-logo').value.trim();
 
             if (id) {
@@ -656,9 +587,13 @@
         function editClass(id) {
             const cls = localData.classes.find(c => c.id === id);
             if (!cls) return;
+            
+            // Chặn Edit nếu không phải lớp của mình
+            if (!isMasterAdmin && cls.branch !== assignedBranch) return alert("Bạn không có quyền sửa lớp của cơ sở khác!");
+
             document.getElementById('class-id').value = cls.id;
             document.getElementById('class-name').value = cls.name;
-            document.getElementById('class-branch').value = cls.branch;
+            if (isMasterAdmin) document.getElementById('class-branch').value = cls.branch;
             document.getElementById('class-logo').value = cls.image;
             document.getElementById('class-logo-preview').src = cls.image || 'images/user.jpg';
             
@@ -670,7 +605,10 @@
         function deleteClass(id) {
             const cls = localData.classes.find(c => c.id === id);
             if (!cls) return;
+
+            if (!isMasterAdmin && cls.branch !== assignedBranch) return alert("Bạn không có quyền xóa lớp của cơ sở khác!");
             if (localData.students.some(s => s.class === cls.name && s.branch === cls.branch)) return alert(`Lớp đang có học sinh!`);
+            
             if (!confirm(`Xóa lớp ${cls.name}?`)) return;
             localData.classes = localData.classes.filter(c => c.id !== id);
             renderClasses();
@@ -681,6 +619,11 @@
             document.getElementById('class-id').value = '';
             document.getElementById('class-logo').value = '';
             document.getElementById('class-logo-preview').src = 'images/user.jpg';
+            
+            if (isMasterAdmin) {
+                document.getElementById('class-branch').value = localData.branches[0];
+            }
+
             document.getElementById('class-submit-btn').innerText = "Lưu Lớp";
             document.getElementById('class-submit-btn').classList.replace('bg-amber-500', 'bg-indigo-600');
             document.getElementById('class-cancel-btn').classList.add('hidden');
@@ -694,9 +637,16 @@
             const filterValue = document.getElementById('filter-class').value;
             
             let filtered = localData.students;
+
+            // Nếu là Giáo viên thường -> ÉP BUỘC CHỈ HIỂN THỊ HỌC SINH CỦA CƠ SỞ MÌNH
+            if (!isMasterAdmin) {
+                filtered = filtered.filter(s => s.branch === assignedBranch);
+            }
+
+            // Nếu có dùng bộ lọc trên giao diện
             if (filterValue !== 'all') {
                 const [fBranch, fClass] = filterValue.split('|');
-                filtered = localData.students.filter(s => s.class === fClass && s.branch === fBranch);
+                filtered = filtered.filter(s => s.class === fClass && s.branch === fBranch);
             }
 
             document.getElementById('student-count').innerText = `${filtered.length} bé`;
@@ -717,7 +667,7 @@
                         <td class="px-6 py-2"><img src="${imgDisplay}" class="w-10 h-10 rounded-full object-cover border border-slate-200 bg-white"></td>
                         <td class="px-6 py-3.5 text-slate-900 font-semibold">${student.name}${nickDisplay}</td>
                         <td class="px-6 py-3.5">
-                            <div class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold inline-block">${student.class}</div>
+                            <div class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold inline-block whitespace-nowrap">${student.class}</div>
                             <div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">${student.branch}</div>
                         </td>
                         <td class="px-6 py-3.5">${busBadge}</td>
@@ -731,7 +681,10 @@
 
         function renderBusStudents() {
             const tbody = document.getElementById('bus-table-body');
-            const busStudents = localData.students.filter(s => s.isBus === true);
+            
+            let busStudents = localData.students.filter(s => s.isBus === true);
+            if (!isMasterAdmin) busStudents = busStudents.filter(s => s.branch === assignedBranch);
+
             document.getElementById('bus-student-count').innerText = `${busStudents.length} bé`;
             tbody.innerHTML = '';
 
@@ -742,7 +695,7 @@
                         <td class="px-6 py-2"><img src="${imgDisplay}" class="w-10 h-10 rounded-full object-cover border border-slate-200 bg-white"></td>
                         <td class="px-6 py-3.5 font-semibold text-slate-900">${student.name}</td>
                         <td class="px-6 py-3.5">
-                            <div class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold inline-block">${student.class}</div>
+                            <div class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold inline-block whitespace-nowrap">${student.class}</div>
                             <div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">${student.branch}</div>
                         </td>
                         <td class="px-6 py-3.5 font-medium text-slate-700">${student.busRoute || 'Chưa phân tuyến'}</td>
@@ -760,7 +713,9 @@
             const id = document.getElementById('student-id').value;
             const name = document.getElementById('student-name').value.trim();
             const nickname = document.getElementById('student-nickname').value.trim();
-            const sBranch = document.getElementById('student-branch').value;
+            
+            // Xử lý nhánh an toàn
+            const sBranch = isMasterAdmin ? document.getElementById('student-branch').value : assignedBranch;
             const sClass = document.getElementById('student-class').value;
             if (!sClass) return alert('Vui lòng chọn lớp học!');
 
@@ -785,12 +740,13 @@
             const student = localData.students.find(s => s.id === id);
             if (!student) return;
 
+            if (!isMasterAdmin && student.branch !== assignedBranch) return alert("Bạn không có quyền sửa học sinh của cơ sở khác!");
+
             document.getElementById('student-id').value = student.id;
             document.getElementById('student-name').value = student.name;
             document.getElementById('student-nickname').value = student.nickname || '';
             
-            // Xử lý nạp Cơ sở -> Tự động nạp Lớp -> Gán Lớp
-            document.getElementById('student-branch').value = student.branch || localData.branches[0];
+            if (isMasterAdmin) document.getElementById('student-branch').value = student.branch || localData.branches[0];
             updateStudentClassDropdown(student.class);
             
             const imgPath = student.image || 'images/user.jpg';
@@ -815,6 +771,9 @@
         }
 
         function deleteStudent(id) {
+            const student = localData.students.find(s => s.id === id);
+            if (!isMasterAdmin && student.branch !== assignedBranch) return alert("Bạn không có quyền xóa học sinh của cơ sở khác!");
+            
             if (!confirm('Bạn có chắc muốn xóa bé này?')) return;
             localData.students = localData.students.filter(s => s.id !== id);
             renderStudents(); renderBusStudents();
@@ -832,8 +791,9 @@
             document.getElementById('cancel-edit-btn').classList.add('hidden');
             toggleBusRouteInput();
             
-            // Reset Dropdown Lớp học về mặc định
-            document.getElementById('student-branch').value = localData.branches[0];
+            if (isMasterAdmin) {
+                document.getElementById('student-branch').value = localData.branches[0];
+            }
             updateStudentClassDropdown();
         }
 
