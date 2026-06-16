@@ -64,12 +64,12 @@ window.kindergartenData = {
             "id": "st-1781164837815",
             "name": "Bùi Thanh Vân",
             "nickname": "Vân Vân",
+            "branch": "TanQuy Campus",
             "class": "Giraffe",
             "image": "images/user.jpg",
             "sound": "",
-            "isBus": false,
-            "busRoute": "",
-            "branch": "TanQuy Campus"
+            "isBus": true,
+            "busRoute": ""
         },
         {
             "id": "st-1781580399492",
@@ -86,12 +86,12 @@ window.kindergartenData = {
             "id": "st-1781580563385",
             "name": "Hà Duy AN",
             "nickname": "Duy Duy",
+            "branch": "TanQuy Campus",
             "class": "Panda",
             "image": "images/img_1781580557563.jpg",
             "sound": "",
-            "isBus": false,
-            "busRoute": "",
-            "branch": "TanQuy Campus"
+            "isBus": true,
+            "busRoute": ""
         },
         {
             "id": "st-1781584029404",
