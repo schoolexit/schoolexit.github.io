@@ -21,8 +21,8 @@ window.kindergartenData = {
         {
             "id": "cl-1781590377934328",
             "name": "Dolphin",
-            "image": "",
-            "branch": "TanQuy Campus"
+            "branch": "TanQuy Campus",
+            "image": "images/img_1781594690908.jpg"
         },
         {
             "id": "cl-1781590377934692",
@@ -34,7 +34,7 @@ window.kindergartenData = {
             "id": "cl-1781591664919",
             "name": "Koala 1.1",
             "branch": "HimLam Campus",
-            "image": ""
+            "image": "images/img_1781594700833.jpg"
         }
     ],
     "students": [
