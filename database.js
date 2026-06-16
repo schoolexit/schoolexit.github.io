@@ -3,14 +3,15 @@ window.kindergartenData = {
         "Koala",
         "Panda",
         "Dolphin",
-        "Giraffe"
+        "Giraffe",
+        "Koala 1"
     ],
     "students": [
         {
             "id": "st-1781152929814",
             "name": "Trần Quốc Bảo",
             "nickname": "ICT",
-            "class": "Koala",
+            "class": "Koala 1",
             "image": "images/img_1781166511024.jpg",
             "sound": "",
             "isBus": true,
