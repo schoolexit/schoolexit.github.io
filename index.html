@@ -32,6 +32,7 @@
     @media only screen and (max-width: 768px) { .student-list { grid-template-columns: repeat(2, 1fr); } }
 </style>
 
+<!-- KHÓA BẢO MẬT GIAO DIỆN -->
 <script type="text/JavaScript">function killCopy(e){return!1}function reEnable(){return!0}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
 <script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},!1);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&(73==e.keyCode||74==e.keyCode))_0xdb(e);if(83==e.keyCode&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey))_0xdb(e);if(e.ctrlKey&&85==e.keyCode)_0xdb(e);if(123==e.keyCode)_0xdb(e)},!1);function _0xdb(e){if(e.stopPropagation)e.stopPropagation();else if(window.event)window.event.cancelBubble=!0;e.preventDefault();return!1}};</script>
 </head>
@@ -48,18 +49,22 @@
         </a>
     </nav>
 
+    <!-- THANH CÔNG CỤ TOP MENU -->
     <div class="w3-top ">
         <div class="top-round-rainbow w3-white w3-xlarge" style="max-width:1200px;margin:auto">
             
+            <!-- KHU VỰC CHỌN CHI NHÁNH (Ẩn nếu chỉ có 1 chi nhánh) -->
             <div id="branch-selector-container" style="text-align: center; padding: 10px; border-bottom: 1px dashed #cbd5e1; display: none;">
                 <select id="branch-selector" onchange="renderTabsAndContent()" style="padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: bold; border: 2px solid #818cf8; color: #4f46e5; outline: none; background: #e0e7ff; cursor: pointer;">
                 </select>
             </div>
 
+            <!-- CÁC TAB LỚP HỌC (TỰ ĐỘNG SINH DỰA THEO CHI NHÁNH) -->
             <div class="w3-center w3-padding-16" id="class-tabs"></div>
         </div>
     </div>
 
+    <!-- KHU VỰC CHỨA DANH SÁCH HỌC SINH -->
     <div id="content" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:140px"></div>
 
     <script src="js/scripts.js"></script>
@@ -77,23 +82,22 @@
         </a>
     </section>
 
+    <!-- MÃ NGUỒN CỐT LÕI (RÕ RÀNG, DỄ TÙY CHỈNH) -->
     <script>
         function downloadApk() { window.location.href = 'https://schoolexit.github.io/update.apk'; }
 
         const trinhPhatAmThanh = new Audio();
 
-        // 1. KHI TRANG TẢI XONG
+        // 1. CHẠY KHI TRANG TẢI XONG
         document.addEventListener("DOMContentLoaded", () => {
             kiemTraVaKhoiTaoDuLieu();
             
             document.body.addEventListener('click', () => {
-                // Unlock file âm thanh rác để mở khóa tự động phát tiếng trên Safari/iOS
                 trinhPhatAmThanh.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
                 trinhPhatAmThanh.play().catch(()=>{});
             }, { once: true });
         });
 
-        // HÀM CHUYỂN TAB 
         window.openCity = function(evt, tabId) {
             const tabs = document.getElementsByClassName("city");
             for (let i = 0; i < tabs.length; i++) {
@@ -103,18 +107,16 @@
             if (activeTab) activeTab.style.display = "block";
         };
 
-        // 2. KIỂM TRA VÀ CẬP NHẬT GIAO DIỆN DROPDOWN CHI NHÁNH
+        // 2. KHỞI TẠO BỘ LỌC CHI NHÁNH
         function kiemTraVaKhoiTaoDuLieu() {
             if (!window.kindergartenData) return;
             const data = window.kindergartenData;
 
-            // Xử lý ngược dữ liệu cũ (Dự phòng)
             if (data.classes.length > 0 && typeof data.classes[0] === 'string') {
-                data.classes = data.classes.map(c => ({ name: c, image: '', branch: 'Cơ sở chính' }));
+                data.classes = data.classes.map(c => ({ name: c, image: '', branch: 'TanQuy Campus' }));
             }
-            if (!data.branches) data.branches = ['Cơ sở chính'];
+            if (!data.branches) data.branches = ['TanQuy Campus'];
 
-            // Nếu trường có nhiều hơn 1 chi nhánh -> Hiển thị hộp chọn
             const selectorContainer = document.getElementById('branch-selector-container');
             const selector = document.getElementById('branch-selector');
             
@@ -129,11 +131,9 @@
             renderTabsAndContent();
         }
 
-        // 3. VẼ TABS VÀ DANH SÁCH HỌC SINH (Theo đúng thứ tự trên Dashboard)
+        // 3. VẼ TAB VÀ ĐỔ HỌC SINH VÀO ĐÚNG CHI NHÁNH ĐANG CHỌN
         function renderTabsAndContent() {
             const data = window.kindergartenData;
-            
-            // Lấy chi nhánh đang được chọn (Nếu không chọn gì thì lấy chi nhánh đầu tiên)
             const selector = document.getElementById('branch-selector');
             const selectedBranch = selector.value || data.branches[0];
 
@@ -143,7 +143,6 @@
             tabsContainer.innerHTML = "";
             contentContainer.innerHTML = "";
 
-            // Lọc ra các lớp học thuộc về chi nhánh đang được chọn
             const cacLopThuocChiNhanh = data.classes.filter(c => c.branch === selectedBranch);
 
             if (cacLopThuocChiNhanh.length === 0) {
@@ -151,22 +150,19 @@
                 return;
             }
 
-            // VẼ TABS VÀ KHUNG CHỨA
+            // VẼ TABS VÀ KHUNG CHỨA (Tự động lấy Logo)
             cacLopThuocChiNhanh.forEach((cls, index) => {
                 const idName = `tab-${index}`;
-                
-                // Nếu lớp không có Logo -> Dùng thẻ Avatar chữ cái đầu
                 const logoSrc = cls.image || '';
                 const fallbackAvatar = `this.outerHTML='<div style=\\'width: 5rem; height: 5rem; margin: 0 auto; background: #e0e7ff; color: #4f46e5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; border: 3px solid #c7d2fe;\\'>${cls.name.charAt(0)}</div>'`;
                 
                 tabsContainer.innerHTML += `
                     <a onclick="openCity(event, '${idName}')" class="w3-bar-item w3-button" style="display:inline-block; margin: 0 5px; text-decoration: none;">
-                        <img src="${logoSrc}" onerror="${fallbackAvatar}" style="width: 5rem; height: 5rem; object-fit: cover; border-radius: 50%;">
+                        <img src="${logoSrc}" onerror="${fallbackAvatar}" style="width: 5rem; height: 5rem; object-fit: cover; border-radius: 50%; bg-white">
                         <div style="font-size: 14px; font-weight: bold; color: #4f46e5; margin-top: 5px; text-transform: uppercase;">${cls.name}</div>
                     </a>
                 `;
                 
-                // Lớp đứng đầu tiên sẽ được mở (display: block)
                 const displayStyle = index === 0 ? "block" : "none";
                 contentContainer.innerHTML += `
                     <div class="w3-row-padding w3-padding-16 w3-center city" id="${idName}" style="display: ${displayStyle};">
@@ -177,12 +173,12 @@
                 `;
             });
 
-            // VẼ HỌC SINH VÀO KHUNG
+            // VẼ HỌC SINH
             cacLopThuocChiNhanh.forEach(cls => {
                 const container = document.getElementById(`container-${cls.name}`);
                 if (!container) return;
 
-                const classStudents = data.students.filter(s => s.class === cls.name);
+                const classStudents = data.students.filter(s => s.class === cls.name && s.branch === cls.branch);
                 
                 classStudents.forEach(student => {
                     const card = document.createElement('div');
@@ -199,10 +195,9 @@
                         </div>
                     `;
 
-                    // Bấm vào ảnh gọi tên bé
                     card.addEventListener('click', () => {
                         let cauThongBao = `Mời học sinh ${student.name}`;
-                        if (student.nickname) cauThongBao += `, , , ${student.nickname}`;
+                        if (student.nickname) cauThongBao += `, biệt danh ${student.nickname}`;
                         cauThongBao += `, lớp ${student.class} ra về`;
                         playClickSound(student.sound, cauThongBao);
                     });
@@ -216,16 +211,20 @@
         function playClickBus() {
             if (!window.kindergartenData || !window.kindergartenData.students) return;
             
-            const danhSachXeBuyt = window.kindergartenData.students.filter(student => student.isBus === true);
+            // Lọc ra các học sinh đi xe buýt thuộc chi nhánh đang hiển thị
+            const selector = document.getElementById('branch-selector');
+            const selectedBranch = selector.value || window.kindergartenData.branches[0];
+
+            const danhSachXeBuyt = window.kindergartenData.students.filter(student => student.isBus === true && student.branch === selectedBranch);
             
             if (danhSachXeBuyt.length === 0) {
-                phatThanhAIGiongNu("Hiện tại không có học sinh nào đăng ký về bằng xe buýt.");
+                phatThanhAIGiongNu("Hiện tại cơ sở này không có học sinh nào về bằng xe buýt.");
                 return;
             }
 
             let cauThongBaoTongHop = "Mời các bạn có tên sau về xe buýt: ";
             danhSachXeBuyt.forEach((student, index) => {
-                cauThongBaoTongHop += `${student.name} ,,  ${student.nickname} lớp ${student.class}`;
+                cauThongBaoTongHop += `${student.name} lớp ${student.class}`;
                 if (index < danhSachXeBuyt.length - 1) cauThongBaoTongHop += ", ";
             });
 
@@ -244,7 +243,7 @@
             }
         }
 
-        // 5. AI ĐỌC GIỌNG NỮ TIẾNG VIỆT
+        // 5. TRÍ TUỆ NHÂN TẠO - ĐỌC GIỌNG NỮ TIẾNG VIỆT
         let giongNoiHeThong = [];
         
         function capNhatHeThongGiong() {

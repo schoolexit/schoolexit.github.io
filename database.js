@@ -4,30 +4,30 @@ window.kindergartenData = {
             "id": "cl-1781590377934293",
             "name": "Koala 1",
             "image": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "cl-1781590377934325",
             "name": "Koala",
             "image": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "cl-1781590377934729",
             "name": "Panda",
             "image": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "cl-1781590377934328",
             "name": "Dolphin",
             "image": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "cl-1781590377934692",
             "name": "Giraffe",
-            "branch": "Cơ sở chính",
+            "branch": "TanQuy Campus",
             "image": "images/img_1781590497434.jpg"
         },
         {
@@ -58,7 +58,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781164837815",
@@ -69,7 +69,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781580399492",
@@ -80,7 +80,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781580563385",
@@ -91,7 +91,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781584029404",
@@ -102,7 +102,7 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         },
         {
             "id": "st-1781585644915",
@@ -113,11 +113,11 @@ window.kindergartenData = {
             "sound": "sounds/audio_1781585637216.mp3",
             "isBus": false,
             "busRoute": "",
-            "branch": "Cơ sở chính"
+            "branch": "TanQuy Campus"
         }
     ],
     "branches": [
-        "Cơ sở chính",
+        "TanQuy Campus",
         "HimLam Campus"
     ]
 };

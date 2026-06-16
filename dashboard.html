@@ -233,7 +233,7 @@
         // =========================================================
         let localData = window.kindergartenData || { branches: [], classes: [], students: [] };
 
-        if (!localData.branches || localData.branches.length === 0) localData.branches = ["Cơ sở chính"];
+        if (!localData.branches || localData.branches.length === 0) localData.branches = ["TanQuy Campus"];
 
         if (localData.classes.length > 0 && typeof localData.classes[0] === 'string') {
             localData.classes = localData.classes.map(c => ({
@@ -401,7 +401,7 @@
                 list.innerHTML += `
                     <div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
                         <span class="text-sm font-bold text-slate-700">${b}</span>
-                        ${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">Cơ sở chính</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}
+                        ${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}
                     </div>`;
                 classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
                 studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
