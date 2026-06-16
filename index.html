@@ -1,303 +1,76 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <title>ĐÓN BÉ HL | TRƯỜNG MẦM NON QUỐC TẾ KINDYCITY</title>
+    <title>CHỌN CƠ SỞ | KINDYCITY</title>
     <meta charset="utf-8">
-    <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no, maximum-scale=1.0, shrink-to-fit=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-32x32.png">
-    <link rel="stylesheet" href="css/w3.css">
-    <link rel="stylesheet" href="css/css.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script src="database.js"></script>
 
-<style>
-    body { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-color: #f8fafc; }
-    * { box-sizing: border-box; }
-    .student-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 10px; }
-    .responsive { width: 100% !important; float: none !important; padding: 0 !important; margin: 0 !important; display: flex; height: 100%; }
-    div.gallery { border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; width: 100%; transition: 0.2s; }
-    div.gallery:hover { border: 1px solid #a5b4fc; transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-    div.gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-bottom: 2px solid #f1f5f9; }
-    div.desc { padding: 14px 8px; text-align: center; font-weight: bold; font-size: 14px; color: #4f46e5; flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.4; }
-    .nick-title { font-size: 12px; color: #64748b; font-weight: normal; margin-top: 2px; }
-    @media only screen and (max-width: 1024px) { .student-list { grid-template-columns: repeat(3, 1fr); } }
-    @media only screen and (max-width: 768px) { .student-list { grid-template-columns: repeat(2, 1fr); } }
-</style>
-
-<!-- KHÓA BẢO MẬT GIAO DIỆN -->
-<script type="text/JavaScript">function killCopy(e){return!1}function reEnable(){return!0}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
-<script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},!1);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&(73==e.keyCode||74==e.keyCode))_0xdb(e);if(83==e.keyCode&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey))_0xdb(e);if(e.ctrlKey&&85==e.keyCode)_0xdb(e);if(123==e.keyCode)_0xdb(e)},!1);function _0xdb(e){if(e.stopPropagation)e.stopPropagation();else if(window.event)window.event.cancelBubble=!0;e.preventDefault();return!1}};</script>
+    <style>
+        body { background: linear-gradient(135deg, #f0fdf4 0%, #e0e7ff 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: sans-serif; -webkit-user-select: none; user-select: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.5); }
+    </style>
 </head>
 <body>
 
-    <noscript>
-        <style>body > *:not(noscript) { display: none !important; } .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; } .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }</style>
-        <div class="no-js-overlay"><div class="no-js-box"><div style="font-size: 50px; margin-bottom: 15px;">⚠️</div><h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2><p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p></div></div>
-    </noscript>
+    <div class="glass-card w-full max-w-lg mx-4 rounded-3xl p-8 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+        
+        <img src="images/icon/favicon-512x512.png" alt="Logo" class="w-20 h-20 mx-auto mb-4 bg-white p-2 rounded-2xl shadow-md border border-slate-100">
+        
+        <h1 class="text-2xl font-black text-slate-800 tracking-tight mb-2">HỆ THỐNG ĐÓN BÉ</h1>
+        <p class="text-sm font-medium text-slate-500 mb-8 uppercase tracking-widest">Trường Mầm Non KindyCity</p>
 
-    <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-        <a onclick="downloadApk();w3_close()" class="w3-bar-item w3-button" style="text-align: center;">
-            <img src="images/icon/download.png">
-        </a>
-    </nav>
-
-    <!-- THANH CÔNG CỤ TOP MENU -->
-    <div class="w3-top ">
-        <div class="top-round-rainbow w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-            
-            <!-- KHU VỰC CHỌN CHI NHÁNH (Ẩn nếu chỉ có 1 chi nhánh) -->
-            <div id="branch-selector-container" style="text-align: center; padding: 10px; border-bottom: 1px dashed #cbd5e1; display: none;">
-                <select id="branch-selector" onchange="renderTabsAndContent()" style="padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: bold; border: 2px solid #818cf8; color: #4f46e5; outline: none; background: #e0e7ff; cursor: pointer;">
-                </select>
+        <div class="text-left mb-3 pl-2 text-xs font-bold text-slate-400 uppercase tracking-wide">Vui lòng chọn cơ sở:</div>
+        
+        <div id="branch-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             </div>
 
-            <!-- CÁC TAB LỚP HỌC (TỰ ĐỘNG SINH DỰA THEO CHI NHÁNH) -->
-            <div class="w3-center w3-padding-16" id="class-tabs"></div>
+        <div class="mt-8 pt-6 border-t border-slate-100 text-xs text-slate-400 font-medium flex items-center justify-between">
+            <span>Phiên bản v2.0</span>
+            <a href="login.html" class="text-indigo-500 hover:text-indigo-700 font-bold"><i class="fas fa-lock"></i> Quản trị</a>
         </div>
     </div>
 
-    <!-- KHU VỰC CHỨA DANH SÁCH HỌC SINH -->
-    <div id="content" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:140px"></div>
-
-    <script src="js/scripts.js"></script>
-
-    <section class="call-buton" onclick="window.location.reload();">
-        <a class="cc-calto-action-ripple">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16"><path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06M6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/></svg>
-            <span class="num"></span>
-        </a>
-    </section>
-
-    <section class="bus-buton" onclick="playClickBus()">
-        <a class="cc-calto-action-ripple" style="text-align: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16"><path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/><path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/></svg>
-        </a>
-    </section>
-
-    <!-- MÃ NGUỒN CỐT LÕI (RÕ RÀNG, DỄ TÙY CHỈNH) -->
     <script>
-        function downloadApk() { window.location.href = 'https://schoolexit.github.io/update.apk'; }
-
-        const trinhPhatAmThanh = new Audio();
-
-        // 1. CHẠY KHI TRANG TẢI XONG
         document.addEventListener("DOMContentLoaded", () => {
-            kiemTraVaKhoiTaoDuLieu();
-            
-            document.body.addEventListener('click', () => {
-                trinhPhatAmThanh.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
-                trinhPhatAmThanh.play().catch(()=>{});
-            }, { once: true });
-        });
-
-        window.openCity = function(evt, tabId) {
-            const tabs = document.getElementsByClassName("city");
-            for (let i = 0; i < tabs.length; i++) {
-                tabs[i].style.display = "none";
-            }
-            const activeTab = document.getElementById(tabId);
-            if (activeTab) activeTab.style.display = "block";
-        };
-
-        // 2. KHỞI TẠO BỘ LỌC CHI NHÁNH
-        function kiemTraVaKhoiTaoDuLieu() {
-            if (!window.kindergartenData) return;
+            const container = document.getElementById('branch-container');
             const data = window.kindergartenData;
 
-            if (data.classes.length > 0 && typeof data.classes[0] === 'string') {
-                data.classes = data.classes.map(c => ({ name: c, image: '', branch: 'TanQuy Campus' }));
-            }
-            if (!data.branches) data.branches = ['TanQuy Campus'];
-
-            const selectorContainer = document.getElementById('branch-selector-container');
-            const selector = document.getElementById('branch-selector');
-            
-            if (data.branches.length > 1) {
-                selectorContainer.style.display = 'block';
-                selector.innerHTML = '';
-                data.branches.forEach(b => {
-                    selector.innerHTML += `<option value="${b}">${b}</option>`;
-                });
-            }
-
-            renderTabsAndContent();
-        }
-
-        // 3. VẼ TAB VÀ ĐỔ HỌC SINH VÀO ĐÚNG CHI NHÁNH ĐANG CHỌN
-        function renderTabsAndContent() {
-            const data = window.kindergartenData;
-            const selector = document.getElementById('branch-selector');
-            const selectedBranch = selector.value || data.branches[0];
-
-            const tabsContainer = document.getElementById("class-tabs");
-            const contentContainer = document.getElementById("content");
-            
-            tabsContainer.innerHTML = "";
-            contentContainer.innerHTML = "";
-
-            const cacLopThuocChiNhanh = data.classes.filter(c => c.branch === selectedBranch);
-
-            if (cacLopThuocChiNhanh.length === 0) {
-                contentContainer.innerHTML = `<div style="text-align:center; padding: 50px; color: #94a3b8; font-weight: bold;">Chi nhánh này chưa có lớp học nào.</div>`;
+            if (!data || !data.branches || data.branches.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-rose-500 font-bold p-4 bg-rose-50 rounded-xl">Hệ thống chưa có dữ liệu cơ sở nào. Vui lòng vào trang quản trị để thêm!</div>`;
                 return;
             }
 
-            // VẼ TABS VÀ KHUNG CHỨA (Tự động lấy Logo)
-            cacLopThuocChiNhanh.forEach((cls, index) => {
-                const idName = `tab-${index}`;
-                const logoSrc = cls.image || '';
-                const fallbackAvatar = `this.outerHTML='<div style=\\'width: 5rem; height: 5rem; margin: 0 auto; background: #e0e7ff; color: #4f46e5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; border: 3px solid #c7d2fe;\\'>${cls.name.charAt(0)}</div>'`;
-                
-                tabsContainer.innerHTML += `
-                    <a onclick="openCity(event, '${idName}')" class="w3-bar-item w3-button" style="display:inline-block; margin: 0 5px; text-decoration: none;">
-                        <img src="${logoSrc}" onerror="${fallbackAvatar}" style="width: 5rem; height: 5rem; object-fit: cover; border-radius: 50%; bg-white">
-                        <div style="font-size: 14px; font-weight: bold; color: #4f46e5; margin-top: 5px; text-transform: uppercase;">${cls.name}</div>
-                    </a>
-                `;
-                
-                const displayStyle = index === 0 ? "block" : "none";
-                contentContainer.innerHTML += `
-                    <div class="w3-row-padding w3-padding-16 w3-center city" id="${idName}" style="display: ${displayStyle};">
-                        <div class="class-wrapper">
-                            <div class="student-list" id="container-${cls.name}"></div>
-                        </div>
-                    </div>
-                `;
-            });
+            // Tạo các nút bấm tương ứng với số lượng chi nhánh trong Database
+            data.branches.forEach((branch, index) => {
+                // Mã hóa tên chi nhánh để truyền qua đường dẫn web an toàn
+                const encodedBranch = encodeURIComponent(branch);
+                const colors = ['indigo', 'emerald', 'amber', 'rose', 'sky', 'fuchsia'];
+                const color = colors[index % colors.length]; // Xoay vòng màu sắc cho đẹp
 
-            // VẼ HỌC SINH
-            cacLopThuocChiNhanh.forEach(cls => {
-                const container = document.getElementById(`container-${cls.name}`);
-                if (!container) return;
-
-                const classStudents = data.students.filter(s => s.class === cls.name && s.branch === cls.branch);
-                
-                classStudents.forEach(student => {
-                    const card = document.createElement('div');
-                    card.className = 'responsive'; 
-
-                    const nickHtml = student.nickname ? `<span class="nick-title">Nhà gọi: ${student.nickname}</span>` : '';
-                    card.innerHTML = `
-                        <div class="gallery">
-                            <img src="${student.image}" alt="${student.name}" loading="lazy">
-                            <div class="desc">
-                                <span>${student.name}</span>
-                                ${nickHtml}
+                container.innerHTML += `
+                    <button onclick="window.location.href='view.html?branch=${encodedBranch}'" 
+                            class="group relative w-full flex items-center justify-between p-4 bg-white border-2 border-slate-100 hover:border-${color}-400 rounded-2xl transition-all shadow-sm hover:shadow-md cursor-pointer text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-${color}-50 text-${color}-600 flex items-center justify-center text-lg shadow-inner group-hover:scale-110 transition-transform">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-slate-700 text-sm">${branch}</div>
+                                <div class="text-[10px] font-medium text-slate-400">Xem danh sách</div>
                             </div>
                         </div>
-                    `;
-
-                    card.addEventListener('click', () => {
-                        let cauThongBao = `Mời học sinh ${student.name}`;
-                        if (student.nickname) cauThongBao += `, biệt danh ${student.nickname}`;
-                        cauThongBao += `, lớp ${student.class} ra về`;
-                        playClickSound(student.sound, cauThongBao);
-                    });
-
-                    container.appendChild(card);
-                });
+                        <i class="fas fa-chevron-right text-slate-300 group-hover:text-${color}-500 transition-colors"></i>
+                    </button>
+                `;
             });
-        }
-
-        // 4. GỌI XE BUÝT TẬP TRUNG
-        function playClickBus() {
-            if (!window.kindergartenData || !window.kindergartenData.students) return;
-            
-            // Lọc ra các học sinh đi xe buýt thuộc chi nhánh đang hiển thị
-            const selector = document.getElementById('branch-selector');
-            const selectedBranch = selector.value || window.kindergartenData.branches[0];
-
-            const danhSachXeBuyt = window.kindergartenData.students.filter(student => student.isBus === true && student.branch === selectedBranch);
-            
-            if (danhSachXeBuyt.length === 0) {
-                phatThanhAIGiongNu("Hiện tại cơ sở này không có học sinh nào về bằng xe buýt.");
-                return;
-            }
-
-            let cauThongBaoTongHop = "Mời các bạn có tên sau về xe buýt: ";
-            danhSachXeBuyt.forEach((student, index) => {
-                cauThongBaoTongHop += `${student.name} lớp ${student.class}`;
-                if (index < danhSachXeBuyt.length - 1) cauThongBaoTongHop += ", ";
-            });
-
-            phatThanhAIGiongNu(cauThongBaoTongHop);
-        }
-
-        function playClickSound(soundUrl, textBackup) {
-            let cleanUrl = soundUrl ? soundUrl.trim().replace(/\\/g, '/') : '';
-            const coFileMP3 = cleanUrl !== "" && cleanUrl !== "sound/" && !cleanUrl.endsWith('/');
-
-            if (coFileMP3) {
-                trinhPhatAmThanh.src = cleanUrl;
-                trinhPhatAmThanh.play().catch(() => phatThanhAIGiongNu(textBackup));
-            } else {
-                phatThanhAIGiongNu(textBackup);
-            }
-        }
-
-        // 5. TRÍ TUỆ NHÂN TẠO - ĐỌC GIỌNG NỮ TIẾNG VIỆT
-        let giongNoiHeThong = [];
-        
-        function capNhatHeThongGiong() {
-            giongNoiHeThong = window.speechSynthesis.getVoices();
-        }
-        if ('speechSynthesis' in window) {
-            capNhatHeThongGiong();
-            window.speechSynthesis.onvoiceschanged = capNhatHeThongGiong;
-        }
-
-        function phatThanhAIGiongNu(text) {
-            let daPhatBangGiongCucBo = false;
-
-            if ('speechSynthesis' in window) {
-                if (window.speechSynthesis.speaking) window.speechSynthesis.cancel(); 
-
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'vi-VN';
-                utterance.rate = 0.95; 
-
-                if (giongNoiHeThong.length === 0) giongNoiHeThong = window.speechSynthesis.getVoices();
-
-                const giongTiengViet = giongNoiHeThong.filter(voice => 
-                    voice.lang.includes('vi') || voice.lang.includes('VN') || voice.name.includes('Vietnamese')
-                );
-
-                if (giongTiengViet.length > 0) {
-                    const tuKhoaGiongNam = [' an', ' nam', ' minh', 'male', 'david', 'mark'];
-                    const locGiongNu = giongTiengViet.filter(voice => {
-                        let ten = voice.name.toLowerCase();
-                        return !tuKhoaGiongNam.some(tu => ten.includes(tu));
-                    });
-                    
-                    let giongNuMienNam = locGiongNu.find(voice => 
-                        voice.name.toLowerCase().includes('hoaimy') || voice.name.toLowerCase().includes('linh')      
-                    );
-
-                    if (!giongNuMienNam) giongNuMienNam = locGiongNu.find(voice => voice.name.toLowerCase().includes('google'));
-                    if (!giongNuMienNam && locGiongNu.length > 0) giongNuMienNam = locGiongNu[0];
-
-                    if (giongNuMienNam) {
-                        utterance.voice = giongNuMienNam;
-                        setTimeout(() => { window.speechSynthesis.speak(utterance); }, 50);
-                        daPhatBangGiongCucBo = true;
-                    }
-                }
-            }
-
-            if (!daPhatBangGiongCucBo) {
-                const urlCloudTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(text)}`;
-                trinhPhatAmThanh.src = urlCloudTTS;
-                trinhPhatAmThanh.play().catch(err => console.error(err));
-            }
-        }
+        });
     </script>
+
 </body>
 </html>
