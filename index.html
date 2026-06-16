@@ -16,94 +16,30 @@
     
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
     <script src="database.js"></script>
 
 <style>
-    .highlight { background-color: yellow; }
-    
-    body {
-        -webkit-touch-callout: none; 
-        -webkit-user-select: none; 
-        -moz-user-select: none; 
-        -ms-user-select: none; 
-        user-select: none;
-        background-color: #f8fafc;
-    }
+    body { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; background-color: #f8fafc; }
     * { box-sizing: border-box; }
-
-    /* CSS GRID CHỐNG LỆCH DÒNG THẺ HỌC SINH */
-    .student-list {
-        display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 10px;
-    }
-    .responsive {
-        width: 100% !important; float: none !important; padding: 0 !important; margin: 0 !important; display: flex; height: 100%;
-    }
-    div.gallery {
-        border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #fff;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; width: 100%; transition: 0.2s;
-    }
+    .student-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 10px; }
+    .responsive { width: 100% !important; float: none !important; padding: 0 !important; margin: 0 !important; display: flex; height: 100%; }
+    div.gallery { border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; width: 100%; transition: 0.2s; }
     div.gallery:hover { border: 1px solid #a5b4fc; transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
     div.gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-bottom: 2px solid #f1f5f9; }
-    
-    div.desc {
-        padding: 14px 8px; text-align: center; font-weight: bold; font-size: 14px; color: #4f46e5;
-        flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.4;
-    }
+    div.desc { padding: 14px 8px; text-align: center; font-weight: bold; font-size: 14px; color: #4f46e5; flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.4; }
     .nick-title { font-size: 12px; color: #64748b; font-weight: normal; margin-top: 2px; }
-
     @media only screen and (max-width: 1024px) { .student-list { grid-template-columns: repeat(3, 1fr); } }
     @media only screen and (max-width: 768px) { .student-list { grid-template-columns: repeat(2, 1fr); } }
 </style>
 
-<script type="text/JavaScript">
-    function killCopy(e) { return false; }
-    function reEnable() { return true; }
-    document.onselectstart = new Function("return false");
-    if (window.sidebar) { 
-        document.onmousedown = killCopy; 
-        document.onclick = reEnable; 
-    }
-</script>
-<script language="JavaScript">
-    window.onload = function() {
-        document.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
-        
-        document.addEventListener("keydown", function(e) {
-            // Chặn Ctrl+Shift+I hoặc J
-            if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) disableEvent(e);
-            // Chặn Ctrl+S (Lưu trang)
-            if (e.keyCode === 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) disableEvent(e);
-            // Chặn Ctrl+U (Xem mã nguồn)
-            if (e.ctrlKey && e.keyCode === 85) disableEvent(e);
-            // Chặn F12
-            if (e.keyCode === 123) disableEvent(e);
-        }, false);
-
-        function disableEvent(e) {
-            if (e.stopPropagation) e.stopPropagation(); 
-            else if (window.event) window.event.cancelBubble = true;
-            e.preventDefault(); 
-            return false;
-        }
-    };
-</script>
+<script type="text/JavaScript">function killCopy(e){return!1}function reEnable(){return!0}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
+<script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},!1);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&(73==e.keyCode||74==e.keyCode))_0xdb(e);if(83==e.keyCode&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey))_0xdb(e);if(e.ctrlKey&&85==e.keyCode)_0xdb(e);if(123==e.keyCode)_0xdb(e)},!1);function _0xdb(e){if(e.stopPropagation)e.stopPropagation();else if(window.event)window.event.cancelBubble=!0;e.preventDefault();return!1}};</script>
 </head>
 <body>
 
     <noscript>
-        <style>
-            body > *:not(noscript) { display: none !important; }
-            .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; }
-            .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }
-        </style>
-        <div class="no-js-overlay">
-            <div class="no-js-box">
-                <div style="font-size: 50px; margin-bottom: 15px;">⚠️</div>
-                <h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2>
-                <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p>
-            </div>
-        </div>
+        <style>body > *:not(noscript) { display: none !important; } .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; } .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }</style>
+        <div class="no-js-overlay"><div class="no-js-box"><div style="font-size: 50px; margin-bottom: 15px;">⚠️</div><h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2><p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p></div></div>
     </noscript>
 
     <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
@@ -113,163 +49,171 @@
     </nav>
 
     <div class="w3-top ">
-        <div class="top-round-rainbow w3-white w3-xlarge" style="margin:auto">
+        <div class="top-round-rainbow w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+            
+            <div id="branch-selector-container" style="text-align: center; padding: 10px; border-bottom: 1px dashed #cbd5e1; display: none;">
+                <select id="branch-selector" onchange="renderTabsAndContent()" style="padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: bold; border: 2px solid #818cf8; color: #4f46e5; outline: none; background: #e0e7ff; cursor: pointer;">
+                </select>
+            </div>
+
             <div class="w3-center w3-padding-16" id="class-tabs"></div>
         </div>
     </div>
 
-    <div id="content" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px"></div>
+    <div id="content" class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:140px"></div>
 
     <script src="js/scripts.js"></script>
 
     <section class="call-buton" onclick="window.location.reload();">
         <a class="cc-calto-action-ripple">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16">
-                <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06M6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute" viewBox="0 0 16 16"><path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06M6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0"/></svg>
             <span class="num"></span>
         </a>
     </section>
 
     <section class="bus-buton" onclick="playClickBus()">
         <a class="cc-calto-action-ripple" style="text-align: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16">
-                <path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/>
-                <path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16"><path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/><path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/></svg>
         </a>
     </section>
 
     <script>
-        function downloadApk() {
-            window.location.href = 'https://schoolexit.github.io/update.apk';
-        }
+        function downloadApk() { window.location.href = 'https://schoolexit.github.io/update.apk'; }
 
         const trinhPhatAmThanh = new Audio();
 
-        // CHẠY KHI TRANG TẢI XONG
+        // 1. KHI TRANG TẢI XONG
         document.addEventListener("DOMContentLoaded", () => {
-            taoTabTuDong(); // 1. Vẽ các Tab lớp học
-            veGiaoDienHocSinhDong(); // 2. Đổ học sinh vào các lớp
+            kiemTraVaKhoiTaoDuLieu();
             
-            // 3. Mở khóa âm thanh trình duyệt
             document.body.addEventListener('click', () => {
-                // Phóng ra một đoạn âm thanh siêu nhỏ dạng chuỗi để ép trình duyệt cho phép phát tiếng
+                // Unlock file âm thanh rác để mở khóa tự động phát tiếng trên Safari/iOS
                 trinhPhatAmThanh.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
                 trinhPhatAmThanh.play().catch(()=>{});
             }, { once: true });
         });
 
-        // HÀM CHUYỂN QUA LẠI GIỮA CÁC TAB LỚP HỌC
-        window.openCity = function(evt, cityName) {
-            const x = document.getElementsByClassName("city");
-            for (let i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
+        // HÀM CHUYỂN TAB 
+        window.openCity = function(evt, tabId) {
+            const tabs = document.getElementsByClassName("city");
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
             }
-            const activeTab = document.getElementById(cityName);
+            const activeTab = document.getElementById(tabId);
             if (activeTab) activeTab.style.display = "block";
         };
 
-        // =========================================================================
-        // HỆ THỐNG TỰ ĐỘNG TẠO TAB (CẬP NHẬT TỪ DATABASE.JS)
-        // =========================================================================
-        function taoTabTuDong() {
-            if (!window.kindergartenData || !window.kindergartenData.classes) return;
+        // 2. KIỂM TRA VÀ CẬP NHẬT GIAO DIỆN DROPDOWN CHI NHÁNH
+        function kiemTraVaKhoiTaoDuLieu() {
+            if (!window.kindergartenData) return;
+            const data = window.kindergartenData;
+
+            // Xử lý ngược dữ liệu cũ (Dự phòng)
+            if (data.classes.length > 0 && typeof data.classes[0] === 'string') {
+                data.classes = data.classes.map(c => ({ name: c, image: '', branch: 'Cơ sở chính' }));
+            }
+            if (!data.branches) data.branches = ['Cơ sở chính'];
+
+            // Nếu trường có nhiều hơn 1 chi nhánh -> Hiển thị hộp chọn
+            const selectorContainer = document.getElementById('branch-selector-container');
+            const selector = document.getElementById('branch-selector');
             
-            const classes = window.kindergartenData.classes;
-            const tabContainer = document.getElementById("class-tabs");
+            if (data.branches.length > 1) {
+                selectorContainer.style.display = 'block';
+                selector.innerHTML = '';
+                data.branches.forEach(b => {
+                    selector.innerHTML += `<option value="${b}">${b}</option>`;
+                });
+            }
+
+            renderTabsAndContent();
+        }
+
+        // 3. VẼ TABS VÀ DANH SÁCH HỌC SINH (Theo đúng thứ tự trên Dashboard)
+        function renderTabsAndContent() {
+            const data = window.kindergartenData;
+            
+            // Lấy chi nhánh đang được chọn (Nếu không chọn gì thì lấy chi nhánh đầu tiên)
+            const selector = document.getElementById('branch-selector');
+            const selectedBranch = selector.value || data.branches[0];
+
+            const tabsContainer = document.getElementById("class-tabs");
             const contentContainer = document.getElementById("content");
             
-            tabContainer.innerHTML = "";
+            tabsContainer.innerHTML = "";
             contentContainer.innerHTML = "";
-            
-            classes.forEach((className, index) => {
-                // Tạo ID từ tên lớp (Ví dụ: "Panda" -> "panda", "Lớp Lớn" -> "lớp-lớn")
-                const idName = className.toLowerCase().replace(/\s+/g, "-");
+
+            // Lọc ra các lớp học thuộc về chi nhánh đang được chọn
+            const cacLopThuocChiNhanh = data.classes.filter(c => c.branch === selectedBranch);
+
+            if (cacLopThuocChiNhanh.length === 0) {
+                contentContainer.innerHTML = `<div style="text-align:center; padding: 50px; color: #94a3b8; font-weight: bold;">Chi nhánh này chưa có lớp học nào.</div>`;
+                return;
+            }
+
+            // VẼ TABS VÀ KHUNG CHỨA
+            cacLopThuocChiNhanh.forEach((cls, index) => {
+                const idName = `tab-${index}`;
                 
-                // Nếu lớp không có icon ảnh thật, vẽ ra một Avatar Avatar hình tròn chứa chữ cái đầu tiên
-                const fallbackAvatar = `this.outerHTML='<div style=\\'width: 5rem; height: 5rem; margin: 0 auto; background: #e0e7ff; color: #4f46e5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; border: 3px solid #c7d2fe;\\'>${className.charAt(0)}</div>'`;
+                // Nếu lớp không có Logo -> Dùng thẻ Avatar chữ cái đầu
+                const logoSrc = cls.image || '';
+                const fallbackAvatar = `this.outerHTML='<div style=\\'width: 5rem; height: 5rem; margin: 0 auto; background: #e0e7ff; color: #4f46e5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; border: 3px solid #c7d2fe;\\'>${cls.name.charAt(0)}</div>'`;
                 
-                // Thêm nút bấm Menu ở trên cùng
-                tabContainer.innerHTML += `
+                tabsContainer.innerHTML += `
                     <a onclick="openCity(event, '${idName}')" class="w3-bar-item w3-button" style="display:inline-block; margin: 0 5px; text-decoration: none;">
-                        <img src="images/icon/${idName}.png" onerror="${fallbackAvatar}" style="width: 5rem; height: 5rem; object-fit: contain;">
-                        <div style="font-size: 14px; font-weight: bold; color: #4f46e5; margin-top: 5px; text-transform: uppercase;">${className}</div>
+                        <img src="${logoSrc}" onerror="${fallbackAvatar}" style="width: 5rem; height: 5rem; object-fit: cover; border-radius: 50%;">
+                        <div style="font-size: 14px; font-weight: bold; color: #4f46e5; margin-top: 5px; text-transform: uppercase;">${cls.name}</div>
                     </a>
                 `;
                 
-                // Thêm Khung chứa học sinh tương ứng ở bên dưới (Mặc định hiển thị lớp đầu tiên)
+                // Lớp đứng đầu tiên sẽ được mở (display: block)
                 const displayStyle = index === 0 ? "block" : "none";
                 contentContainer.innerHTML += `
                     <div class="w3-row-padding w3-padding-16 w3-center city" id="${idName}" style="display: ${displayStyle};">
                         <div class="class-wrapper">
-                            <div class="student-list" id="container-${className}"></div>
+                            <div class="student-list" id="container-${cls.name}"></div>
                         </div>
                     </div>
                 `;
             });
-        }
 
-        // =========================================================================
-        // HỆ THỐNG ĐỔ DỮ LIỆU HỌC SINH TỪ DATABASE.JS VÀO KHUNG CHỨA
-        // =========================================================================
-        function veGiaoDienHocSinhDong() {
-            if (!window.kindergartenData || !window.kindergartenData.students) return;
-            const data = window.kindergartenData;
+            // VẼ HỌC SINH VÀO KHUNG
+            cacLopThuocChiNhanh.forEach(cls => {
+                const container = document.getElementById(`container-${cls.name}`);
+                if (!container) return;
 
-            // Xóa sạch khung cũ trước khi đổ mới
-            data.classes.forEach(c => { 
-                const el = document.getElementById(`container-${c}`); 
-                if (el) el.innerHTML = ''; 
-            });
-
-            // Lặp qua từng học sinh
-            data.students.forEach(student => {
-                const container = document.getElementById(`container-${student.class}`);
-                if (!container) return; 
-
-                const cardWrapper = document.createElement('div');
-                cardWrapper.className = 'responsive'; 
-
-                // Xử lý Biệt danh
-                const nickHtml = student.nickname ? `<span class="nick-title">Nickname: ${student.nickname}</span>` : '';
+                const classStudents = data.students.filter(s => s.class === cls.name);
                 
-                // Thẻ HTML cho một bé
-                cardWrapper.innerHTML = `
-                    <div class="gallery">
-                        <img src="${student.image}" alt="${student.name}" loading="lazy">
-                        <div class="desc">
-                            <span>${student.name}</span>
-                            ${nickHtml}
+                classStudents.forEach(student => {
+                    const card = document.createElement('div');
+                    card.className = 'responsive'; 
+
+                    const nickHtml = student.nickname ? `<span class="nick-title">Nhà gọi: ${student.nickname}</span>` : '';
+                    card.innerHTML = `
+                        <div class="gallery">
+                            <img src="${student.image}" alt="${student.name}" loading="lazy">
+                            <div class="desc">
+                                <span>${student.name}</span>
+                                ${nickHtml}
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
 
-                // Xử lý khi nhấn vào ảnh bé
-                cardWrapper.addEventListener('click', () => {
-                    let cauThongBao = `Mời học sinh ${student.name}`;
-                    if (student.nickname) {
-                        cauThongBao += `, , ,  ${student.nickname}`;
-                    }
-                    cauThongBao += `, lớp ${student.class} ra về`;
-                    {
-                        cauThongBao += `, , ,  ${student.nickname}`;
-                    }
-                    cauThongBao += `, lớp ${student.class} ra về`;
+                    // Bấm vào ảnh gọi tên bé
+                    card.addEventListener('click', () => {
+                        let cauThongBao = `Mời học sinh ${student.name}`;
+                        if (student.nickname) cauThongBao += `, , , ${student.nickname}`;
+                        cauThongBao += `, lớp ${student.class} ra về`;
+                        playClickSound(student.sound, cauThongBao);
+                    });
 
-                    playClickSound(student.sound, cauThongBao);
-
-                    
+                    container.appendChild(card);
                 });
-
-                container.appendChild(cardWrapper);
             });
         }
 
-        // =========================================================================
-        // HỆ THỐNG LỌC VÀ ĐỌC DANH SÁCH XE BUÝT TẬP TRUNG
-        // =========================================================================
-        window.playClickBus = function() {
+        // 4. GỌI XE BUÝT TẬP TRUNG
+        function playClickBus() {
             if (!window.kindergartenData || !window.kindergartenData.students) return;
             
             const danhSachXeBuyt = window.kindergartenData.students.filter(student => student.isBus === true);
@@ -280,30 +224,18 @@
             }
 
             let cauThongBaoTongHop = "Mời các bạn có tên sau về xe buýt: ";
-            
             danhSachXeBuyt.forEach((student, index) => {
-                cauThongBaoTongHop += `${student.name} , , ,  ${student.nickname} lớp ${student.class}`;
-                if (index < danhSachXeBuyt.length - 1) {
-                    cauThongBaoTongHop += ", ";
-                }
-                cauThongBaoTongHop += ", , ,";
-                cauThongBaoTongHop += `${student.name} , , ,  ${student.nickname} lớp ${student.class}`;
-                if (index < danhSachXeBuyt.length - 1) {
-                    cauThongBaoTongHop += ", ";
-                }
+                cauThongBaoTongHop += `${student.name} ,,  ${student.nickname} lớp ${student.class}`;
+                if (index < danhSachXeBuyt.length - 1) cauThongBaoTongHop += ", ";
             });
 
             phatThanhAIGiongNu(cauThongBaoTongHop);
-        };
+        }
 
-        // =========================================================================
-        // HỆ THỐNG XỬ LÝ LUỒNG ÂM THANH
-        // =========================================================================
         function playClickSound(soundUrl, textBackup) {
             let cleanUrl = soundUrl ? soundUrl.trim().replace(/\\/g, '/') : '';
             const coFileMP3 = cleanUrl !== "" && cleanUrl !== "sound/" && !cleanUrl.endsWith('/');
 
-            // Nếu bé có file ghi âm riêng, phát file đó. Lỗi thì quay về AI.
             if (coFileMP3) {
                 trinhPhatAmThanh.src = cleanUrl;
                 trinhPhatAmThanh.play().catch(() => phatThanhAIGiongNu(textBackup));
@@ -312,15 +244,12 @@
             }
         }
 
-        // =====================================================================
-        // TRÍ TUỆ NHÂN TẠO - ƯU TIÊN GIỌNG NỮ MIỀN NAM & CHỐNG TIẾNG ANH
-        // =====================================================================
+        // 5. AI ĐỌC GIỌNG NỮ TIẾNG VIỆT
         let giongNoiHeThong = [];
         
         function capNhatHeThongGiong() {
             giongNoiHeThong = window.speechSynthesis.getVoices();
         }
-        
         if ('speechSynthesis' in window) {
             capNhatHeThongGiong();
             window.speechSynthesis.onvoiceschanged = capNhatHeThongGiong;
@@ -330,65 +259,44 @@
             let daPhatBangGiongCucBo = false;
 
             if ('speechSynthesis' in window) {
-                if (window.speechSynthesis.speaking) {
-                    window.speechSynthesis.cancel(); // Ngắt câu cũ nếu đang nói dở
-                }
+                if (window.speechSynthesis.speaking) window.speechSynthesis.cancel(); 
 
                 const utterance = new SpeechSynthesisUtterance(text);
                 utterance.lang = 'vi-VN';
-                utterance.rate = 1.25; // Tốc độ vừa phải
+                utterance.rate = 0.95; 
 
-                if (giongNoiHeThong.length === 0) {
-                    giongNoiHeThong = window.speechSynthesis.getVoices();
-                }
+                if (giongNoiHeThong.length === 0) giongNoiHeThong = window.speechSynthesis.getVoices();
 
-                // Lọc lấy các giọng hỗ trợ Tiếng Việt
                 const giongTiengViet = giongNoiHeThong.filter(voice => 
-                    voice.lang.includes('vi') || 
-                    voice.lang.includes('VN') || 
-                    voice.name.includes('Vietnamese')
+                    voice.lang.includes('vi') || voice.lang.includes('VN') || voice.name.includes('Vietnamese')
                 );
 
                 if (giongTiengViet.length > 0) {
-                    // Lớp bảo vệ 1: Gạch bỏ các giọng Nam Tiếng Việt phổ biến và giọng Tiếng Anh lỗi
                     const tuKhoaGiongNam = [' an', ' nam', ' minh', 'male', 'david', 'mark'];
                     const locGiongNu = giongTiengViet.filter(voice => {
                         let ten = voice.name.toLowerCase();
                         return !tuKhoaGiongNam.some(tu => ten.includes(tu));
                     });
                     
-                    // Lớp bảo vệ 2: Ưu tiên bắt buộc giọng "Hoài My" (Windows) hoặc "Linh" (Mac/iOS)
                     let giongNuMienNam = locGiongNu.find(voice => 
-                        voice.name.toLowerCase().includes('hoaimy') || 
-                        voice.name.toLowerCase().includes('linh')      
+                        voice.name.toLowerCase().includes('hoaimy') || voice.name.toLowerCase().includes('linh')      
                     );
 
-                    // Dự phòng: Tìm giọng của Google
-                    if (!giongNuMienNam) {
-                        giongNuMienNam = locGiongNu.find(voice => voice.name.toLowerCase().includes('google'));
-                    }
-
-                    // Cuối cùng: Nhặt đại một giọng nữ còn sót lại
-                    if (!giongNuMienNam && locGiongNu.length > 0) {
-                        giongNuMienNam = locGiongNu[0];
-                    }
+                    if (!giongNuMienNam) giongNuMienNam = locGiongNu.find(voice => voice.name.toLowerCase().includes('google'));
+                    if (!giongNuMienNam && locGiongNu.length > 0) giongNuMienNam = locGiongNu[0];
 
                     if (giongNuMienNam) {
                         utterance.voice = giongNuMienNam;
-                        setTimeout(() => {
-                            window.speechSynthesis.speak(utterance);
-                        }, 50);
+                        setTimeout(() => { window.speechSynthesis.speak(utterance); }, 50);
                         daPhatBangGiongCucBo = true;
                     }
                 }
             }
 
-            // Lớp bảo vệ 3 (Tối Thượng): 
-            // Nếu điện thoại không cài Tiếng Việt, gửi văn bản lên máy chủ Google để lấy file ghi âm giọng Nữ
             if (!daPhatBangGiongCucBo) {
                 const urlCloudTTS = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(text)}`;
                 trinhPhatAmThanh.src = urlCloudTTS;
-                trinhPhatAmThanh.play().catch(err => console.error("Lỗi phát âm thanh Cloud:", err));
+                trinhPhatAmThanh.play().catch(err => console.error(err));
             }
         }
     </script>

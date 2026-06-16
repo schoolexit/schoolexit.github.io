@@ -3,24 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Quản Lý Học Sinh</title>
+    <title>Dashboard Quản Lý Hệ Thống</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script src="database.js"></script>
     
     <style>
-        body { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+        body { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
     </style>
     <script type="text/JavaScript">function killCopy(e){return!1}function reEnable(){return!0}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
     <script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},!1);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&(73==e.keyCode||74==e.keyCode))_0xdb(e);if(83==e.keyCode&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey))_0xdb(e);if(e.ctrlKey&&85==e.keyCode)_0xdb(e);if(123==e.keyCode)_0xdb(e)},!1);function _0xdb(e){if(e.stopPropagation)e.stopPropagation();else if(window.event)window.event.cancelBubble=!0;e.preventDefault();return!1}};</script>
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 flex min-h-screen">
-
-    <noscript>
-        <style>body > *:not(noscript) { display: none !important; } .no-js-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; z-index: 999999; font-family: sans-serif; p: 20px; } .no-js-box { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); text-align: center; max-width: 440px; border: 1px solid #e2e8f0; }</style>
-        <div class="no-js-overlay"><div class="no-js-box"><div style="font-size: 50px; margin-bottom: 15px;">⚠️</div><h2 style="font-size: 20px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">Yêu cầu bật JavaScript</h2><p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 0;">Trình duyệt của bạn đang tắt JavaScript. Vui lòng kích hoạt JavaScript trong phần cài đặt để hệ thống hoạt động chính xác.</p></div></div>
-    </noscript>
 
     <aside class="w-20 bg-slate-900 text-slate-400 flex flex-col items-center py-6 gap-6 shadow-xl shrink-0 h-screen sticky top-0 z-50">
         <div class="text-white text-2xl mb-4 bg-indigo-600 p-3 rounded-xl shadow-lg shadow-indigo-600/30">
@@ -35,36 +29,63 @@
     </aside>
 
     <div class="flex-1 flex flex-col min-w-0 min-h-screen overflow-x-hidden">
-        
         <header class="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-40">
             <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div>
-                    <h1 class="text-xl font-bold text-slate-900 tracking-tight">HỆ THỐNG ĐÓN BÉ KINDYCITY Q7</h1>
+                    <h1 class="text-xl font-bold text-slate-900 tracking-tight">HỆ THỐNG ĐÓN BÉ KINDYCITY</h1>
                     <p class="text-xs text-slate-500">Trang quản lý dữ liệu đồng bộ GitHub API</p>
                 </div>
-                <div class="flex items-center gap-2">
-                    <button onclick="saveToGitHub()" id="save-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-lg font-medium shadow transition-all flex items-center gap-2 text-sm">
-                        <i class="fas fa-cloud-upload-alt"></i> Đồng bộ lên GitHub
-                    </button>
-                </div>
+                <button onclick="saveToGitHub()" id="save-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-lg font-medium shadow transition-all flex items-center gap-2 text-sm">
+                    <i class="fas fa-cloud-upload-alt"></i> Đồng bộ lên GitHub
+                </button>
             </div>
         </header>
 
-        <main id="view-general" class="max-w-7xl w-full mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="space-y-6 lg:col-span-1">
+        <main id="view-general" class="max-w-7xl w-full mx-auto px-6 py-8 grid grid-cols-1 xl:grid-cols-3 gap-8">
+            <div class="space-y-6 xl:col-span-1">
+                
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                    <h2 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-tags text-indigo-500"></i> Quản Lý Danh Mục Lớp
+                    <h2 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fas fa-building text-indigo-500"></i> Quản Lý Chi Nhánh (Cơ Sở)
                     </h2>
                     <div class="flex gap-2 mb-4">
-                        <input type="text" id="new-class-input" placeholder="Tên lớp mới..." class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
-                        <button onclick="addClass()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition text-sm">Thêm</button>
+                        <input type="text" id="new-branch-input" placeholder="Tên chi nhánh mới..." class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                        <button onclick="addBranch()" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-lg font-medium transition text-sm">Thêm</button>
                     </div>
+                    <div id="branch-list" class="space-y-2 max-h-40 overflow-y-auto pr-1"></div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h2 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fas fa-tags text-indigo-500"></i> Quản Lý Lớp Học
+                    </h2>
+                    
+                    <form id="class-form" onsubmit="handleClassSubmit(event)" class="bg-slate-50 p-3 rounded-lg border border-slate-200 mb-4 space-y-3">
+                        <input type="hidden" id="class-id">
+                        <input type="text" id="class-name" required placeholder="Tên lớp (VD: Koala)..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                        <select id="class-branch" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"></select>
+                        
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center gap-2">
+                                <input type="hidden" id="class-logo" value="">
+                                <img id="class-logo-preview" src="images/user.jpg" class="w-8 h-8 rounded-full border border-slate-300 object-cover bg-white">
+                                <label class="cursor-pointer text-xs bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-3 py-1.5 rounded font-bold transition">
+                                    Tải Logo Lớp <input type="file" hidden accept="image/*" onchange="handleImageUpload(event, 'class')">
+                                </label>
+                            </div>
+                            <div class="flex gap-2">
+                                <button type="button" onclick="resetClassForm()" id="class-cancel-btn" class="hidden text-xs px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded font-medium">Hủy</button>
+                                <button type="submit" id="class-submit-btn" class="text-xs px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded font-bold">Lưu Lớp</button>
+                            </div>
+                        </div>
+                        <p id="class-upload-status" class="text-[11px] text-slate-500 hidden"></p>
+                    </form>
+
                     <div id="class-list" class="space-y-2 max-h-60 overflow-y-auto pr-1"></div>
                 </div>
             </div>
 
-            <div class="lg:col-span-2 space-y-6">
+            <div class="xl:col-span-2 space-y-6">
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                     <h2 id="form-title" class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
                         <i class="fas fa-user-plus text-indigo-500"></i> Thêm Bé Vào Danh Sách
@@ -80,7 +101,7 @@
                             <input type="text" id="student-nickname" placeholder="Ví dụ: Su, Bin, Thỏ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
                         </div>
                         <div class="md:col-span-2">
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Danh mục Lớp học</label>
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Xếp vào Lớp học</label>
                             <select id="student-class" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></select>
                         </div>
                         
@@ -91,28 +112,25 @@
                                 <img id="image-preview" src="images/user.jpg" alt="Preview" class="w-12 h-12 rounded-full object-cover border border-slate-300 shadow-sm bg-white">
                                 <label class="cursor-pointer bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-4 py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition shadow-sm border border-indigo-200 whitespace-nowrap">
                                     <i class="fas fa-cloud-upload-alt"></i> Tải ảnh lên
-                                    <input type="file" id="student-image-upload" accept="image/png, image/jpeg, image/jpg, image/webp" class="hidden" onchange="handleImageUpload(event)">
+                                    <input type="file" hidden accept="image/*" onchange="handleImageUpload(event, 'student')">
                                 </label>
                                 <span class="text-[11px] text-slate-400 hidden sm:block">Hoặc để trống sẽ tự lấy ảnh mặc định.</span>
                             </div>
-                            <p id="upload-status" class="text-[12px] font-medium text-slate-500 mt-2 hidden"></p>
+                            <p id="student-upload-status" class="text-[12px] font-medium text-slate-500 mt-2 hidden"></p>
                         </div>
 
                         <div class="md:col-span-2 p-3 bg-slate-50 border border-slate-200 rounded-lg">
                             <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Âm thanh gọi tên (Tùy chọn)</label>
                             <div class="flex items-center gap-4">
                                 <input type="hidden" id="student-sound" value="">
-                                
                                 <label class="cursor-pointer bg-pink-100 hover:bg-pink-200 text-pink-700 px-4 py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition shadow-sm border border-pink-200 whitespace-nowrap">
                                     <i class="fas fa-file-audio"></i> Tải tệp MP3
-                                    <input type="file" id="student-audio-upload" accept="audio/mpeg, audio/mp3, audio/wav, audio/m4a" class="hidden" onchange="handleAudioUpload(event)">
+                                    <input type="file" accept="audio/*" class="hidden" onchange="handleAudioUpload(event)">
                                 </label>
-                                
-                                <div class="flex-1 text-sm font-medium text-slate-700 truncate" id="audio-file-name">Chưa có tệp âm thanh (Đang dùng giọng AI Nữ)</div>
+                                <div class="flex-1 text-sm font-medium text-slate-700 truncate" id="audio-file-name">Đang dùng giọng AI Nữ</div>
                                 <button type="button" onclick="clearAudioFile()" class="text-rose-500 hover:text-rose-700 text-xs font-bold px-2 py-1 bg-white rounded border border-rose-200 shadow-sm hidden" id="btn-clear-audio"><i class="fas fa-times"></i> Xóa</button>
                             </div>
                             <p id="audio-upload-status" class="text-[12px] font-medium text-slate-500 mt-2 hidden"></p>
-                            <p class="text-[11px] text-slate-400 mt-1">Lưu ý: Tệp âm thanh phải dưới 1MB. Nếu để trống, hệ thống sẽ tự động gọi tên bé bằng AI.</p>
                         </div>
                         
                         <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100 pt-4 mt-2">
@@ -121,8 +139,8 @@
                                 <label for="student-is-bus" class="text-sm font-medium text-slate-700 cursor-pointer select-none">Bé về bằng xe buýt trường</label>
                             </div>
                             <div id="bus-route-container" class="hidden">
-                                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Tuyến xe / Tài xế / Ghi chú</label>
-                                <input type="text" id="student-bus-route" placeholder="Ví dụ: Tuyến số 1 - Xe 29 chỗ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Tuyến xe / Tài xế</label>
+                                <input type="text" id="student-bus-route" placeholder="VD: Tuyến số 1..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
                             </div>
                         </div>
 
@@ -205,38 +223,46 @@
         const AUDIO_PATH_WEB = "sounds";
 
         // =========================================================
-        // 2. KIỂM TRA BẢO MẬT OTP SESSION
+        // 2. TỰ ĐỘNG CHUYỂN ĐỔI DỮ LIỆU CŨ LÊN CẤU TRÚC MỚI (MIGRATION)
         // =========================================================
-        (function checkSecurity() {
-            const sessionToken = sessionStorage.getItem('HL_ADMIN_SESSION');
-            if (sessionToken !== 'AUTHENTICATED_OK') {
-                alert('Cảnh báo bảo mật: Vui lòng đăng nhập để truy cập.');
-                window.location.replace('login.html');
-            }
-        })();
+        let localData = window.kindergartenData || { branches: [], classes: [], students: [] };
 
-        // Dữ liệu ban đầu
-        let localData = window.kindergartenData || { classes: ["Koala", "Panda", "Dolphin", "Giraffe"], students: [] };
+        // Đảm bảo có nhánh mặc định
+        if (!localData.branches || localData.branches.length === 0) {
+            localData.branches = ["Cơ sở chính"];
+        }
+
+        // Chuyển đổi dữ liệu lớp (Từ mảng text sang mảng Object)
+        if (localData.classes.length > 0 && typeof localData.classes[0] === 'string') {
+            localData.classes = localData.classes.map(c => ({
+                id: 'cl-' + Date.now() + Math.floor(Math.random() * 1000),
+                name: c,
+                image: '', // Ảnh logo trống sẽ dùng avatar chữ cái
+                branch: localData.branches[0]
+            }));
+        }
 
         document.addEventListener('DOMContentLoaded', () => {
+            renderBranches();
             renderClasses();
             renderStudents();
             renderBusStudents();
         });
 
         // =========================================================
-        // TÍNH NĂNG UPLOAD HÌNH ẢNH (Có Nén Ảnh)
+        // TÍNH NĂNG UPLOAD HÌNH ẢNH DÙNG CHUNG (CẢ HỌC SINH VÀ LỚP)
         // =========================================================
-        async function handleImageUpload(event) {
+        async function handleImageUpload(event, type) {
             const file = event.target.files[0];
             if (!file) return;
 
-            const statusEl = document.getElementById('upload-status');
-            const hiddenImageInput = document.getElementById('student-image');
-            const previewImage = document.getElementById('image-preview');
+            const isClass = type === 'class';
+            const statusEl = document.getElementById(isClass ? 'class-upload-status' : 'student-upload-status');
+            const hiddenImageInput = document.getElementById(isClass ? 'class-logo' : 'student-image');
+            const previewImage = document.getElementById(isClass ? 'class-logo-preview' : 'image-preview');
 
             statusEl.classList.remove('hidden');
-            statusEl.innerHTML = '<i class="fas fa-spinner fa-spin text-indigo-500"></i> Đang nén ảnh và tải lên GitHub...';
+            statusEl.innerHTML = '<i class="fas fa-spinner fa-spin text-indigo-500"></i> Đang tải ảnh lên...';
 
             const reader = new FileReader();
             reader.onload = function(e) {
@@ -255,19 +281,12 @@
 
                     const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
                     const base64Content = dataUrl.split(',')[1];
-                    const sizeInBytes = Math.round((base64Content.length * 3) / 4);
-                    const sizeInKB = Math.round(sizeInBytes / 1024);
-
-                    if (sizeInBytes > 50 * 1024) {
-                        statusEl.innerHTML = `<span class="text-rose-500"><i class="fas fa-exclamation-triangle"></i> Lỗi: Ảnh sau khi nén vẫn nặng ${sizeInKB}KB. Hãy chọn ảnh khác!</span>`;
-                        event.target.value = ''; return;
-                    }
 
                     const fileName = `img_${Date.now()}.jpg`;
                     const apiPath = `${UPLOAD_FOLDER_API}/${fileName}`;
                     const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${apiPath}`;
 
-                    const payload = { message: `Upload ảnh học sinh: ${fileName}`, content: base64Content };
+                    const payload = { message: `Upload ảnh: ${fileName}`, content: base64Content };
 
                     try {
                         const response = await fetch(apiUrl, {
@@ -281,10 +300,10 @@
                         hiddenImageInput.value = `${IMAGE_PATH_WEB}/${fileName}`;
                         previewImage.src = `data:image/jpeg;base64,${base64Content}`;
                         
-                        statusEl.innerHTML = `<span class="text-emerald-600"><i class="fas fa-check"></i> Đã tải ảnh thành công!</span>`;
-                        setTimeout(() => statusEl.classList.add('hidden'), 4000);
+                        statusEl.innerHTML = `<span class="text-emerald-600"><i class="fas fa-check"></i> Đã tải xong!</span>`;
+                        setTimeout(() => statusEl.classList.add('hidden'), 3000);
                     } catch (error) {
-                        statusEl.innerHTML = `<span class="text-rose-500"><i class="fas fa-exclamation-triangle"></i> Lỗi tải lên: ${error.message}</span>`;
+                        statusEl.innerHTML = `<span class="text-rose-500"><i class="fas fa-exclamation-triangle"></i> Lỗi: ${error.message}</span>`;
                     }
                 };
                 img.src = e.target.result;
@@ -293,7 +312,7 @@
         }
 
         // =========================================================
-        // TÍNH NĂNG UPLOAD ÂM THANH
+        // TÍNH NĂNG UPLOAD ÂM THANH (HỌC SINH)
         // =========================================================
         async function handleAudioUpload(event) {
             const file = event.target.files[0];
@@ -305,32 +324,25 @@
             const btnClear = document.getElementById('btn-clear-audio');
 
             if (file.size > 1024 * 1024) {
-                statusEl.classList.remove('hidden');
-                statusEl.innerHTML = `<span class="text-rose-500"><i class="fas fa-exclamation-triangle"></i> Lỗi: File âm thanh quá lớn (> 1MB).</span>`;
-                event.target.value = '';
-                return;
+                alert('Lỗi: File âm thanh quá lớn (> 1MB).');
+                event.target.value = ''; return;
             }
 
             statusEl.classList.remove('hidden');
-            statusEl.innerHTML = '<i class="fas fa-spinner fa-spin text-pink-500"></i> Đang tải âm thanh lên GitHub...';
+            statusEl.innerHTML = '<i class="fas fa-spinner fa-spin text-pink-500"></i> Đang tải âm thanh...';
 
             const reader = new FileReader();
             reader.onload = async function(e) {
                 const base64Content = e.target.result.split(',')[1];
-                const sizeInKB = Math.round(file.size / 1024);
-                
                 const ext = file.name.split('.').pop().toLowerCase();
                 const fileName = `audio_${Date.now()}.${ext}`;
-                const apiPath = `${UPLOAD_FOLDER_AUDIO_API}/${fileName}`;
-                const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${apiPath}`;
-
-                const payload = { message: `Upload âm thanh: ${fileName}`, content: base64Content };
+                const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${UPLOAD_FOLDER_AUDIO_API}/${fileName}`;
 
                 try {
                     const response = await fetch(apiUrl, {
                         method: 'PUT',
                         headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}`, 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
+                        body: JSON.stringify({ message: `Upload âm thanh`, content: base64Content })
                     });
 
                     if (!response.ok) throw new Error((await response.json()).message);
@@ -340,27 +352,24 @@
                     fileNameDisplay.classList.replace('text-slate-700', 'text-pink-600');
                     btnClear.classList.remove('hidden');
                     
-                    statusEl.innerHTML = `<span class="text-emerald-600"><i class="fas fa-check"></i> Đã tải tệp MP3 lên thành công (${sizeInKB}KB)!</span>`;
-                    setTimeout(() => statusEl.classList.add('hidden'), 4000);
-                    
+                    statusEl.innerHTML = `<span class="text-emerald-600"><i class="fas fa-check"></i> Đã tải xong!</span>`;
+                    setTimeout(() => statusEl.classList.add('hidden'), 3000);
                 } catch (error) {
-                    statusEl.innerHTML = `<span class="text-rose-500"><i class="fas fa-exclamation-triangle"></i> Lỗi tải lên: ${error.message}</span>`;
+                    statusEl.innerHTML = `<span class="text-rose-500">Lỗi tải lên: ${error.message}</span>`;
                 }
             };
-            reader.onerror = () => { statusEl.innerHTML = '<span class="text-rose-500">Lỗi đọc file âm thanh!</span>'; }
             reader.readAsDataURL(file);
         }
 
         function clearAudioFile() {
             document.getElementById('student-sound').value = "";
-            document.getElementById('student-audio-upload').value = "";
-            document.getElementById('audio-file-name').innerText = "Chưa có tệp âm thanh (Đang dùng AI Nữ)";
+            document.getElementById('audio-file-name').innerText = "Đang dùng giọng AI Nữ";
             document.getElementById('audio-file-name').classList.replace('text-pink-600', 'text-slate-700');
             document.getElementById('btn-clear-audio').classList.add('hidden');
         }
 
         // =========================================================
-        // 3. ĐỒNG BỘ DATA LÊN GITHUB
+        // ĐỒNG BỘ LÊN GITHUB
         // =========================================================
         async function saveToGitHub() {
             const fileContent = "window.kindergartenData = " + JSON.stringify(localData, null, 4) + ";";
@@ -376,13 +385,10 @@
                 let currentSha = null;
                 if (getRes.ok) { currentSha = (await getRes.json()).sha; }
                 
-                const payload = { message: "Dashboard: Cập nhật thông tin", content: encodedContent };
-                if (currentSha) payload.sha = currentSha;
-                
                 const putRes = await fetch(apiUrl, {
                     method: 'PUT',
                     headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify({ message: "Dashboard: Cập nhật dữ liệu", content: encodedContent, sha: currentSha })
                 });
                 
                 if (!putRes.ok) throw new Error((await putRes.json()).message);
@@ -397,36 +403,51 @@
         }
 
         // =========================================================
-        // LOGIC QUẢN LÝ TABS VÀ UI
+        // QUẢN LÝ CHI NHÁNH
         // =========================================================
-        function switchTab(tabName) {
-            const viewGeneral = document.getElementById('view-general');
-            const viewBus = document.getElementById('view-bus');
-            const btnGeneral = document.getElementById('btn-tab-general');
-            const btnBus = document.getElementById('btn-tab-bus');
+        function renderBranches() {
+            const list = document.getElementById('branch-list');
+            const classBranchSelect = document.getElementById('class-branch');
+            
+            list.innerHTML = '';
+            classBranchSelect.innerHTML = '';
+            
+            localData.branches.forEach((b, index) => {
+                const isDefault = index === 0;
+                list.innerHTML += `
+                    <div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
+                        <span class="text-sm font-bold text-slate-700">${b}</span>
+                        ${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">Cơ sở chính</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}
+                    </div>
+                `;
+                classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
+            });
+        }
 
-            if (tabName === 'general') {
-                viewGeneral.classList.remove('hidden'); viewBus.classList.add('hidden');
-                btnGeneral.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20";
-                btnBus.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800";
-                renderStudents();
-            } else if (tabName === 'bus') {
-                viewGeneral.classList.add('hidden'); viewBus.classList.remove('hidden');
-                btnBus.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20";
-                btnGeneral.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800";
-                renderBusStudents();
+        function addBranch() {
+            const val = document.getElementById('new-branch-input').value.trim();
+            if (!val) return alert("Vui lòng nhập tên chi nhánh!");
+            if (localData.branches.includes(val)) return alert("Chi nhánh này đã tồn tại!");
+            
+            localData.branches.push(val);
+            document.getElementById('new-branch-input').value = '';
+            renderBranches();
+            renderClasses(); // Cập nhật dropdown lớp học
+        }
+
+        function deleteBranch(branchName) {
+            if (localData.classes.some(c => c.branch === branchName)) {
+                return alert("Không thể xóa! Chi nhánh này đang có lớp học. Hãy chuyển lớp sang chi nhánh khác hoặc xóa lớp trước.");
             }
-        }
-
-        function toggleBusRouteInput() {
-            const isBusChecked = document.getElementById('student-is-bus').checked;
-            const container = document.getElementById('bus-route-container');
-            if (isBusChecked) container.classList.remove('hidden');
-            else { container.classList.add('hidden'); document.getElementById('student-bus-route').value = ''; }
+            if (!confirm(`Bạn có chắc muốn xóa chi nhánh ${branchName}?`)) return;
+            
+            localData.branches = localData.branches.filter(b => b !== branchName);
+            renderBranches();
+            renderClasses();
         }
 
         // =========================================================
-        // QUẢN LÝ LỚP HỌC & SẮP XẾP LỚP (TÍNH NĂNG MỚI)
+        // QUẢN LÝ LỚP HỌC & SẮP XẾP LÊN XUỐNG
         // =========================================================
         function renderClasses() {
             const classList = document.getElementById('class-list');
@@ -434,56 +455,137 @@
             const filterClassSelect = document.getElementById('filter-class');
             
             classList.innerHTML = '';
-            studentClassSelect.innerHTML = '<option value="">-- Chọn lớp --</option>';
-            if (filterClassSelect) filterClassSelect.innerHTML = '<option value="all">Tất cả lớp</option>';
+            studentClassSelect.innerHTML = '<option value="">-- Chọn lớp học --</option>';
+            filterClassSelect.innerHTML = '<option value="all">Tất cả các lớp</option>';
             
-            localData.classes.forEach((className, index) => {
-                // Xác định trạng thái của nút Lên / Xuống
-                const upDisabled = index === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100';
-                const downDisabled = index === localData.classes.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100';
+            // Vẽ danh sách lớp và Nút sắp xếp
+            localData.classes.forEach((cls, index) => {
+                const upDisabled = index === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100 cursor-pointer';
+                const downDisabled = index === localData.classes.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100 cursor-pointer';
                 
                 const upClick = index === 0 ? '' : `onclick="moveClass(${index}, -1)"`;
                 const downClick = index === localData.classes.length - 1 ? '' : `onclick="moveClass(${index}, 1)"`;
 
+                const logoSrc = cls.image || 'images/user.jpg';
+
                 classList.innerHTML += `
-                    <div class="flex items-center justify-between bg-slate-50 px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-100 transition">
-                        <span class="font-medium text-slate-700 text-sm flex-1">${className}</span>
+                    <div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
+                        <div class="flex items-center gap-3">
+                            <img src="${logoSrc}" class="w-8 h-8 rounded-full border border-slate-200 object-cover">
+                            <div>
+                                <div class="font-bold text-slate-700 text-sm">${cls.name}</div>
+                                <div class="text-[10px] text-slate-400 uppercase tracking-wide">${cls.branch}</div>
+                            </div>
+                        </div>
                         <div class="flex items-center gap-1">
-                            <button type="button" ${upClick} class="text-indigo-500 p-1.5 rounded transition ${upDisabled}" title="Chuyển lên"><i class="fas fa-chevron-up text-xs"></i></button>
-                            <button type="button" ${downClick} class="text-indigo-500 p-1.5 rounded transition ${downDisabled}" title="Chuyển xuống"><i class="fas fa-chevron-down text-xs"></i></button>
-                            <div class="w-px h-4 bg-slate-300 mx-1"></div>
-                            <button type="button" onclick="deleteClass('${className}')" class="text-rose-500 hover:text-rose-700 hover:bg-rose-100 p-1.5 rounded transition" title="Xóa"><i class="fas fa-trash-alt text-xs"></i></button>
+                            <button type="button" onclick="editClass('${cls.id}')" class="text-indigo-500 hover:text-indigo-700 hover:bg-indigo-50 p-2 rounded transition" title="Sửa"><i class="fas fa-edit text-xs"></i></button>
+                            <div class="w-px h-4 bg-slate-200 mx-1"></div>
+                            <button type="button" ${upClick} class="text-indigo-500 p-2 rounded transition ${upDisabled}" title="Chuyển lên"><i class="fas fa-chevron-up text-xs"></i></button>
+                            <button type="button" ${downClick} class="text-indigo-500 p-2 rounded transition ${downDisabled}" title="Chuyển xuống"><i class="fas fa-chevron-down text-xs"></i></button>
+                            <div class="w-px h-4 bg-slate-200 mx-1"></div>
+                            <button type="button" onclick="deleteClass('${cls.id}')" class="text-rose-500 hover:text-rose-700 hover:bg-rose-50 p-2 rounded transition" title="Xóa"><i class="fas fa-trash-alt text-xs"></i></button>
                         </div>
                     </div>`;
-                studentClassSelect.innerHTML += `<option value="${className}">${className}</option>`;
-                if (filterClassSelect) filterClassSelect.innerHTML += `<option value="${className}">${className}</option>`;
+                
+                filterClassSelect.innerHTML += `<option value="${cls.name}">${cls.name} (${cls.branch})</option>`;
+            });
+
+            // Gom nhóm lớp học theo Chi nhánh vào trong Form thêm Học sinh
+            localData.branches.forEach(branch => {
+                const branchClasses = localData.classes.filter(c => c.branch === branch);
+                if (branchClasses.length > 0) {
+                    studentClassSelect.innerHTML += `<optgroup label="📍 ${branch}">`;
+                    branchClasses.forEach(c => {
+                        studentClassSelect.innerHTML += `<option value="${c.name}">${c.name}</option>`;
+                    });
+                    studentClassSelect.innerHTML += `</optgroup>`;
+                }
             });
         }
 
-        // Hàm di chuyển vị trí của lớp học
+        // Dịch chuyển thứ tự lớp học
         function moveClass(index, direction) {
             const newIndex = index + direction;
             if (newIndex < 0 || newIndex >= localData.classes.length) return;
-            
-            // Hoán đổi vị trí trong mảng
             const temp = localData.classes[index];
             localData.classes[index] = localData.classes[newIndex];
             localData.classes[newIndex] = temp;
-            
             renderClasses();
         }
 
-        function addClass() {
-            const input = document.getElementById('new-class-input');
-            const className = input.value.trim();
-            if (!className) return alert('Vui lòng nhập tên lớp!');
-            if (localData.classes.includes(className)) return alert('Lớp này đã tồn tại!');
-            localData.classes.push(className); input.value = ''; renderClasses();
+        function handleClassSubmit(e) {
+            e.preventDefault();
+            const id = document.getElementById('class-id').value;
+            const name = document.getElementById('class-name').value.trim();
+            const branch = document.getElementById('class-branch').value;
+            const image = document.getElementById('class-logo').value.trim();
+
+            if (id) {
+                // Chỉnh sửa lớp
+                const clsIndex = localData.classes.findIndex(c => c.id === id);
+                if (clsIndex !== -1) {
+                    const oldName = localData.classes[clsIndex].name;
+                    localData.classes[clsIndex] = { id, name, branch, image };
+                    
+                    // Nếu đổi tên lớp, đồng loạt đổi tên lớp của tất cả học sinh đang học lớp đó
+                    if (oldName !== name) {
+                        localData.students.forEach(s => {
+                            if (s.class === oldName) s.class = name;
+                        });
+                    }
+                }
+            } else {
+                // Thêm lớp mới
+                if (localData.classes.some(c => c.name.toLowerCase() === name.toLowerCase())) {
+                    return alert("Tên lớp này đã tồn tại!");
+                }
+                localData.classes.push({ id: 'cl-' + Date.now(), name, branch, image });
+            }
+
+            resetClassForm();
+            renderClasses();
+            renderStudents(); // Update lại bảng học sinh vì có thể tên lớp vừa bị đổi
         }
 
-        function deleteClass(className) {
-            if (localData.students.some(s => s.class === className)) { if (!confirm(`Lớp ${className} đang có học sinh. Vẫn xóa chứ?`)) return; }
-            localData.classes = localData.classes.filter(c => c !== className); renderClasses(); renderStudents();
+        function editClass(id) {
+            const cls = localData.classes.find(c => c.id === id);
+            if (!cls) return;
+
+            document.getElementById('class-id').value = cls.id;
+            document.getElementById('class-name').value = cls.name;
+            document.getElementById('class-branch').value = cls.branch;
+            document.getElementById('class-logo').value = cls.image;
+            document.getElementById('class-logo-preview').src = cls.image || 'images/user.jpg';
+            
+            document.getElementById('class-submit-btn').innerText = "Cập Nhật";
+            document.getElementById('class-submit-btn').classList.replace('bg-indigo-600', 'bg-amber-500');
+            document.getElementById('class-submit-btn').classList.replace('hover:bg-indigo-700', 'hover:bg-amber-600');
+            document.getElementById('class-cancel-btn').classList.remove('hidden');
+        }
+
+        function deleteClass(id) {
+            const cls = localData.classes.find(c => c.id === id);
+            if (!cls) return;
+
+            if (localData.students.some(s => s.class === cls.name)) {
+                return alert(`Lớp ${cls.name} đang có học sinh. Bạn phải chuyển học sinh sang lớp khác hoặc xóa học sinh trước khi xóa lớp!`);
+            }
+            if (!confirm(`Bạn có chắc muốn xóa lớp ${cls.name}?`)) return;
+
+            localData.classes = localData.classes.filter(c => c.id !== id);
+            renderClasses();
+        }
+
+        function resetClassForm() {
+            document.getElementById('class-form').reset();
+            document.getElementById('class-id').value = '';
+            document.getElementById('class-logo').value = '';
+            document.getElementById('class-logo-preview').src = 'images/user.jpg';
+            
+            document.getElementById('class-submit-btn').innerText = "Lưu Lớp";
+            document.getElementById('class-submit-btn').classList.replace('bg-amber-500', 'bg-indigo-600');
+            document.getElementById('class-submit-btn').classList.replace('hover:bg-amber-600', 'hover:bg-indigo-700');
+            document.getElementById('class-cancel-btn').classList.add('hidden');
         }
 
         // =========================================================
@@ -511,11 +613,11 @@
 
                 tbody.innerHTML += `
                     <tr class="hover:bg-slate-50 transition border-b border-slate-100">
-                        <td class="px-6 py-2"><img src="${imgDisplay}" class="w-10 h-10 rounded-full object-cover border border-slate-200"></td>
+                        <td class="px-6 py-2"><img src="${imgDisplay}" class="w-10 h-10 rounded-full object-cover border border-slate-200 bg-white"></td>
                         <td class="px-6 py-3.5 text-slate-900 font-semibold">${student.name}${nickDisplay}</td>
-                        <td class="px-6 py-3.5"><span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold">${student.class}</span></td>
+                        <td class="px-6 py-3.5"><span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold whitespace-nowrap">${student.class}</span></td>
                         <td class="px-6 py-3.5">${busBadge}</td>
-                        <td class="px-6 py-3.5 text-right space-x-2">
+                        <td class="px-6 py-3.5 text-right space-x-2 whitespace-nowrap">
                             <button onclick="editStudent('${student.id}')" class="text-indigo-600 hover:text-indigo-900 text-xs border border-indigo-200 px-2 py-1 rounded">Sửa</button>
                             <button onclick="deleteStudent('${student.id}')" class="text-rose-600 hover:text-rose-900 text-xs border border-rose-200 px-2 py-1 rounded">Xóa</button>
                         </td>
@@ -535,7 +637,7 @@
                     <tr class="hover:bg-slate-50 transition border-b border-slate-100">
                         <td class="px-6 py-2"><img src="${imgDisplay}" class="w-10 h-10 rounded-full object-cover border border-slate-200"></td>
                         <td class="px-6 py-3.5 font-semibold text-slate-900">${student.name}</td>
-                        <td class="px-6 py-3.5"><span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold">${student.class}</span></td>
+                        <td class="px-6 py-3.5"><span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold whitespace-nowrap">${student.class}</span></td>
                         <td class="px-6 py-3.5 font-medium text-slate-700">${student.busRoute || 'Chưa phân tuyến'}</td>
                         <td class="px-6 py-3.5 text-right space-x-2">
                             <button onclick="editStudentFromBus('${student.id}')" class="text-indigo-600 hover:text-indigo-900 text-xs border border-indigo-200 px-2 py-1 rounded">Sửa</button>
@@ -596,7 +698,7 @@
             
             toggleBusRouteInput();
             document.getElementById('form-title').innerHTML = `<i class="fas fa-edit text-amber-500"></i> Chỉnh Sửa Thông Tin Bé`;
-            document.getElementById('submit-btn').innerText = "Cập Nhật Lên Danh Sách";
+            document.getElementById('submit-btn').innerText = "Cập Nhật Học Sinh";
             document.getElementById('cancel-edit-btn').classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -619,10 +721,34 @@
             document.getElementById('form-title').innerHTML = `<i class="fas fa-user-plus text-indigo-500"></i> Thêm Bé Vào Danh Sách`;
             document.getElementById('submit-btn').innerText = "Lưu Học Sinh";
             document.getElementById('cancel-edit-btn').classList.add('hidden');
-            document.getElementById('upload-status').classList.add('hidden');
-            document.getElementById('audio-upload-status').classList.add('hidden');
             
             toggleBusRouteInput();
+        }
+
+        function switchTab(tabName) {
+            const viewGeneral = document.getElementById('view-general');
+            const viewBus = document.getElementById('view-bus');
+            const btnGeneral = document.getElementById('btn-tab-general');
+            const btnBus = document.getElementById('btn-tab-bus');
+
+            if (tabName === 'general') {
+                viewGeneral.classList.remove('hidden'); viewBus.classList.add('hidden');
+                btnGeneral.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20";
+                btnBus.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800";
+                renderStudents();
+            } else if (tabName === 'bus') {
+                viewGeneral.classList.add('hidden'); viewBus.classList.remove('hidden');
+                btnBus.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20";
+                btnGeneral.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800";
+                renderBusStudents();
+            }
+        }
+
+        function toggleBusRouteInput() {
+            const isBusChecked = document.getElementById('student-is-bus').checked;
+            const container = document.getElementById('bus-route-container');
+            if (isBusChecked) container.classList.remove('hidden');
+            else { container.classList.add('hidden'); document.getElementById('student-bus-route').value = ''; }
         }
     </script>
 </body>
