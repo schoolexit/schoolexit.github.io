@@ -144,6 +144,11 @@
                 if (index < danhSachXeBuyt.length - 1) {
                     cauThongBaoTongHop += ", ";
                 }
+                cauThongBaoTongHop += ", , ,";
+                cauThongBaoTongHop += `${student.name} lớp ${student.class}`;
+                if (index < danhSachXeBuyt.length - 1) {
+                    cauThongBaoTongHop += ", ";
+                }
             });
 
             phatThanhAIGiongNu(cauThongBaoTongHop);
