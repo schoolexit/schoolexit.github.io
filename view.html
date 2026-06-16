@@ -303,7 +303,9 @@
 
                     card.addEventListener('click', () => {
                         let cauThongBao = `Mời học sinh ${student.name}`;
-                        if (student.nickname) cauThongBao += `, biệt danh ${student.nickname}`;
+                        if (student.nickname) cauThongBao += `, , , ${student.nickname}`;
+                        cauThongBao += `, lớp ${student.class} ra về`;
+                        if (student.nickname) cauThongBao += `, , , ${student.nickname}`;
                         cauThongBao += `, lớp ${student.class} ra về`;
                         playClickSound(student.sound, cauThongBao);
                     });
@@ -328,8 +330,15 @@
 
             let cauThongBaoTongHop = "Mời các bạn có tên sau về xe buýt: ";
             danhSachXeBuyt.forEach((student, index) => {
-                cauThongBaoTongHop += `${student.name} lớp ${student.class}`;
-                if (index < danhSachXeBuyt.length - 1) cauThongBaoTongHop += ", ";
+                cauThongBaoTongHop += `${student.name} , , ,  ${student.nickname} lớp ${student.class}`;
+                if (index < danhSachXeBuyt.length - 1) {
+                    cauThongBaoTongHop += ", ";
+                }
+                cauThongBaoTongHop += ", , ,";
+                cauThongBaoTongHop += `${student.name} , , ,  ${student.nickname}  lớp ${student.class} Ra về`;
+                if (index < danhSachXeBuyt.length - 1) {
+                    cauThongBaoTongHop += ", ";
+                }
             });
 
             phatThanhAIGiongNu(cauThongBaoTongHop);
