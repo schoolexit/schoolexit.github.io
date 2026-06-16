@@ -10,7 +10,7 @@ window.kindergartenData = {
             "id": "cl-1781590377934325",
             "name": "Koala",
             "branch": "TanQuy Campus",
-            "image": "images/img_1781594462709.jpg"
+            "image": "images/img_1781594482576.jpg"
         },
         {
             "id": "cl-1781590377934729",
@@ -34,7 +34,7 @@ window.kindergartenData = {
             "id": "cl-1781591664919",
             "name": "Koala 1.1",
             "branch": "HimLam Campus",
-            "image": "images/img_1781594700833.jpg"
+            "image": "images/img_1781594482576.jpg"
         }
     ],
     "students": [
