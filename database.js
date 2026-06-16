@@ -15,8 +15,8 @@ window.kindergartenData = {
         {
             "id": "cl-1781590377934729",
             "name": "Panda",
-            "image": "",
-            "branch": "TanQuy Campus"
+            "branch": "TanQuy Campus",
+            "image": "images/img_1781594622803.jpg"
         },
         {
             "id": "cl-1781590377934328",
@@ -28,7 +28,7 @@ window.kindergartenData = {
             "id": "cl-1781590377934692",
             "name": "Giraffe",
             "branch": "TanQuy Campus",
-            "image": "images/img_1781590497434.jpg"
+            "image": "images/img_1781594600632.jpg"
         },
         {
             "id": "cl-1781591664919",
