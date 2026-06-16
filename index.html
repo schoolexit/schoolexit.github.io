@@ -98,7 +98,7 @@
                 const cardWrapper = document.createElement('div');
                 cardWrapper.className = 'responsive'; 
 
-                const nickHtml = student.nickname ? `<span class="nick-title">Nhà gọi: ${student.nickname}</span>` : '';
+                const nickHtml = student.nickname ? `<span class="nick-title">Nickname: ${student.nickname}</span>` : '';
                 cardWrapper.innerHTML = `
                     <div class="gallery">
                         <img src="${student.image}" alt="${student.name}" loading="lazy">
@@ -112,7 +112,7 @@
                 cardWrapper.addEventListener('click', () => {
                     let cauThongBao = `Mời học sinh ${student.name}`;
                     if (student.nickname) {
-                        cauThongBao += `, biệt danh ${student.nickname}`;
+                        cauThongBao += `, , ,${student.nickname}`;
                     }
                     cauThongBao += `, lớp ${student.class} ra về`;
 
