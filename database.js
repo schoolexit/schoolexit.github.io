@@ -45,6 +45,16 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": ""
+        },
+        {
+            "id": "st-1781580563385",
+            "name": "Hà Duy AN",
+            "nickname": "Duy Duy",
+            "class": "Panda",
+            "image": "images/img_1781580557563.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
         }
     ]
 };
