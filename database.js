@@ -40,7 +40,7 @@ window.kindergartenData = {
             "id": "cl-1781720238526",
             "name": "Koala 1 VDT",
             "branch": "VDT Campus",
-            "image": ""
+            "image": "images/img_1781594482576.jpg"
         }
     ],
     "students": [
