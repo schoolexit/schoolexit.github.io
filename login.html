@@ -103,7 +103,7 @@
                 sessionStorage.setItem('HL_ADMIN_PHONE', 'MASTER_KEY'); 
                 
                 alert('🚀 Nhận diện Quản trị viên tối cao. Đăng nhập thành công!');
-                window.location.href = 'dashboard.html';
+                window.location.href = 'dashboard';
                 return; 
             }
 
@@ -144,7 +144,7 @@
                 sessionStorage.setItem('HL_ADMIN_PHONE', user.phoneNumber); 
 
                 alert('Xác thực thành công! Đang chuyển hướng...');
-                window.location.href = 'dashboard.html';
+                window.location.href = 'dashboard';
             } catch (error) {
                 console.error(error);
                 alert('Mã OTP không chính xác hoặc đã hết hạn!');

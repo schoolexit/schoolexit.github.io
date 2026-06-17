@@ -362,7 +362,7 @@
 
             if (sessionToken !== 'AUTHENTICATED_OK' || !adminPhone) {
                 alert('Cảnh báo bảo mật: Vui lòng đăng nhập để truy cập.');
-                window.location.replace('login.html');
+                window.location.replace('login');
                 return;
             }
 
@@ -375,7 +375,7 @@
                 if (!assignedBranch) {
                     alert(`Tài khoản có số điện thoại ${adminPhone} chưa được phân quyền quản lý cơ sở nào! Hãy liên hệ Quản trị viên cấp cao.`);
                     sessionStorage.clear();
-                    window.location.replace('login.html');
+                    window.location.replace('login');
                 }
             }
         })();
