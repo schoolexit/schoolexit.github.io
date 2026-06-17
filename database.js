@@ -118,6 +118,7 @@ window.kindergartenData = {
     ],
     "branches": [
         "TanQuy Campus",
-        "HimLam Campus"
+        "HimLam Campus",
+        "VDT Campus"
     ]
 };
