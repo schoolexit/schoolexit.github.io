@@ -159,7 +159,7 @@
 
     <script>
         const GITHUB_TOKEN="ghp_"+"HoeNm7xM6HBQUs"+"dLync9S8LYg1JXyM3h030b";const GITHUB_USER="schoolexit";const GITHUB_REPO="schoolexit.github.io";const FILE_PATH="database.js";const UPLOAD_FOLDER_API="images";const IMAGE_PATH_WEB="images";const UPLOAD_FOLDER_AUDIO_API="sounds";const AUDIO_PATH_WEB="sounds";
-        const PHAN_QUYEN_CO_SO={'+84868462396':'TanQuy Campus','+84329080195':'HimLam Campus','+84333310277':'Cơ sở 3'};
+        const PHAN_QUYEN_CO_SO={'+84868462396':'TanQuy Campus','+84329080195':'HimLam Campus','+84333310277':'VDT Campus'};
         let isMasterAdmin=!1;let assignedBranch=null;
         (function checkSecurity(){const e=sessionStorage.getItem('HL_ADMIN_SESSION'),t=sessionStorage.getItem('HL_ADMIN_PHONE');if(e!=='AUTHENTICATED_OK'||!t){alert('\x43\x1ea\x63\x6e\x68\x20\x62\x61\x6f\x20\x62\x61\x6f\x20\x6d\x61\x74\x3a\x20\x56\x75\x69\x20\x6c\x6f\x6e\x67\x20\x64\x61\x6e\x67\x20\x6e\x68\x61\x70\x20\x64\x65\x20\x74\x72\x75\x79\x20\x63\x61\x70\x2e');window.location.replace('login');return}if(t==='MASTER_KEY')isMasterAdmin=!0;else{assignedBranch=PHAN_QUYEN_CO_SO[t];if(!assignedBranch){alert(`Tài khoản có số điện thoại ${t} chưa được phân quyền quản lý cơ sở nào! Hãy liên hệ Quản trị viên cấp cao.`);sessionStorage.clear();window.location.replace('login')}}})();
         let localData=window.kindergartenData||{branches:[],classes:[],students:[]};if(!localData.branches||0===localData.branches.length)localData.branches=["TanQuy Campus"];
