@@ -2,37 +2,37 @@ window.kindergartenData = {
     "classes": [
         {
             "id": "cl-1781590377934293",
-            "name": "Koala 1",
+            "name": "Koala 1 TQ",
             "branch": "TanQuy Campus",
             "image": "images/img_1781594482576.jpg"
         },
         {
             "id": "cl-1781590377934325",
-            "name": "Koala",
+            "name": "Koala 1.1 TQ",
             "branch": "TanQuy Campus",
             "image": "images/img_1781594482576.jpg"
         },
         {
             "id": "cl-1781590377934729",
-            "name": "Panda",
+            "name": "Panda 1 TQ",
             "branch": "TanQuy Campus",
             "image": "images/img_1781594622803.jpg"
         },
         {
             "id": "cl-1781590377934328",
-            "name": "Dolphin",
+            "name": "Dolphin 1 TQ",
             "branch": "TanQuy Campus",
             "image": "images/img_1781594690908.jpg"
         },
         {
             "id": "cl-1781590377934692",
-            "name": "Giraffe",
+            "name": "Giraffe 1 TQ",
             "branch": "TanQuy Campus",
             "image": "images/img_1781594600632.jpg"
         },
         {
             "id": "cl-1781591664919",
-            "name": "Koala 1.2",
+            "name": "Koala 1 HL",
             "branch": "HimLam Campus",
             "image": "images/img_1781594482576.jpg"
         },
