@@ -35,6 +35,12 @@ window.kindergartenData = {
             "name": "Koala 1.2",
             "branch": "HimLam Campus",
             "image": "images/img_1781594482576.jpg"
+        },
+        {
+            "id": "cl-1781720238526",
+            "name": "Koala 1 VDT",
+            "branch": "VDT Campus",
+            "image": ""
         }
     ],
     "students": [
@@ -42,8 +48,8 @@ window.kindergartenData = {
             "id": "st-1781152929814",
             "name": "Trần Quốc Bảo",
             "nickname": "ICT",
-            "branch": "HimLam Campus",
-            "class": "Koala 1.2",
+            "branch": "VDT Campus",
+            "class": "Koala 1 VDT",
             "image": "images/img_1781166511024.jpg",
             "sound": "",
             "isBus": true,
