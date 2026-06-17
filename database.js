@@ -59,12 +59,12 @@ window.kindergartenData = {
             "id": "st-1781164535551",
             "name": "HUỲNH TRẦN THIÊN AN",
             "nickname": "suboi",
-            "class": "Koala",
+            "branch": "TanQuy Campus",
+            "class": "Koala 1 TQ",
             "image": "images/user.jpg",
             "sound": "",
             "isBus": false,
-            "busRoute": "",
-            "branch": "TanQuy Campus"
+            "busRoute": ""
         },
         {
             "id": "st-1781164837815",
