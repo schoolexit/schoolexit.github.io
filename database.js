@@ -32,7 +32,7 @@ window.kindergartenData = {
         },
         {
             "id": "cl-1781591664919",
-            "name": "Koala 1.1",
+            "name": "Koala 1.2",
             "branch": "HimLam Campus",
             "image": "images/img_1781594482576.jpg"
         }
@@ -43,7 +43,7 @@ window.kindergartenData = {
             "name": "Trần Quốc Bảo",
             "nickname": "ICT",
             "branch": "HimLam Campus",
-            "class": "Koala 1.1",
+            "class": "Koala 1.2",
             "image": "images/img_1781166511024.jpg",
             "sound": "",
             "isBus": true,
@@ -98,7 +98,7 @@ window.kindergartenData = {
             "name": "Thái Duy Thanh",
             "nickname": "Duy Thanh",
             "branch": "HimLam Campus",
-            "class": "Koala 1.1",
+            "class": "Koala 1.2",
             "image": "images/user.jpg",
             "sound": "",
             "isBus": true,
