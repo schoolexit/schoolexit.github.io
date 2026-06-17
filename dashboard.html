@@ -7,163 +7,47 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="database.js"></script>
-    
     <style>
-        body { -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+        body{ -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+        div.gallery{ border: 1px solid #ccc; }
+        div.gallery:hover{ border: 1px solid #777; }
+        div.gallery img{ width: 100%; height: auto; }
+        div.desc{ padding: 15px; text-align: center; }
+        *{ box-sizing: border-box; }
+        .responsive{ padding: 0 6px; float: left; width: 24.99999%; }
+        @media only screen and (max-width: 700px){ .responsive{ width: 49.99999%; margin: 6px 0; } }
+        @media only screen and (max-width: 500px){ .responsive{ width: 100%; } }
+        .clearfix:after{ content: ""; display: table; clear: both; }
     </style>
-    <!--Block Copy-->
-<style>
-  body{
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  }
-  div.gallery {
-  border: 1px solid #ccc;
-  }
-
-  div.gallery:hover {
-  border: 1px solid #777;
-  }
-
-  div.gallery img {
-  width: 100%;
-  height: auto;
-  }
-
-  div.desc {
-  padding: 15px;
-  text-align: center;
-  }
-
-  * {
-  box-sizing: border-box;
-  }
-
-  .responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-  }
-
-  @media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-  }
-
-  @media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%;
-  }
-  }
-
-  .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-  }
-  </style>
-<script type=”text/JavaScript”>
-  function killCopy(e){
-  return false
-  }
-  function reEnable(){
-  return true
-  }
-  document.onselectstart=new Function (“return false”)
-  if (window.sidebar){
-  document.onmousedown=killCopy
-  document.onclick=reEnable
-  }
-</script>
-<script language="JavaScript">
-  window.onload = function() {
-      document.addEventListener("contextmenu", function(e) {
-          e.preventDefault();
-      }, false);
-      document.addEventListener("keydown", function(e) {
-          //document.onkeydown = function(e) {
-          // "I" key
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-              disabledEvent(e);
-          }
-          // "J" key
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-              disabledEvent(e);
-          }
-          // "S" key + macOS
-          if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-              disabledEvent(e);
-          }
-          // "U" key
-          if (e.ctrlKey && e.keyCode == 85) {
-              disabledEvent(e);
-          }
-          // "F12" key
-          if (event.keyCode == 123) {
-              disabledEvent(e);
-          }
-      }, false);
-
-      function disabledEvent(e) {
-          if (e.stopPropagation) {
-              e.stopPropagation();
-          } else if (window.event) {
-              window.event.cancelBubble = true;
-          }
-          e.preventDefault();
-          return false;
-      }
-  };
-</script>
+    <script type="text/JavaScript">function killCopy(e){return false}function reEnable(){return true}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
+    <script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},false);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&e.keyCode==73){disabledEvent(e)}if(e.ctrlKey&&e.shiftKey&&e.keyCode==74){disabledEvent(e)}if(e.keyCode==83&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey)){disabledEvent(e)}if(e.ctrlKey&&e.keyCode==85){disabledEvent(e)}if(event.keyCode==123){disabledEvent(e)}},false);function disabledEvent(e){if(e.stopPropagation){e.stopPropagation()}else if(window.event){window.event.cancelBubble=true}e.preventDefault();return false}};</script>
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 flex min-h-screen">
-        <noscript>
-            <meta http-equiv="refresh" content="0;url=https://schoolexit.github.io">
-        </noscript>
+    <noscript><meta http-equiv="refresh" content="0;url=https://schoolexit.github.io"></noscript>
     <aside class="w-20 bg-slate-900 text-slate-400 flex flex-col items-center py-6 gap-6 shadow-xl shrink-0 h-screen sticky top-0 z-50">
         <div class="text-white text-2xl mb-4 bg-indigo-600 p-3 rounded-xl shadow-lg shadow-indigo-600/30">
             <i class="fas fa-school"></i>
         </div>
-        <button onclick="switchTab('general')" id="btn-tab-general" class="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20" title="Quản lý học sinh & lớp học">
-            <i class="fas fa-users text-lg"></i>
-        </button>
-        <button onclick="switchTab('bus')" id="btn-tab-bus" class="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800" title="Danh sách xe buýt về">
-            <i class="fas fa-bus text-lg"></i>
-        </button>
-        <button onclick="window.location.href='https://schoolexit.github.io'" class="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800" title="về trang chủ">
-            <i class="fas fa-sign-out text-lg"></i>
-        </button>
+        <button onclick="switchTab('general')" id="btn-tab-general" class="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20" title="Quản lý học sinh & lớp học"><i class="fas fa-users text-lg"></i></button>
+        <button onclick="switchTab('bus')" id="btn-tab-bus" class="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800" title="Danh sách xe buýt về"><i class="fas fa-bus text-lg"></i></button>
+        <button onclick="window.location.href='https://schoolexit.github.io'" class="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800" title="về trang chủ"><i class="fas fa-sign-out text-lg"></i></button>
     </aside>
 
     <div class="flex-1 flex flex-col min-w-0 min-h-screen overflow-x-hidden">
         <header class="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-40">
             <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div>
-                    <h1 class="text-xl font-bold text-slate-900 tracking-tight">
-                        HỆ THỐNG ĐÓN BÉ KINDYCITY
-                        <span id="dashboard-title-branch" class="text-indigo-600 font-bold ml-2 text-base"></span>
-                    </h1>
+                    <h1 class="text-xl font-bold text-slate-900 tracking-tight">HỆ THỐNG ĐÓN BÉ KINDYCITY<span id="dashboard-title-branch" class="text-indigo-600 font-bold ml-2 text-base"></span></h1>
                     <p class="text-xs text-slate-500">Trang quản lý dữ liệu</p>
                 </div>
-                <button onclick="saveToGitHub()" id="save-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-lg font-medium shadow transition-all flex items-center gap-2 text-sm">
-                    <i class="fas fa-cloud-upload-alt"></i> Đồng bộ lên Server
-                </button>
+                <button onclick="saveToGitHub()" id="save-btn" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-lg font-medium shadow transition-all flex items-center gap-2 text-sm"><i class="fas fa-cloud-upload-alt"></i> Đồng bộ lên Server</button>
             </div>
         </header>
 
         <main id="view-general" class="max-w-7xl w-full mx-auto px-6 py-8 grid grid-cols-1 xl:grid-cols-3 gap-8">
             <div class="space-y-6 xl:col-span-1">
-                
                 <div id="branch-management-block" class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                    <h2 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-building text-indigo-500"></i> Quản Lý Cở Sở
-                    </h2>
+                    <h2 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-building text-indigo-500"></i> Quản Lý Cở Sở</h2>
                     <div class="flex gap-2 mb-4">
                         <input type="text" id="new-branch-input" placeholder="Tên cở sở mới..." class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
                         <button onclick="addBranch()" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-lg font-medium transition text-sm">Thêm</button>
@@ -172,9 +56,7 @@
                 </div>
 
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                    <h2 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-tags text-indigo-500"></i> Quản Lý Lớp Học
-                    </h2>
+                    <h2 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-tags text-indigo-500"></i> Quản Lý Lớp Học</h2>
                     <form id="class-form" onsubmit="handleClassSubmit(event)" class="bg-slate-50 p-3 rounded-lg border border-slate-200 mb-4 space-y-3">
                         <input type="hidden" id="class-id">
                         <input type="text" id="class-name" required placeholder="Tên lớp (VD: Koala)..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
@@ -183,9 +65,7 @@
                             <div class="flex items-center gap-2">
                                 <input type="hidden" id="class-logo" value="">
                                 <img id="class-logo-preview" src="images/user.jpg" class="w-8 h-8 rounded-full border border-slate-300 object-cover bg-white">
-                                <label class="cursor-pointer text-xs bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-3 py-1.5 rounded font-bold transition">
-                                    Tải Logo <input type="file" hidden accept="image/*" onchange="handleImageUpload(event, 'class')">
-                                </label>
+                                <label class="cursor-pointer text-xs bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-3 py-1.5 rounded font-bold transition">Tải Logo <input type="file" hidden accept="image/*" onchange="handleImageUpload(event, 'class')"></label>
                             </div>
                             <div class="flex gap-2">
                                 <button type="button" onclick="resetClassForm()" id="class-cancel-btn" class="hidden text-xs px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded font-medium">Hủy</button>
@@ -200,57 +80,33 @@
 
             <div class="xl:col-span-2 space-y-6">
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                    <h2 id="form-title" class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <i class="fas fa-user-plus text-indigo-500"></i> Thêm Bé Vào Danh Sách
-                    </h2>
+                    <h2 id="form-title" class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-user-plus text-indigo-500"></i> Thêm Bé Vào Danh Sách</h2>
                     <form id="student-form" onsubmit="handleStudentSubmit(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input type="hidden" id="student-id">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Họ và tên của bé</label>
-                            <input type="text" id="student-name" required placeholder="Nhập họ tên đầy đủ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Biệt danh (Nickname)</label>
-                            <input type="text" id="student-nickname" placeholder="Ví dụ: Su, Bin, Thỏ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Cơ sở (Chi nhánh)</label>
-                            <select id="student-branch" onchange="updateStudentClassDropdown()" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-indigo-700 bg-indigo-50"></select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Xếp vào Lớp học</label>
-                            <select id="student-class" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></select>
-                        </div>
-
+                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1">Họ và tên của bé</label><input type="text" id="student-name" required placeholder="Nhập họ tên đầy đủ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
+                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1">Biệt danh (Nickname)</label><input type="text" id="student-nickname" placeholder="Ví dụ: Su, Bin, Thỏ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
+                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1">Cơ sở (Chi nhánh)</label><select id="student-branch" onchange="updateStudentClassDropdown()" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-indigo-700 bg-indigo-50"></select></div>
+                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1">Xếp vào Lớp học</label><select id="student-class" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></select></div>
                         <div class="md:col-span-2 p-3 bg-slate-50 border border-slate-200 rounded-lg">
                             <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Ảnh đại diện của bé</label>
                             <div class="flex items-center gap-4">
                                 <input type="hidden" id="student-image" value="images/user.jpg">
                                 <img id="image-preview" src="images/user.jpg" alt="Preview" class="w-12 h-12 rounded-full object-cover border border-slate-300 shadow-sm bg-white">
-                                <label class="cursor-pointer bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-4 py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition shadow-sm border border-indigo-200 whitespace-nowrap">
-                                    <i class="fas fa-cloud-upload-alt"></i> Tải ảnh lên
-                                    <input type="file" hidden accept="image/*" onchange="handleImageUpload(event, 'student')">
-                                </label>
+                                <label class="cursor-pointer bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-4 py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition shadow-sm border border-indigo-200 whitespace-nowrap"><i class="fas fa-cloud-upload-alt"></i> Tải ảnh lên <input type="file" hidden accept="image/*" onchange="handleImageUpload(event, 'student')"></label>
                                 <span class="text-[11px] text-slate-400 hidden sm:block">Hoặc để trống sẽ tự lấy ảnh mặc định.</span>
                             </div>
                             <p id="student-upload-status" class="text-[12px] font-medium text-slate-500 mt-2 hidden"></p>
                         </div>
-
                         <div class="md:col-span-2 p-3 bg-slate-50 border border-slate-200 rounded-lg">
                             <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Âm thanh gọi tên (Tùy chọn)</label>
                             <div class="flex items-center gap-4">
                                 <input type="hidden" id="student-sound" value="">
-                                <label class="cursor-pointer bg-pink-100 hover:bg-pink-200 text-pink-700 px-4 py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition shadow-sm border border-pink-200 whitespace-nowrap">
-                                    <i class="fas fa-file-audio"></i> Tải tệp MP3
-                                    <input type="file" accept="audio/*" class="hidden" onchange="handleAudioUpload(event)">
-                                </label>
+                                <label class="cursor-pointer bg-pink-100 hover:bg-pink-200 text-pink-700 px-4 py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition shadow-sm border border-pink-200 whitespace-nowrap"><i class="fas fa-file-audio"></i> Tải tệp MP3<input type="file" accept="audio/*" class="hidden" onchange="handleAudioUpload(event)"></label>
                                 <div class="flex-1 text-sm font-medium text-slate-700 truncate" id="audio-file-name">Đang dùng giọng AI Nữ</div>
                                 <button type="button" onclick="clearAudioFile()" class="text-rose-500 hover:text-rose-700 text-xs font-bold px-2 py-1 bg-white rounded border border-rose-200 shadow-sm hidden" id="btn-clear-audio"><i class="fas fa-times"></i> Xóa</button>
                             </div>
                             <p id="audio-upload-status" class="text-[12px] font-medium text-slate-500 mt-2 hidden"></p>
                         </div>
-                        
                         <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100 pt-4 mt-2">
                             <div class="flex items-center space-x-3 h-full">
                                 <input type="checkbox" id="student-is-bus" onchange="toggleBusRouteInput()" class="w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500 cursor-pointer">
@@ -261,64 +117,39 @@
                                 <input type="text" id="student-bus-route" placeholder="VD: Tuyến số 1..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
                             </div>
                         </div>
-
                         <div class="md:col-span-2 flex justify-end gap-2 pt-2">
                             <button type="button" id="cancel-edit-btn" onclick="resetStudentForm()" class="hidden bg-slate-200 hover:bg-slate-300 text-slate-700 px-4 py-2 rounded-lg font-medium transition text-sm">Hủy bỏ</button>
                             <button type="submit" id="submit-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg font-medium transition text-sm">Lưu Học Sinh</button>
                         </div>
                     </form>
                 </div>
-
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                     <div class="px-6 py-4 border-b border-slate-200 bg-slate-50 flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
-                            <i class="fas fa-list-ul text-indigo-500"></i> Danh Sách Học Sinh Hiện Tại
-                        </h2>
+                        <h2 class="text-base font-bold text-slate-900 flex items-center gap-2"><i class="fas fa-list-ul text-indigo-500"></i> Danh Sách Học Sinh Hiện Tại</h2>
                         <div class="flex items-center gap-3">
                             <label for="filter-class" class="text-sm font-medium text-slate-600">Lọc nhanh:</label>
-                            <select id="filter-class" onchange="renderStudents()" class="px-3 py-1.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm bg-white font-medium">
-                                <option value="all">Tất cả học sinh</option>
-                            </select>
+                            <select id="filter-class" onchange="renderStudents()" class="px-3 py-1.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm bg-white font-medium"><option value="all">Tất cả học sinh</option></select>
                             <span id="student-count" class="text-xs bg-indigo-100 text-indigo-700 font-bold px-2.5 py-1.5 rounded-full">0 bé</span>
                         </div>
                     </div>
                     <div class="overflow-x-auto max-h-[500px]">
                         <table class="w-full text-left border-collapse">
-                            <thead>
-                                <tr class="bg-slate-100 text-slate-600 text-xs uppercase font-bold border-b border-slate-200">
-                                    <th class="px-6 py-3 w-16">Ảnh</th>
-                                    <th class="px-6 py-3">Họ tên & Nickname</th>
-                                    <th class="px-6 py-3">Lớp & Cơ sở</th>
-                                    <th class="px-6 py-3">Xe Buýt</th>
-                                    <th class="px-6 py-3 text-right">Thao tác</th>
-                                </tr>
-                            </thead>
+                            <thead><tr class="bg-slate-100 text-slate-600 text-xs uppercase font-bold border-b border-slate-200"><th class="px-6 py-3 w-16">Ảnh</th><th class="px-6 py-3">Họ tên & Nickname</th><th class="px-6 py-3">Lớp & Cơ sở</th><th class="px-6 py-3">Xe Buýt</th><th class="px-6 py-3 text-right">Thao tác</th></tr></thead>
                             <tbody id="student-table-body" class="divide-y divide-slate-100 text-sm"></tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </main>
-
         <main id="view-bus" class="max-w-7xl w-full mx-auto px-6 py-8 hidden">
             <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                 <div class="px-6 py-4 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
-                    <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
-                        <i class="fas fa-bus text-indigo-500"></i> Danh Sách Học Sinh Về Xe Buýt Trường
-                    </h2>
+                    <h2 class="text-base font-bold text-slate-900 flex items-center gap-2"><i class="fas fa-bus text-indigo-500"></i> Danh Sách Học Sinh Về Xe Buýt Trường</h2>
                     <span id="bus-student-count" class="text-xs bg-amber-100 text-amber-700 font-bold px-2.5 py-1.5 rounded-full">0 bé đi xe</span>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="bg-slate-100 text-slate-600 text-xs uppercase font-bold border-b border-slate-200">
-                                <th class="px-6 py-3 w-16">Ảnh</th>
-                                <th class="px-6 py-3">Họ và Tên</th>
-                                <th class="px-6 py-3">Lớp & Cơ sở</th>
-                                <th class="px-6 py-3">Tuyến Xe / Ghi Chú</th>
-                                <th class="px-6 py-3 text-right">Thao tác</th>
-                            </tr>
-                        </thead>
+                        <thead><tr class="bg-slate-100 text-slate-600 text-xs uppercase font-bold border-b border-slate-200"><th class="px-6 py-3 w-16">Ảnh</th><th class="px-6 py-3">Họ và Tên</th><th class="px-6 py-3">Lớp & Cơ sở</th><th class="px-6 py-3">Tuyến Xe / Ghi Chú</th><th class="px-6 py-3 text-right">Thao tác</th></tr></thead>
                         <tbody id="bus-table-body" class="divide-y divide-slate-100 text-sm"></tbody>
                     </table>
                 </div>
@@ -327,616 +158,35 @@
     </div>
 
     <script>
-        // =========================================================
-        // 1. CẤU HÌNH GITHUB 
-        // =========================================================
-        const GITHUB_TOKEN = "ghp_"+"HoeNm7xM6HBQUs"+"dLync9S8LYg1JXyM3h030b"; 
-        const GITHUB_USER = "schoolexit"; 
-        const GITHUB_REPO = "schoolexit.github.io"; 
-        const FILE_PATH = "database.js"; 
-        const UPLOAD_FOLDER_API = "images"; 
-        const IMAGE_PATH_WEB = "images";
-        const UPLOAD_FOLDER_AUDIO_API = "sounds"; 
-        const AUDIO_PATH_WEB = "sounds";
-
-
-        // =========================================================
-        // 2. CẤU HÌNH BẢNG PHÂN QUYỀN (RBAC) - VÔ CÙNG QUAN TRỌNG
-        // =========================================================
-        // Điền số điện thoại Firebase (+84) của giáo viên và Cơ sở họ được phép quản lý
-        const PHAN_QUYEN_CO_SO = {
-            '+84868462396': 'TanQuy Campus', // Ví dụ: Tân Quy
-            '+84329080195': 'HimLam Campus',     // Ví dụ: Him Lam
-            '+84333310277': 'Cơ sở 3'      // Ví dụ: NDD
-        };
-
-        // =========================================================
-        // 3. KIỂM TRA BẢO MẬT VÀ PHÂN QUYỀN
-        // =========================================================
-        let isMasterAdmin = false;
-        let assignedBranch = null;
-
-        (function checkSecurity() {
-            const sessionToken = sessionStorage.getItem('HL_ADMIN_SESSION');
-            const adminPhone = sessionStorage.getItem('HL_ADMIN_PHONE'); // Lấy số ĐT vừa đăng nhập
-
-            if (sessionToken !== 'AUTHENTICATED_OK' || !adminPhone) {
-                alert('Cảnh báo bảo mật: Vui lòng đăng nhập để truy cập.');
-                window.location.replace('login');
-                return;
-            }
-
-            // Kiểm tra: Có phải là Vua (Quản trị viên tối cao) không?
-            if (adminPhone === 'MASTER_KEY') {
-                isMasterAdmin = true;
-            } else {
-                // Nếu là giáo viên thường, tìm xem họ được cấp quyền quản lý cơ sở nào
-                assignedBranch = PHAN_QUYEN_CO_SO[adminPhone];
-                if (!assignedBranch) {
-                    alert(`Tài khoản có số điện thoại ${adminPhone} chưa được phân quyền quản lý cơ sở nào! Hãy liên hệ Quản trị viên cấp cao.`);
-                    sessionStorage.clear();
-                    window.location.replace('login');
-                }
-            }
-        })();
-
-        let localData = window.kindergartenData || { branches: [], classes: [], students: [] };
-        if (!localData.branches || localData.branches.length === 0) localData.branches = ["TanQuy Campus"];
-
-        // =========================================================
-        // 4. KHỞI CHẠY GIAO DIỆN THEO QUYỀN HẠN
-        // =========================================================
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // XÓA BỎ CÁC QUYỀN HẠN NẾU LÀ GIÁO VIÊN THƯỜNG (CHỈ QUẢN LÝ 1 CHI NHÁNH)
-            if (!isMasterAdmin) {
-                // 1. Ẩn hoàn toàn tính năng thêm/xóa Chi nhánh
-                document.getElementById('branch-management-block').style.display = 'none';
-                
-                // 2. Hiện thông báo tên Cơ sở đang quản lý lên Tiêu đề
-                document.getElementById('dashboard-title-branch').innerText = `(Chỉ hiển thị dữ liệu của: ${assignedBranch})`;
-
-                // 3. Khóa cứng Dropdown chọn Chi nhánh ở form Lớp học và Học sinh
-                const classBranchSelect = document.getElementById('class-branch');
-                const studentBranchSelect = document.getElementById('student-branch');
-                
-                classBranchSelect.innerHTML = `<option value="${assignedBranch}">${assignedBranch}</option>`;
-                classBranchSelect.disabled = true;
-
-                studentBranchSelect.innerHTML = `<option value="${assignedBranch}">${assignedBranch}</option>`;
-                studentBranchSelect.disabled = true;
-            } else {
-                // NẾU LÀ MASTER ADMIN -> VẼ ĐẦY ĐỦ DROPDOWN CHI NHÁNH
-                const list = document.getElementById('branch-list');
-                const classBranchSelect = document.getElementById('class-branch');
-                const studentBranchSelect = document.getElementById('student-branch');
-                
-                list.innerHTML = ''; classBranchSelect.innerHTML = ''; studentBranchSelect.innerHTML = '';
-                
-                localData.branches.forEach((b, index) => {
-                    const isDefault = index === 0;
-                    list.innerHTML += `
-                        <div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
-                            <span class="text-sm font-bold text-slate-700">${b}</span>
-                            ${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}
-                        </div>`;
-                    classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
-                    studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
-                });
-            }
-
-            renderClasses();
-            renderStudents();
-            renderBusStudents();
-        });
-
-
-        // =========================================================
-        // CÁC HÀM UPLOAD (GIỮ NGUYÊN)
-        // =========================================================
-        async function handleImageUpload(event, type) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const isClass = type === 'class';
-            const statusEl = document.getElementById(isClass ? 'class-upload-status' : 'student-upload-status');
-            const hiddenImageInput = document.getElementById(isClass ? 'class-logo' : 'student-image');
-            const previewImage = document.getElementById(isClass ? 'class-logo-preview' : 'image-preview');
-
-            statusEl.classList.remove('hidden');
-            statusEl.innerHTML = '<i class="fas fa-spinner fa-spin text-indigo-500"></i> Đang nén ảnh...';
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = new Image();
-                img.onload = async function() {
-                    const canvas = document.createElement('canvas');
-                    const MAX_WIDTH = 300; const MAX_HEIGHT = 300;
-                    let width = img.width; let height = img.height;
-
-                    if (width > height) { if (width > MAX_WIDTH) { height *= MAX_WIDTH / width; width = MAX_WIDTH; } } 
-                    else { if (height > MAX_HEIGHT) { width *= MAX_HEIGHT / height; height = MAX_HEIGHT; } }
-                    
-                    canvas.width = width; canvas.height = height;
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0, width, height);
-
-                    const base64Content = canvas.toDataURL('image/jpeg', 0.7).split(',')[1];
-                    const fileName = `img_${Date.now()}.jpg`;
-                    const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${UPLOAD_FOLDER_API}/${fileName}`;
-
-                    try {
-                        const response = await fetch(apiUrl, {
-                            method: 'PUT',
-                            headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}`, 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ message: `Upload ảnh`, content: base64Content })
-                        });
-                        if (!response.ok) throw new Error((await response.json()).message);
-
-                        hiddenImageInput.value = `${IMAGE_PATH_WEB}/${fileName}`;
-                        previewImage.src = `data:image/jpeg;base64,${base64Content}`;
-                        statusEl.innerHTML = `<span class="text-emerald-600"><i class="fas fa-check"></i> Đã tải xong!</span>`;
-                        setTimeout(() => statusEl.classList.add('hidden'), 3000);
-                    } catch (err) { statusEl.innerHTML = `<span class="text-rose-500">Lỗi: ${err.message}</span>`; }
-                };
-                img.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-
-        async function handleAudioUpload(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const statusEl = document.getElementById('audio-upload-status');
-            const hiddenAudioInput = document.getElementById('student-sound');
-            const fileNameDisplay = document.getElementById('audio-file-name');
-            const btnClear = document.getElementById('btn-clear-audio');
-
-            if (file.size > 1024 * 1024) return alert('Lỗi: File quá lớn (> 1MB).');
-
-            statusEl.classList.remove('hidden');
-            statusEl.innerHTML = '<i class="fas fa-spinner fa-spin text-pink-500"></i> Đang tải âm thanh...';
-
-            const reader = new FileReader();
-            reader.onload = async function(e) {
-                const base64Content = e.target.result.split(',')[1];
-                const ext = file.name.split('.').pop().toLowerCase();
-                const fileName = `audio_${Date.now()}.${ext}`;
-                const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${UPLOAD_FOLDER_AUDIO_API}/${fileName}`;
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'PUT',
-                        headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}`, 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message: `Upload âm thanh`, content: base64Content })
-                    });
-                    if (!response.ok) throw new Error((await response.json()).message);
-
-                    hiddenAudioInput.value = `${AUDIO_PATH_WEB}/${fileName}`;
-                    fileNameDisplay.innerText = fileName;
-                    fileNameDisplay.classList.replace('text-slate-700', 'text-pink-600');
-                    btnClear.classList.remove('hidden');
-                    statusEl.innerHTML = `<span class="text-emerald-600"><i class="fas fa-check"></i> Tải xong!</span>`;
-                    setTimeout(() => statusEl.classList.add('hidden'), 3000);
-                } catch (err) { statusEl.innerHTML = `<span class="text-rose-500">Lỗi: ${err.message}</span>`; }
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function clearAudioFile() {
-            document.getElementById('student-sound').value = "";
-            document.getElementById('audio-file-name').innerText = "Đang dùng giọng AI Nữ";
-            document.getElementById('audio-file-name').classList.replace('text-pink-600', 'text-slate-700');
-            document.getElementById('btn-clear-audio').classList.add('hidden');
-        }
-
-        async function saveToGitHub() {
-            const fileContent = "window.kindergartenData = " + JSON.stringify(localData, null, 4) + ";";
-            const encodedContent = btoa(unescape(encodeURIComponent(fileContent)));
-            const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${FILE_PATH}`;
-            
-            const btn = document.getElementById('save-btn');
-            const originalHTML = btn.innerHTML;
-            try {
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang đồng bộ...';
-                const getRes = await fetch(apiUrl, { headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}` } });
-                let currentSha = null;
-                if (getRes.ok) { currentSha = (await getRes.json()).sha; }
-                
-                const putRes = await fetch(apiUrl, {
-                    method: 'PUT',
-                    headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: "Dashboard: Cập nhật", content: encodedContent, sha: currentSha })
-                });
-                if (!putRes.ok) throw new Error((await putRes.json()).message);
-                
-                btn.innerHTML = '<i class="fas fa-check"></i> Đã Đồng Bộ!';
-                btn.classList.replace('bg-emerald-500', 'bg-blue-600');
-                setTimeout(() => { btn.innerHTML = originalHTML; btn.classList.replace('bg-blue-600', 'bg-emerald-500'); }, 2000);
-            } catch (error) { alert("Lỗi đồng bộ: " + error.message); btn.innerHTML = originalHTML; }
-        }
-
-        // =========================================================
-        // QUẢN LÝ LỚP & SẮP XẾP
-        // =========================================================
-        function updateStudentClassDropdown(selectedClass = '') {
-            // Xác định xem đang lấy giá trị của Select hay giá trị Phân quyền
-            const currentBranch = isMasterAdmin ? document.getElementById('student-branch').value : assignedBranch;
-            
-            const classSelect = document.getElementById('student-class');
-            classSelect.innerHTML = '';
-            
-            const branchClasses = localData.classes.filter(c => c.branch === currentBranch);
-            
-            if (branchClasses.length === 0) {
-                classSelect.innerHTML = '<option value="">-- Chưa có lớp --</option>';
-            } else {
-                branchClasses.forEach(c => { classSelect.innerHTML += `<option value="${c.name}">${c.name}</option>`; });
-                if (selectedClass) classSelect.value = selectedClass;
-            }
-        }
-
-        function addBranch() {
-            if (!isMasterAdmin) return;
-            const val = document.getElementById('new-branch-input').value.trim();
-            if (!val) return alert("Vui lòng nhập tên chi nhánh!");
-            if (localData.branches.includes(val)) return alert("Đã tồn tại!");
-            localData.branches.push(val); document.getElementById('new-branch-input').value = '';
-            
-            // Xóa đi vẽ lại phần Master
-            const list = document.getElementById('branch-list');
-            const classBranchSelect = document.getElementById('class-branch');
-            const studentBranchSelect = document.getElementById('student-branch');
-            list.innerHTML = ''; classBranchSelect.innerHTML = ''; studentBranchSelect.innerHTML = '';
-            
-            localData.branches.forEach((b, index) => {
-                const isDefault = index === 0;
-                list.innerHTML += `<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${b}</span>${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;
-                classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
-                studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
-            });
-            renderClasses();
-        }
-
-        function deleteBranch(branchName) {
-            if (!isMasterAdmin) return;
-            if (localData.classes.some(c => c.branch === branchName)) return alert("Không thể xóa do đang chứa lớp học!");
-            if (!confirm(`Xóa chi nhánh ${branchName}?`)) return;
-            localData.branches = localData.branches.filter(b => b !== branchName);
-            
-            // Xóa đi vẽ lại
-            const list = document.getElementById('branch-list');
-            const classBranchSelect = document.getElementById('class-branch');
-            const studentBranchSelect = document.getElementById('student-branch');
-            list.innerHTML = ''; classBranchSelect.innerHTML = ''; studentBranchSelect.innerHTML = '';
-            
-            localData.branches.forEach((b, index) => {
-                const isDefault = index === 0;
-                list.innerHTML += `<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${b}</span>${isDefault ? `<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>` : `<button type="button" onclick="deleteBranch('${b}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;
-                classBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
-                studentBranchSelect.innerHTML += `<option value="${b}">${b}</option>`;
-            });
-            renderClasses();
-        }
-
-        function renderClasses() {
-            const classList = document.getElementById('class-list');
-            const filterClassSelect = document.getElementById('filter-class');
-            
-            classList.innerHTML = ''; 
-            filterClassSelect.innerHTML = '<option value="all">Tất cả học sinh</option>';
-            
-            localData.classes.forEach((cls, index) => {
-                // NẾU LÀ GIÁO VIÊN THƯỜNG -> CHỈ VẼ CÁC LỚP CỦA HỌ, ẨN CÁC LỚP KHÁC
-                if (!isMasterAdmin && cls.branch !== assignedBranch) return;
-
-                // NÚT SẮP XẾP CHỈ DÀNH CHO MASTER ADMIN (Tránh lỗi đảo lộn mảng)
-                const sortButtons = isMasterAdmin ? `
-                    <div class="w-px h-4 bg-slate-200 mx-1"></div>
-                    <button type="button" onclick="moveClass(${index}, -1)" class="text-indigo-500 p-2 rounded transition ${index === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100'}"><i class="fas fa-chevron-up text-xs"></i></button>
-                    <button type="button" onclick="moveClass(${index}, 1)" class="text-indigo-500 p-2 rounded transition ${index === localData.classes.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-indigo-700 hover:bg-indigo-100'}"><i class="fas fa-chevron-down text-xs"></i></button>
-                ` : '';
-
-                const logoSrc = cls.image || 'images/user.jpg';
-
-                classList.innerHTML += `
-                    <div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
-                        <div class="flex items-center gap-3">
-                            <img src="${logoSrc}" class="w-8 h-8 rounded-full border border-slate-200 object-cover bg-white">
-                            <div>
-                                <div class="font-bold text-slate-700 text-sm">${cls.name}</div>
-                                <div class="text-[10px] text-slate-400 uppercase tracking-wide">${cls.branch}</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-1">
-                            <button type="button" onclick="editClass('${cls.id}')" class="text-indigo-500 hover:text-indigo-700 hover:bg-indigo-50 p-2 rounded transition"><i class="fas fa-edit text-xs"></i></button>
-                            ${sortButtons}
-                            <div class="w-px h-4 bg-slate-200 mx-1"></div>
-                            <button type="button" onclick="deleteClass('${cls.id}')" class="text-rose-500 hover:text-rose-700 hover:bg-rose-50 p-2 rounded transition"><i class="fas fa-trash-alt text-xs"></i></button>
-                        </div>
-                    </div>`;
-                
-                filterClassSelect.innerHTML += `<option value="${cls.branch}|${cls.name}">${cls.name} (${cls.branch})</option>`;
-            });
-
-            updateStudentClassDropdown();
-        }
-
-        function moveClass(index, direction) {
-            if (!isMasterAdmin) return;
-            const newIndex = index + direction;
-            if (newIndex < 0 || newIndex >= localData.classes.length) return;
-            const temp = localData.classes[index];
-            localData.classes[index] = localData.classes[newIndex];
-            localData.classes[newIndex] = temp;
-            renderClasses();
-        }
-
-        function handleClassSubmit(e) {
-            e.preventDefault();
-            const id = document.getElementById('class-id').value;
-            const name = document.getElementById('class-name').value.trim();
-            const branch = isMasterAdmin ? document.getElementById('class-branch').value : assignedBranch;
-            const image = document.getElementById('class-logo').value.trim();
-
-            if (id) {
-                const clsIndex = localData.classes.findIndex(c => c.id === id);
-                if (clsIndex !== -1) {
-                    const oldName = localData.classes[clsIndex].name;
-                    localData.classes[clsIndex] = { id, name, branch, image };
-                    if (oldName !== name) {
-                        localData.students.forEach(s => { if (s.class === oldName) s.class = name; });
-                    }
-                }
-            } else {
-                if (localData.classes.some(c => c.name.toLowerCase() === name.toLowerCase() && c.branch === branch)) {
-                    return alert("Tên lớp này đã tồn tại ở chi nhánh này!");
-                }
-                localData.classes.push({ id: 'cl-' + Date.now(), name, branch, image });
-            }
-
-            resetClassForm(); renderClasses(); renderStudents();
-        }
-
-        function editClass(id) {
-            const cls = localData.classes.find(c => c.id === id);
-            if (!cls) return;
-            
-            // Chặn Edit nếu không phải lớp của mình
-            if (!isMasterAdmin && cls.branch !== assignedBranch) return alert("Bạn không có quyền sửa lớp của cơ sở khác!");
-
-            document.getElementById('class-id').value = cls.id;
-            document.getElementById('class-name').value = cls.name;
-            if (isMasterAdmin) document.getElementById('class-branch').value = cls.branch;
-            document.getElementById('class-logo').value = cls.image;
-            document.getElementById('class-logo-preview').src = cls.image || 'images/user.jpg';
-            
-            document.getElementById('class-submit-btn').innerText = "Cập Nhật";
-            document.getElementById('class-submit-btn').classList.replace('bg-indigo-600', 'bg-amber-500');
-            document.getElementById('class-cancel-btn').classList.remove('hidden');
-        }
-
-        function deleteClass(id) {
-            const cls = localData.classes.find(c => c.id === id);
-            if (!cls) return;
-
-            if (!isMasterAdmin && cls.branch !== assignedBranch) return alert("Bạn không có quyền xóa lớp của cơ sở khác!");
-            if (localData.students.some(s => s.class === cls.name && s.branch === cls.branch)) return alert(`Lớp đang có học sinh!`);
-            
-            if (!confirm(`Xóa lớp ${cls.name}?`)) return;
-            localData.classes = localData.classes.filter(c => c.id !== id);
-            renderClasses();
-        }
-
-        function resetClassForm() {
-            document.getElementById('class-form').reset();
-            document.getElementById('class-id').value = '';
-            document.getElementById('class-logo').value = '';
-            document.getElementById('class-logo-preview').src = 'images/user.jpg';
-            
-            if (isMasterAdmin) {
-                document.getElementById('class-branch').value = localData.branches[0];
-            }
-
-            document.getElementById('class-submit-btn').innerText = "Lưu Lớp";
-            document.getElementById('class-submit-btn').classList.replace('bg-amber-500', 'bg-indigo-600');
-            document.getElementById('class-cancel-btn').classList.add('hidden');
-        }
-
-        // =========================================================
-        // QUẢN LÝ HỌC SINH
-        // =========================================================
-        function renderStudents() {
-            const tbody = document.getElementById('student-table-body');
-            const filterValue = document.getElementById('filter-class').value;
-            
-            let filtered = localData.students;
-
-            // Nếu là Giáo viên thường -> ÉP BUỘC CHỈ HIỂN THỊ HỌC SINH CỦA CƠ SỞ MÌNH
-            if (!isMasterAdmin) {
-                filtered = filtered.filter(s => s.branch === assignedBranch);
-            }
-
-            // Nếu có dùng bộ lọc trên giao diện
-            if (filterValue !== 'all') {
-                const [fBranch, fClass] = filterValue.split('|');
-                filtered = filtered.filter(s => s.class === fClass && s.branch === fBranch);
-            }
-
-            document.getElementById('student-count').innerText = `${filtered.length} bé`;
-            tbody.innerHTML = '';
-
-            if (filtered.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" class="text-center py-10 text-slate-400 font-medium">Chưa có dữ liệu học sinh nào.</td></tr>`;
-                return;
-            }
-
-            filtered.forEach((student) => {
-                const busBadge = student.isBus ? `<span class="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs font-bold rounded-full border border-amber-200">Đi xe</span>` : `<span class="text-xs text-slate-400">Tự đón</span>`;
-                const nickDisplay = student.nickname ? ` <span class="text-indigo-600 font-bold">(${student.nickname})</span>` : '';
-                const imgDisplay = student.image || 'images/user.jpg';
-
-                tbody.innerHTML += `
-                    <tr class="hover:bg-slate-50 transition border-b border-slate-100">
-                        <td class="px-6 py-2"><img src="${imgDisplay}" class="w-10 h-10 rounded-full object-cover border border-slate-200 bg-white"></td>
-                        <td class="px-6 py-3.5 text-slate-900 font-semibold">${student.name}${nickDisplay}</td>
-                        <td class="px-6 py-3.5">
-                            <div class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold inline-block whitespace-nowrap">${student.class}</div>
-                            <div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">${student.branch}</div>
-                        </td>
-                        <td class="px-6 py-3.5">${busBadge}</td>
-                        <td class="px-6 py-3.5 text-right space-x-2 whitespace-nowrap">
-                            <button onclick="editStudent('${student.id}')" class="text-indigo-600 hover:text-indigo-900 text-xs border border-indigo-200 px-2 py-1 rounded">Sửa</button>
-                            <button onclick="deleteStudent('${student.id}')" class="text-rose-600 hover:text-rose-900 text-xs border border-rose-200 px-2 py-1 rounded">Xóa</button>
-                        </td>
-                    </tr>`;
-            });
-        }
-
-        function renderBusStudents() {
-            const tbody = document.getElementById('bus-table-body');
-            
-            let busStudents = localData.students.filter(s => s.isBus === true);
-            if (!isMasterAdmin) busStudents = busStudents.filter(s => s.branch === assignedBranch);
-
-            document.getElementById('bus-student-count').innerText = `${busStudents.length} bé`;
-            tbody.innerHTML = '';
-
-            busStudents.forEach((student) => {
-                const imgDisplay = student.image || 'images/user.jpg';
-                tbody.innerHTML += `
-                    <tr class="hover:bg-slate-50 transition border-b border-slate-100">
-                        <td class="px-6 py-2"><img src="${imgDisplay}" class="w-10 h-10 rounded-full object-cover border border-slate-200 bg-white"></td>
-                        <td class="px-6 py-3.5 font-semibold text-slate-900">${student.name}</td>
-                        <td class="px-6 py-3.5">
-                            <div class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold inline-block whitespace-nowrap">${student.class}</div>
-                            <div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">${student.branch}</div>
-                        </td>
-                        <td class="px-6 py-3.5 font-medium text-slate-700">${student.busRoute || 'Chưa phân tuyến'}</td>
-                        <td class="px-6 py-3.5 text-right space-x-2">
-                            <button onclick="editStudentFromBus('${student.id}')" class="text-indigo-600 hover:text-indigo-900 text-xs border border-indigo-200 px-2 py-1 rounded">Sửa</button>
-                        </td>
-                    </tr>`;
-            });
-        }
-
-        function editStudentFromBus(id) { switchTab('general'); editStudent(id); }
-
-        function handleStudentSubmit(e) {
-            e.preventDefault();
-            const id = document.getElementById('student-id').value;
-            const name = document.getElementById('student-name').value.trim();
-            const nickname = document.getElementById('student-nickname').value.trim();
-            
-            // Xử lý nhánh an toàn
-            const sBranch = isMasterAdmin ? document.getElementById('student-branch').value : assignedBranch;
-            const sClass = document.getElementById('student-class').value;
-            if (!sClass) return alert('Vui lòng chọn lớp học!');
-
-            const sound = document.getElementById('student-sound').value.trim();
-            const isBus = document.getElementById('student-is-bus').checked;
-            const busRoute = document.getElementById('student-bus-route').value.trim();
-            
-            let image = document.getElementById('student-image').value.trim();
-            if (!image) { image = "images/user.jpg"; }
-
-            if (id) {
-                const index = localData.students.findIndex(s => s.id === id);
-                if (index !== -1) localData.students[index] = { id, name, nickname, branch: sBranch, class: sClass, image, sound, isBus, busRoute };
-            } else {
-                localData.students.push({ id: 'st-' + Date.now(), name, nickname, branch: sBranch, class: sClass, image, sound, isBus, busRoute });
-            }
-
-            resetStudentForm(); renderStudents(); renderBusStudents();
-        }
-
-        function editStudent(id) {
-            const student = localData.students.find(s => s.id === id);
-            if (!student) return;
-
-            if (!isMasterAdmin && student.branch !== assignedBranch) return alert("Bạn không có quyền sửa học sinh của cơ sở khác!");
-
-            document.getElementById('student-id').value = student.id;
-            document.getElementById('student-name').value = student.name;
-            document.getElementById('student-nickname').value = student.nickname || '';
-            
-            if (isMasterAdmin) document.getElementById('student-branch').value = student.branch || localData.branches[0];
-            updateStudentClassDropdown(student.class);
-            
-            const imgPath = student.image || 'images/user.jpg';
-            document.getElementById('student-image').value = imgPath;
-            document.getElementById('image-preview').src = imgPath;
-            
-            document.getElementById('student-sound').value = student.sound || '';
-            if (student.sound) {
-                document.getElementById('audio-file-name').innerText = student.sound;
-                document.getElementById('audio-file-name').classList.replace('text-slate-700', 'text-pink-600');
-                document.getElementById('btn-clear-audio').classList.remove('hidden');
-            } else { clearAudioFile(); }
-
-            document.getElementById('student-is-bus').checked = student.isBus || false;
-            document.getElementById('student-bus-route').value = student.busRoute || '';
-            
-            toggleBusRouteInput();
-            document.getElementById('form-title').innerHTML = `<i class="fas fa-edit text-amber-500"></i> Chỉnh Sửa Thông Tin Bé`;
-            document.getElementById('submit-btn').innerText = "Cập Nhật Học Sinh";
-            document.getElementById('cancel-edit-btn').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function deleteStudent(id) {
-            const student = localData.students.find(s => s.id === id);
-            if (!isMasterAdmin && student.branch !== assignedBranch) return alert("Bạn không có quyền xóa học sinh của cơ sở khác!");
-            
-            if (!confirm('Bạn có chắc muốn xóa bé này?')) return;
-            localData.students = localData.students.filter(s => s.id !== id);
-            renderStudents(); renderBusStudents();
-        }
-
-        function resetStudentForm() {
-            document.getElementById('student-form').reset();
-            document.getElementById('student-id').value = '';
-            document.getElementById('student-image').value = 'images/user.jpg';
-            document.getElementById('image-preview').src = 'images/user.jpg';
-            clearAudioFile();
-            
-            document.getElementById('form-title').innerHTML = `<i class="fas fa-user-plus text-indigo-500"></i> Thêm Bé Vào Danh Sách`;
-            document.getElementById('submit-btn').innerText = "Lưu Học Sinh";
-            document.getElementById('cancel-edit-btn').classList.add('hidden');
-            toggleBusRouteInput();
-            
-            if (isMasterAdmin) {
-                document.getElementById('student-branch').value = localData.branches[0];
-            }
-            updateStudentClassDropdown();
-        }
-
-        function switchTab(tabName) {
-            const viewGeneral = document.getElementById('view-general');
-            const viewBus = document.getElementById('view-bus');
-            const btnGeneral = document.getElementById('btn-tab-general');
-            const btnBus = document.getElementById('btn-tab-bus');
-
-            if (tabName === 'general') {
-                viewGeneral.classList.remove('hidden'); viewBus.classList.add('hidden');
-                btnGeneral.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20";
-                btnBus.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800";
-                renderStudents();
-            } else if (tabName === 'bus') {
-                viewGeneral.classList.add('hidden'); viewBus.classList.remove('hidden');
-                btnBus.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20";
-                btnGeneral.className = "w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800";
-                renderBusStudents();
-            }
-        }
-
-        function toggleBusRouteInput() {
-            const isBusChecked = document.getElementById('student-is-bus').checked;
-            const container = document.getElementById('bus-route-container');
-            if (isBusChecked) container.classList.remove('hidden');
-            else { container.classList.add('hidden'); document.getElementById('student-bus-route').value = ''; }
-        }
+        const GITHUB_TOKEN="ghp_"+"HoeNm7xM6HBQUs"+"dLync9S8LYg1JXyM3h030b";const GITHUB_USER="schoolexit";const GITHUB_REPO="schoolexit.github.io";const FILE_PATH="database.js";const UPLOAD_FOLDER_API="images";const IMAGE_PATH_WEB="images";const UPLOAD_FOLDER_AUDIO_API="sounds";const AUDIO_PATH_WEB="sounds";
+        const PHAN_QUYEN_CO_SO={'+84868462396':'TanQuy Campus','+84329080195':'HimLam Campus','+84333310277':'Cơ sở 3'};
+        let isMasterAdmin=!1;let assignedBranch=null;
+        (function checkSecurity(){const e=sessionStorage.getItem('HL_ADMIN_SESSION'),t=sessionStorage.getItem('HL_ADMIN_PHONE');if(e!=='AUTHENTICATED_OK'||!t){alert('\x43\x1ea\x63\x6e\x68\x20\x62\x61\x6f\x20\x62\x61\x6f\x20\x6d\x61\x74\x3a\x20\x56\x75\x69\x20\x6c\x6f\x6e\x67\x20\x64\x61\x6e\x67\x20\x6e\x68\x61\x70\x20\x64\x65\x20\x74\x72\x75\x79\x20\x63\x61\x70\x2e');window.location.replace('login');return}if(t==='MASTER_KEY')isMasterAdmin=!0;else{assignedBranch=PHAN_QUYEN_CO_SO[t];if(!assignedBranch){alert(`Tài khoản có số điện thoại ${t} chưa được phân quyền quản lý cơ sở nào! Hãy liên hệ Quản trị viên cấp cao.`);sessionStorage.clear();window.location.replace('login')}}})();
+        let localData=window.kindergartenData||{branches:[],classes:[],students:[]};if(!localData.branches||0===localData.branches.length)localData.branches=["TanQuy Campus"];
+        const _$=e=>document.getElementById(e);
+        document.addEventListener('DOMContentLoaded',()=>{if(!isMasterAdmin){_$('branch-management-block').style.display='none';_$('dashboard-title-branch').innerText=`(Chỉ hiển thị dữ liệu của: ${assignedBranch})`;const e=_$('class-branch'),t=_$('student-branch');e.innerHTML=`<option value="${assignedBranch}">${assignedBranch}</option>`;e.disabled=!0;t.innerHTML=`<option value="${assignedBranch}">${assignedBranch}</option>`;t.disabled=!0}else{const e=_$('branch-list'),t=_$('class-branch'),n=_$('student-branch');e.innerHTML='';t.innerHTML='';n.innerHTML='';localData.branches.forEach((o,a)=>{const s=0===a;e.innerHTML+=`<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${o}</span>${s?`<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>`:`<button type="button" onclick="deleteBranch('${o}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;t.innerHTML+=`<option value="${o}">${o}</option>`;n.innerHTML+=`<option value="${o}">${o}</option>`})}renderClasses();renderStudents();renderBusStudents()});
+        async function handleImageUpload(e,t){const n=e.target.files[0];if(!n)return;const o='class'===t,a=_$(o?'class-upload-status':'student-upload-status'),s=_$(o?'class-logo':'student-image'),r=_$(o?'class-logo-preview':'image-preview');a.classList.remove('hidden');a.innerHTML='<i class="fas fa-spinner fa-spin text-indigo-500"></i> Đang nén ảnh...';const l=new FileReader;l.onload=function(e){const t=new Image;t.onload=async function(){const e=document.createElement('canvas'),n=300,o=300;let l=t.width,c=t.height;l>c?l>n&&(c*=n/l,l=n):c>o&&(l*=o/c,c=o);e.width=l;e.height=c;const d=e.getContext('2d');d.drawImage(t,0,0,l,c);const u=e.toDataURL('image/jpeg',.7).split(',')[1],i=`img_${Date.now()}.jpg`,m=`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${UPLOAD_FOLDER_API}/${i}`;try{const e=await fetch(m,{method:'PUT',headers:{Authorization:`Bearer ${GITHUB_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Upload ảnh`,content:u})});if(!e.ok)throw new Error((await e.json()).message);s.value=`${IMAGE_PATH_WEB}/${i}`;r.src=`data:image/jpeg;base64,${u}`;a.innerHTML='<span class="text-emerald-600"><i class="fas fa-check"></i> Đã tải xong!</span>';setTimeout(()=>a.classList.add('hidden'),3e3)}catch(e){a.innerHTML=`<span class="text-rose-500">Lỗi: ${e.message}</span>`}};t.src=e.target.result};l.readAsDataURL(n)}
+        async function handleAudioUpload(e){const t=e.target.files[0];if(!t)return;const n=_$('audio-upload-status'),o=_$('student-sound'),a=_$('audio-file-name'),s=_$('btn-clear-audio');if(t.size>1048576)return alert('Lỗi: File quá lớn (> 1MB).');n.classList.remove('hidden');n.innerHTML='<i class="fas fa-spinner fa-spin text-pink-500"></i> Đang tải âm thanh...';const r=new FileReader;r.onload=async function(e){const r=e.target.result.split(',')[1],l=t.name.split('.').pop().toLowerCase(),c=`audio_${Date.now()}.${l}`,d=`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${UPLOAD_FOLDER_AUDIO_API}/${c}`;try{const e=await fetch(d,{method:'PUT',headers:{Authorization:`Bearer ${GITHUB_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Upload âm thanh`,content:r})});if(!e.ok)throw new Error((await e.json()).message);o.value=`${AUDIO_PATH_WEB}/${c}`;a.innerText=c;a.classList.replace('text-slate-700','text-pink-600');s.classList.remove('hidden');n.innerHTML='<span class="text-emerald-600"><i class="fas fa-check"></i> Tải xong!</span>';setTimeout(()=>n.classList.add('hidden'),3e3)}catch(e){n.innerHTML=`<span class="text-rose-500">Lỗi: ${e.message}</span>`}};r.readAsDataURL(t)}
+        function clearAudioFile(){_$('student-sound').value="";_$('audio-file-name').innerText="Đang dùng giọng AI Nữ";_$('audio-file-name').classList.replace('text-pink-600','text-slate-700');_$('btn-clear-audio').classList.add('hidden')}
+        async function saveToGitHub(){const e="window.kindergartenData = "+JSON.stringify(localData,null,4)+";",t=btoa(unescape(encodeURIComponent(e))),n=`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${FILE_PATH}`,o=_$('save-btn'),a=o.innerHTML;try{o.innerHTML='<i class="fas fa-spinner fa-spin"></i> Đang đồng bộ...';const e=await fetch(n,{headers:{Authorization:`Bearer ${GITHUB_TOKEN}`}});let s=null;e.ok&&(s=(await e.json()).sha);const r=await fetch(n,{method:'PUT',headers:{Authorization:`Bearer ${GITHUB_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify({message:"Dashboard: Cập nhật",content:t,sha:s})});if(!r.ok)throw new Error((await r.json()).message);o.innerHTML='<i class="fas fa-check"></i> Đã Đồng Bộ!';o.classList.replace('bg-emerald-500','bg-blue-600');setTimeout(()=>{o.innerHTML=a;o.classList.replace('bg-blue-600','bg-emerald-500')},2e3)}catch(e){alert("Lỗi đồng bộ: "+e.message);o.innerHTML=a}}
+        function updateStudentClassDropdown(e=''){const t=isMasterAdmin?_$('student-branch').value:assignedBranch,n=_$('student-class');n.innerHTML='';const o=localData.classes.filter(e=>e.branch===t);0===o.length?n.innerHTML='<option value="">-- Chưa có lớp --</option>':(o.forEach(e=>{n.innerHTML+=`<option value="${e.name}">${e.name}</option>`}),e&&(n.value=e))}
+        function addBranch(){if(!isMasterAdmin)return;const e=_$('new-branch-input').value.trim();if(!e)return alert("Vui lòng nhập tên chi nhánh!");if(localData.branches.includes(e))return alert("Đã tồn tại!");localData.branches.push(e);_$('new-branch-input').value='';const t=_$('branch-list'),n=_$('class-branch'),o=_$('student-branch');t.innerHTML='';n.innerHTML='';o.innerHTML='';localData.branches.forEach((e,a)=>{const s=0===a;t.innerHTML+=`<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${e}</span>${s?`<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>`:`<button type="button" onclick="deleteBranch('${e}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;n.innerHTML+=`<option value="${e}">${e}</option>`;o.innerHTML+=`<option value="${e}">${e}</option>`});renderClasses()}
+        function deleteBranch(e){if(!isMasterAdmin)return;if(localData.classes.some(t=>t.branch===e))return alert("Không thể xóa do đang chứa lớp học!");if(!confirm(`Xóa chi nhánh ${e}?`))return;localData.branches=localData.branches.filter(t=>t!==e);const t=_$('branch-list'),n=_$('class-branch'),o=_$('student-branch');t.innerHTML='';n.innerHTML='';o.innerHTML='';localData.branches.forEach((e,a)=>{const s=0===a;t.innerHTML+=`<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${e}</span>${s?`<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>`:`<button type="button" onclick="deleteBranch('${e}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;n.innerHTML+=`<option value="${e}">${e}</option>`;o.innerHTML+=`<option value="${e}">${e}</option>`});renderClasses()}
+        function renderClasses(){const e=_$('class-list'),t=_$('filter-class');e.innerHTML='';t.innerHTML='<option value="all">Tất cả học sinh</option>';localData.classes.forEach((n,o)=>{if(!isMasterAdmin&&n.branch!==assignedBranch)return;const a=isMasterAdmin?`<div class="w-px h-4 bg-slate-200 mx-1"></div><button type="button" onclick="moveClass(${o}, -1)" class="text-indigo-500 p-2 rounded transition ${0===o?'opacity-30 cursor-not-allowed':'hover:text-indigo-700 hover:bg-indigo-100'}"><i class="fas fa-chevron-up text-xs"></i></button><button type="button" onclick="moveClass(${o}, 1)" class="text-indigo-500 p-2 rounded transition ${o===localData.classes.length-1?'opacity-30 cursor-not-allowed':'hover:text-indigo-700 hover:bg-indigo-100'}"><i class="fas fa-chevron-down text-xs"></i></button>`:'';const s=n.image||'images/user.jpg';e.innerHTML+=`<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><div class="flex items-center gap-3"><img src="${s}" class="w-8 h-8 rounded-full border border-slate-200 object-cover bg-white"><div><div class="font-bold text-slate-700 text-sm">${n.name}</div><div class="text-[10px] text-slate-400 uppercase tracking-wide">${n.branch}</div></div></div><div class="flex items-center gap-1"><button type="button" onclick="editClass('${n.id}')" class="text-indigo-500 hover:text-indigo-700 hover:bg-indigo-50 p-2 rounded transition"><i class="fas fa-edit text-xs"></i></button>${a}<div class="w-px h-4 bg-slate-200 mx-1"></div><button type="button" onclick="deleteClass('${n.id}')" class="text-rose-500 hover:text-rose-700 hover:bg-rose-50 p-2 rounded transition"><i class="fas fa-trash-alt text-xs"></i></button></div></div>`;t.innerHTML+=`<option value="${n.branch}|${n.name}">${n.name} (${n.branch})</option>`});updateStudentClassDropdown()}
+        function moveClass(e,t){if(!isMasterAdmin)return;const n=e+t;if(n<0||n>=localData.classes.length)return;const o=localData.classes[e];localData.classes[e]=localData.classes[n];localData.classes[n]=o;renderClasses()}
+        function handleClassSubmit(e){e.preventDefault();const t=_$('class-id').value,n=_$('class-name').value.trim(),o=isMasterAdmin?_$('class-branch').value:assignedBranch,a=_$('class-logo').value.trim();if(t){const e=localData.classes.findIndex(e=>e.id===t);if(-1!==e){const s=localData.classes[e].name;localData.classes[e]={id:t,name:n,branch:o,image:a};s!==n&&localData.students.forEach(e=>{e.class===s&&(e.class=n)})}}else{if(localData.classes.some(e=>e.name.toLowerCase()===n.toLowerCase()&&e.branch===o))return alert("Tên lớp này đã tồn tại ở chi nhánh này!");localData.classes.push({id:'cl-'+Date.now(),name:n,branch:o,image:a})}resetClassForm();renderClasses();renderStudents()}
+        function editClass(e){const t=localData.classes.find(t=>t.id===e);if(!t)return;if(!isMasterAdmin&&t.branch!==assignedBranch)return alert("Bạn không có quyền sửa lớp của cơ sở khác!");_$('class-id').value=t.id;_$('class-name').value=t.name;isMasterAdmin&&(_$('class-branch').value=t.branch);_$('class-logo').value=t.image;_$('class-logo-preview').src=t.image||'images/user.jpg';_$('class-submit-btn').innerText="Cập Nhật";_$('class-submit-btn').classList.replace('bg-indigo-600','bg-amber-500');_$('class-cancel-btn').classList.remove('hidden')}
+        function deleteClass(e){const t=localData.classes.find(t=>t.id===e);if(!t)return;if(!isMasterAdmin&&t.branch!==assignedBranch)return alert("Bạn không có quyền xóa lớp của cơ sở khác!");if(localData.students.some(e=>e.class===t.name&&e.branch===t.branch))return alert("Lớp đang có học sinh!");if(!confirm(`Xóa lớp ${t.name}?`))return;localData.classes=localData.classes.filter(t=>t.id!==e);renderClasses()}
+        function resetClassForm(){_$('class-form').reset();_$('class-id').value='';_$('class-logo').value='';_$('class-logo-preview').src='images/user.jpg';isMasterAdmin&&(_$('class-branch').value=localData.branches[0]);_$('class-submit-btn').innerText="Lưu Lớp";_$('class-submit-btn').classList.replace('bg-amber-500','bg-indigo-600');_$('class-cancel-btn').classList.add('hidden')}
+        function renderStudents(){const e=_$('student-table-body'),t=_$('filter-class').value;let n=localData.students;if(!isMasterAdmin&&(n=n.filter(e=>e.branch===assignedBranch)),'all'!==t){const[e,o]=t.split('|');n=n.filter(t=>t.class===o&&t.branch===e)}_$('student-count').innerText=`${n.length} bé`;e.innerHTML='';if(0===n.length){e.innerHTML='<tr><td colspan="5" class="text-center py-10 text-slate-400 font-medium">Chưa có dữ liệu học sinh nào.</td></tr>';return}n.forEach(t=>{const n=t.isBus?'<span class="px-2 py-0.5 bg-amber-100 text-amber-800 text-xs font-bold rounded-full border border-amber-200">Đi xe</span>':'<span class="text-xs text-slate-400">Tự đón</span>',o=t.nickname?` <span class="text-indigo-600 font-bold">(${t.nickname})</span>`:'',a=t.image||'images/user.jpg';e.innerHTML+=`<tr class="hover:bg-slate-50 transition border-b border-slate-100"><td class="px-6 py-2"><img src="${a}" class="w-10 h-10 rounded-full object-cover border border-slate-200 bg-white"></td><td class="px-6 py-3.5 text-slate-900 font-semibold">${t.name}${o}</td><td class="px-6 py-3.5"><div class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold inline-block whitespace-nowrap">${t.class}</div><div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">${t.branch}</div></td><td class="px-6 py-3.5">${n}</td><td class="px-6 py-3.5 text-right space-x-2 whitespace-nowrap"><button onclick="editStudent('${t.id}')" class="text-indigo-600 hover:text-indigo-900 text-xs border border-indigo-200 px-2 py-1 rounded">Sửa</button><button onclick="deleteStudent('${t.id}')" class="text-rose-600 hover:text-rose-900 text-xs border border-rose-200 px-2 py-1 rounded">Xóa</button></td></tr>`})}
+        function renderBusStudents(){const e=_$('bus-table-body');let t=localData.students.filter(e=>!0===e.isBus);!isMasterAdmin&&(t=t.filter(e=>e.branch===assignedBranch));_$('bus-student-count').innerText=`${t.length} bé`;e.innerHTML='';t.forEach(t=>{const n=t.image||'images/user.jpg';e.innerHTML+=`<tr class="hover:bg-slate-50 transition border-b border-slate-100"><td class="px-6 py-2"><img src="${n}" class="w-10 h-10 rounded-full object-cover border border-slate-200 bg-white"></td><td class="px-6 py-3.5 font-semibold text-slate-900">${t.name}</td><td class="px-6 py-3.5"><div class="px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-bold inline-block whitespace-nowrap">${t.class}</div><div class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">${t.branch}</div></td><td class="px-6 py-3.5 font-medium text-slate-700">${t.busRoute||'Chưa phân tuyến'}</td><td class="px-6 py-3.5 text-right space-x-2"><button onclick="editStudentFromBus('${t.id}')" class="text-indigo-600 hover:text-indigo-900 text-xs border border-indigo-200 px-2 py-1 rounded">Sửa</button></td></tr>`})}
+        function editStudentFromBus(e){switchTab('general');editStudent(e)}
+        function handleStudentSubmit(e){e.preventDefault();const t=_$('student-id').value,n=_$('student-name').value.trim(),o=_$('student-nickname').value.trim(),a=isMasterAdmin?_$('student-branch').value:assignedBranch,s=_$('student-class').value;if(!s)return alert('Vui lòng chọn lớp học!');const r=_$('student-sound').value.trim(),l=_$('student-is-bus').checked,c=_$('student-bus-route').value.trim();let d=_$('student-image').value.trim();d||(d="images/user.jpg");if(t){const e=localData.students.findIndex(e=>e.id===t);-1!==e&&(localData.students[e]={id:t,name:n,nickname:o,branch:a,class:s,image:d,sound:r,isBus:l,busRoute:c})}else localData.students.push({id:'st-'+Date.now(),name:n,nickname:o,branch:a,class:s,image:d,sound:r,isBus:l,busRoute:c});resetStudentForm();renderStudents();renderBusStudents()}
+        function editStudent(e){const t=localData.students.find(t=>t.id===e);if(!t)return;if(!isMasterAdmin&&t.branch!==assignedBranch)return alert("Bạn không có quyền sửa học sinh của cơ sở khác!");_$('student-id').value=t.id;_$('student-name').value=t.name;_$('student-nickname').value=t.nickname||'';isMasterAdmin&&(_$('student-branch').value=t.branch||localData.branches[0]);updateStudentClassDropdown(t.class);const n=t.image||'images/user.jpg';_$('student-image').value=n;_$('image-preview').src=n;_$('student-sound').value=t.sound||'';t.sound?(_$('audio-file-name').innerText=t.sound,_$('audio-file-name').classList.replace('text-slate-700','text-pink-600'),_$('btn-clear-audio').classList.remove('hidden')):clearAudioFile();_$('student-is-bus').checked=t.isBus||!1;_$('student-bus-route').value=t.busRoute||'';toggleBusRouteInput();_$('form-title').innerHTML='<i class="fas fa-edit text-amber-500"></i> Chỉnh Sửa Thông Tin Bé';_$('submit-btn').innerText="Cập Nhật Học Sinh";_$('cancel-edit-btn').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
+        function deleteStudent(e){const t=localData.students.find(t=>t.id===e);if(!isMasterAdmin&&t.branch!==assignedBranch)return alert("Bạn không có quyền xóa học sinh của cơ sở khác!");if(!confirm('Bạn có chắc muốn xóa bé này?'))return;localData.students=localData.students.filter(t=>t.id!==e);renderStudents();renderBusStudents()}
+        function resetStudentForm(){_$('student-form').reset();_$('student-id').value='';_$('student-image').value='images/user.jpg';_$('image-preview').src='images/user.jpg';clearAudioFile();_$('form-title').innerHTML='<i class="fas fa-user-plus text-indigo-500"></i> Thêm Bé Vào Danh Sách';_$('submit-btn').innerText="Lưu Học Sinh";_$('cancel-edit-btn').classList.add('hidden');toggleBusRouteInput();isMasterAdmin&&(_$('student-branch').value=localData.branches[0]);updateStudentClassDropdown()}
+        function switchTab(e){const t=_$('view-general'),n=_$('view-bus'),o=_$('btn-tab-general'),a=_$('btn-tab-bus');'general'===e?(t.classList.remove('hidden'),n.classList.add('hidden'),o.className="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20",a.className="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800",renderStudents()):'bus'===e&&(t.classList.add('hidden'),n.classList.remove('hidden'),a.className="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20",o.className="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800",renderBusStudents())}
+        function toggleBusRouteInput(){const e=_$('student-is-bus').checked,t=_$('bus-route-container');e?t.classList.remove('hidden'):(t.classList.add('hidden'),_$('student-bus-route').value='')}
     </script>
 </body>
 </html>
