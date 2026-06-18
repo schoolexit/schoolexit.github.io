@@ -71,7 +71,7 @@ window.kindergartenData = {
             "name": "Bùi Thanh Vân",
             "nickname": "Vân Vân",
             "branch": "TanQuy Campus",
-            "class": "Giraffe",
+            "class": "Koala 1 TQ",
             "image": "images/user.jpg",
             "sound": "",
             "isBus": true,
@@ -81,19 +81,19 @@ window.kindergartenData = {
             "id": "st-1781580399492",
             "name": "Bùi Thị Hồng Đào",
             "nickname": "Báo đè",
-            "class": "Dolphin",
+            "branch": "TanQuy Campus",
+            "class": "Koala 1 TQ",
             "image": "images/user.jpg",
             "sound": "",
             "isBus": false,
-            "busRoute": "",
-            "branch": "TanQuy Campus"
+            "busRoute": ""
         },
         {
             "id": "st-1781580563385",
             "name": "Hà Duy AN",
             "nickname": "Duy Duy",
             "branch": "TanQuy Campus",
-            "class": "Panda",
+            "class": "Koala 1 TQ",
             "image": "images/img_1781580557563.jpg",
             "sound": "",
             "isBus": true,
@@ -114,12 +114,12 @@ window.kindergartenData = {
             "id": "st-1781585644915",
             "name": "Đoàn Nguyễn Minh Khôi",
             "nickname": "Bơ",
-            "class": "Koala 1",
+            "branch": "TanQuy Campus",
+            "class": "Koala 1 TQ",
             "image": "images/user.jpg",
             "sound": "sounds/audio_1781585637216.mp3",
             "isBus": false,
-            "busRoute": "",
-            "branch": "TanQuy Campus"
+            "busRoute": ""
         }
     ],
     "branches": [
