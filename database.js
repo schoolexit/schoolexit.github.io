@@ -104,7 +104,7 @@ window.kindergartenData = {
             "name": "Thái Duy Thanh",
             "nickname": "Duy Thanh",
             "branch": "HimLam Campus",
-            "class": "Koala 1.2",
+            "class": "Koala 1",
             "image": "images/user.jpg",
             "sound": "",
             "isBus": true,
