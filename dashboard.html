@@ -235,13 +235,24 @@
         function toggleSelectAllTransfer(){const e=_$('modal-select-all').checked;document.querySelectorAll('.transfer-checkbox').forEach(t=>t.checked=e)}
         function executeBulkTransfer(){const e=_$('modal-source-class').value,t=_$('modal-dest-class').value;if(!e||!t)return alert('Vui lòng chọn đầy đủ Lớp nguồn và Lớp đích!');if(e===t)return alert('Lớp nguồn và Lớp đích không được trùng nhau!');const[n,o]=t.split('|'),s=document.querySelectorAll('.transfer-checkbox:checked');if(0===s.length)return alert('Chọn ít nhất 1 học sinh!');if(!confirm(`Chuyển ${s.length} học sinh sang ${o} (${n})?`))return;const a=Array.from(s).map(e=>e.value);localData.students.forEach(e=>{if(a.includes(e.id)){e.class=o;e.branch=n}});closeBulkTransferModal();renderStudents();renderBusStudents();alert(`Thành công! Nhớ bấm Đồng bộ lên Server.`)}
         function downloadExcelTemplate() {
-            if (typeof XLSX === 'undefined') {alert('Hệ thống đang nạp thư viện xử lý Excel. Vui lòng bấm lại sau 1-2 giây!');return;}
+            // 1. Kiểm tra xem thư viện Excel đã tải xong chưa
+            if (typeof XLSX === 'undefined') {
+                alert('Hệ thống đang nạp thư viện xử lý Excel. Vui lòng bấm lại sau 1-2 giây!');
+                return;
+            }
+
+            // 2. Tạo dữ liệu mẫu chuẩn
             const duLieuMau = [
                 { "Họ và Tên": "Nguyễn Văn A", "Biệt danh": "Su", "Cơ sở": "TanQuy Campus", "Lớp": "Koala", "Xe buýt (Có/Không)": "Có", "Tuyến xe/Tài xế": "Tuyến 1 - Xe 16 chỗ" },
                 { "Họ và Tên": "Trần Thị B", "Biệt danh": "", "Cơ sở": "HimLam Campus", "Lớp": "Panda", "Xe buýt (Có/Không)": "Không", "Tuyến xe/Tài xế": "" },
-                { "Họ và Tên": "Lê Hoàng C", "Biệt danh": "Bin", "Cơ sở": "VDT Campus", "Lớp": "Dolphin", "Xe buýt (Có/Không)": "x", "Tuyến xe/Tài xế": "Tuyến 2" }
-            ];const ws = XLSX.utils.json_to_sheet(duLieuMau);
-            ws['!cols'] = [//kích thước cột
+                { "Họ và Tên": "Lê Hoàng C", "Biệt danh": "Bin", "Cơ sở": "Cơ sở 3", "Lớp": "Dolphin", "Xe buýt (Có/Không)": "x", "Tuyến xe/Tài xế": "Tuyến 2" }
+            ];
+
+            // 3. Chuyển đổi dữ liệu thành trang tính (worksheet)
+            const ws = XLSX.utils.json_to_sheet(duLieuMau);
+
+            // 4. Căn chỉnh độ rộng các cột cho đẹp mắt và chuyên nghiệp
+            ws['!cols'] = [
                 { wch: 25 }, // Cột A: Họ và Tên
                 { wch: 15 }, // Cột B: Biệt danh
                 { wch: 20 }, // Cột C: Cơ sở
@@ -249,17 +260,27 @@
                 { wch: 20 }, // Cột E: Xe buýt
                 { wch: 30 }  // Cột F: Tuyến xe
             ];
+
+            // 5. Tạo một sổ làm việc (workbook) và gắn trang tính vào
             const wb = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(wb, ws, "DanhSachHocSinh");
+
+            // 6. Xuất ra bộ đệm nhị phân (tránh dùng lệnh writeFile mặc định dễ bị chặn)
             const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+
+            // 7. Đóng gói thành file và ép trình duyệt tải xuống an toàn
             const blob = new Blob([wbout], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
             const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
+            
             link.setAttribute("href", url);
-            link.setAttribute("download", "Mau_Nhap_Hoc_Sinh.xlsx");
+            link.setAttribute("download", "Mau_Nhap_Hoc_Sinh.xlsx"); // Tải đúng định dạng chuẩn
             link.style.display = 'none';
+            
             document.body.appendChild(link);
             link.click();
+            
+            // Dọn dẹp bộ nhớ sau khi tải xong
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
         }
