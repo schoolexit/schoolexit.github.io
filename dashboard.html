@@ -234,7 +234,35 @@
         function loadStudentsForTransfer(){const e=_$('modal-source-class').value,t=_$('modal-student-list');_$('modal-select-all').checked=!1;if(!e){t.innerHTML='<div class="p-4 text-center text-sm text-slate-400">Vui lòng chọn lớp để xem danh sách.</div>';return}const[n,o]=e.split('|'),s=localData.students.filter(e=>e.class===o&&e.branch===n);if(0===s.length){t.innerHTML='<div class="p-4 text-center text-sm text-slate-500 font-medium">Lớp này không có học sinh.</div>';return}t.innerHTML='';s.forEach(e=>{const n=e.image||'images/user.jpg';t.innerHTML+=`<label class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded border border-transparent hover:border-slate-200 cursor-pointer transition"><input type="checkbox" value="${e.id}" class="transfer-checkbox w-4 h-4 text-indigo-600 rounded"><img src="${n}" class="w-8 h-8 rounded-full object-cover border border-slate-200"><span class="text-sm font-semibold text-slate-700">${e.name} ${e.nickname?`(${e.nickname})`:''}</span></label>`})}
         function toggleSelectAllTransfer(){const e=_$('modal-select-all').checked;document.querySelectorAll('.transfer-checkbox').forEach(t=>t.checked=e)}
         function executeBulkTransfer(){const e=_$('modal-source-class').value,t=_$('modal-dest-class').value;if(!e||!t)return alert('Vui lòng chọn đầy đủ Lớp nguồn và Lớp đích!');if(e===t)return alert('Lớp nguồn và Lớp đích không được trùng nhau!');const[n,o]=t.split('|'),s=document.querySelectorAll('.transfer-checkbox:checked');if(0===s.length)return alert('Chọn ít nhất 1 học sinh!');if(!confirm(`Chuyển ${s.length} học sinh sang ${o} (${n})?`))return;const a=Array.from(s).map(e=>e.value);localData.students.forEach(e=>{if(a.includes(e.id)){e.class=o;e.branch=n}});closeBulkTransferModal();renderStudents();renderBusStudents();alert(`Thành công! Nhớ bấm Đồng bộ lên Server.`)}
-        function downloadExcelTemplate() {const csvContent = "\uFEFFHọ và Tên,Biệt danh,Cơ sở,Lớp,Xe buýt (Có/Không),Tuyến xe\nNguyễn Văn A,Su,TanQuy Campus,Koala,Có,Tuyến 1 - Xe 16 chỗ\nTrần Thị B,,HimLam Campus,Panda,Không,\nLê Hoàng C,Bin,Cơ sở 3,Dolphin,x,Tuyến 2";const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });const link = document.createElement("a");const url = URL.createObjectURL(blob);link.setAttribute("href", url);link.setAttribute("download", "Mau_Nhap_Hoc_Sinh.csv");link.style.display = 'none';document.body.appendChild(link);link.click();document.body.removeChild(link);}
+        function downloadExcelTemplate() {
+            if (typeof XLSX === 'undefined') {alert('Hệ thống đang nạp thư viện xử lý Excel. Vui lòng bấm lại sau 1-2 giây!');return;}
+            const duLieuMau = [
+                { "Họ và Tên": "Nguyễn Văn A", "Biệt danh": "Su", "Cơ sở": "TanQuy Campus", "Lớp": "Koala", "Xe buýt (Có/Không)": "Có", "Tuyến xe/Tài xế": "Tuyến 1 - Xe 16 chỗ" },
+                { "Họ và Tên": "Trần Thị B", "Biệt danh": "", "Cơ sở": "HimLam Campus", "Lớp": "Panda", "Xe buýt (Có/Không)": "Không", "Tuyến xe/Tài xế": "" },
+                { "Họ và Tên": "Lê Hoàng C", "Biệt danh": "Bin", "Cơ sở": "VDT Campus", "Lớp": "Dolphin", "Xe buýt (Có/Không)": "x", "Tuyến xe/Tài xế": "Tuyến 2" }
+            ];const ws = XLSX.utils.json_to_sheet(duLieuMau);
+            ws['!cols'] = [//kích thước cột
+                { wch: 25 }, // Cột A: Họ và Tên
+                { wch: 15 }, // Cột B: Biệt danh
+                { wch: 20 }, // Cột C: Cơ sở
+                { wch: 15 }, // Cột D: Lớp
+                { wch: 20 }, // Cột E: Xe buýt
+                { wch: 30 }  // Cột F: Tuyến xe
+            ];
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "DanhSachHocSinh");
+            const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+            const blob = new Blob([wbout], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", "Mau_Nhap_Hoc_Sinh.xlsx");
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
         function handleExcelUpload(e){const t=e.target.files[0];if(!t)return;const n=new FileReader;n.onload=function(n){try{const o=new Uint8Array(n.target.result),s=XLSX.read(o,{type:'array'}),a=s.Sheets[s.SheetNames[0]],r=XLSX.utils.sheet_to_json(a);let l=0;r.forEach(e=>{const t=e["Họ và Tên"]||e["Họ tên"]||e.Name,n=e["Biệt danh"]||e.Nickname||"";let o=e["Cơ sở"]||e["Chi nhánh"]||e.Branch;const s=e["Lớp"]||e["Lớp học"]||e.Class,a=String(e["Xe buýt (Có/Không)"]||e["Xe buýt"]||"").toLowerCase().trim(),r="có"===a||"co"===a||"x"===a||"1"===a||"yes"===a||"true"===a,c=e["Tuyến xe/Tài xế"]||e["Tuyến xe"]||"";if(!t||!s)return;isMasterAdmin?o||(o=localData.branches[0]):o=assignedBranch;isMasterAdmin&&!localData.branches.includes(o)&&localData.branches.push(o);localData.classes.some(e=>e.name.toLowerCase()===s.toLowerCase()&&e.branch===o)||localData.classes.push({id:'cl-'+Date.now()+Math.random(),name:s,branch:o,image:""});localData.students.push({id:'st-'+Date.now()+Math.random(),name:String(t),nickname:String(n),branch:String(o),class:String(s),image:"images/user.jpg",sound:"",isBus:r,busRoute:String(c)});l++});alert(`Đã nhập thành công ${l} học sinh! Hệ thống đã tự động thêm các Cơ sở/Lớp học mới (nếu có).`);isMasterAdmin&&renderBranches();renderClasses();renderStudents();renderBusStudents()}catch(t){alert("Lỗi đọc file Excel: "+t.message)}finally{e.target.value=""}};n.readAsArrayBuffer(t)}
     </script>
 </body>
