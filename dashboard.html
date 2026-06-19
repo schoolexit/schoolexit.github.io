@@ -22,7 +22,7 @@
     <script type="text/JavaScript">function killCopy(e){return false}function reEnable(){return true}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
     <script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},false);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&e.keyCode==73){disabledEvent(e)}if(e.ctrlKey&&e.shiftKey&&e.keyCode==74){disabledEvent(e)}if(e.keyCode==83&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey)){disabledEvent(e)}if(e.ctrlKey&&e.keyCode==85){disabledEvent(e)}if(event.keyCode==123){disabledEvent(e)}},false);function disabledEvent(e){if(e.stopPropagation){e.stopPropagation()}else if(window.event){window.event.cancelBubble=true}e.preventDefault();return false}};</script>
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 flex min-h-screen">
+<body class="bg-slate-50 font-sans text-slate-800 flex min-h-screen relative">
     <noscript><meta http-equiv="refresh" content="0;url=https://schoolexit.github.io"></noscript>
     <aside class="w-20 bg-slate-900 text-slate-400 flex flex-col items-center py-6 gap-6 shadow-xl shrink-0 h-screen sticky top-0 z-50">
         <div class="text-white text-2xl mb-4 bg-indigo-600 p-3 rounded-xl shadow-lg shadow-indigo-600/30">
@@ -59,7 +59,7 @@
                     <h2 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-tags text-indigo-500"></i> Quản Lý Lớp Học</h2>
                     <form id="class-form" onsubmit="handleClassSubmit(event)" class="bg-slate-50 p-3 rounded-lg border border-slate-200 mb-4 space-y-3">
                         <input type="hidden" id="class-id">
-                        <input type="text" id="class-name" required placeholder="Tên lớp: Koala ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+                        <input type="text" id="class-name" required placeholder="Tên lớp (VD: Koala)..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
                         <select id="class-branch" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-medium"></select>
                         <div class="flex items-center justify-between gap-3">
                             <div class="flex items-center gap-2">
@@ -127,7 +127,9 @@
                     <div class="px-6 py-4 border-b border-slate-200 bg-slate-50 flex flex-col sm:flex-row justify-between items-center gap-4">
                         <h2 class="text-base font-bold text-slate-900 flex items-center gap-2"><i class="fas fa-list-ul text-indigo-500"></i> Danh Sách Học Sinh Hiện Tại</h2>
                         <div class="flex items-center gap-3">
-                            <label for="filter-class" class="text-sm font-medium text-slate-600">Lọc nhanh:</label>
+                            <button onclick="openBulkTransferModal()" class="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 px-3 py-1.5 rounded-lg text-xs font-bold transition"><i class="fas fa-exchange-alt"></i> Chuyển lớp hàng loạt</button>
+                            
+                            <label for="filter-class" class="text-sm font-medium text-slate-600 ml-2">Lọc nhanh:</label>
                             <select id="filter-class" onchange="renderStudents()" class="px-3 py-1.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm bg-white font-medium"><option value="all">Tất cả học sinh</option></select>
                             <span id="student-count" class="text-xs bg-indigo-100 text-indigo-700 font-bold px-2.5 py-1.5 rounded-full">0 bé</span>
                         </div>
@@ -141,6 +143,7 @@
                 </div>
             </div>
         </main>
+        
         <main id="view-bus" class="max-w-7xl w-full mx-auto px-6 py-8 hidden">
             <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                 <div class="px-6 py-4 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
@@ -155,6 +158,41 @@
                 </div>
             </div>
         </main>
+    </div>
+
+    <div id="bulk-transfer-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="px-6 py-4 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
+                <h2 class="text-lg font-bold text-slate-900"><i class="fas fa-exchange-alt text-indigo-500 mr-2"></i> Chuyển Lớp Hàng Loạt</h2>
+                <button onclick="closeBulkTransferModal()" class="text-slate-400 hover:text-rose-500 transition"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto flex-1 space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Từ Lớp (Đang học)</label>
+                        <select id="modal-source-class" onchange="loadStudentsForTransfer()" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-indigo-700"></select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Chuyển sang Lớp (Mới)</label>
+                        <select id="modal-dest-class" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-emerald-700"></select>
+                    </div>
+                </div>
+                <div class="border border-slate-200 rounded-lg overflow-hidden mt-4">
+                    <div class="bg-slate-100 px-4 py-2 border-b border-slate-200 flex justify-between items-center">
+                        <span class="text-sm font-bold text-slate-700">Chọn học sinh cần chuyển:</span>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" id="modal-select-all" onchange="toggleSelectAllTransfer()" class="w-4 h-4 text-indigo-600 rounded">
+                            <span class="text-xs font-bold text-slate-600">Chọn tất cả</span>
+                        </label>
+                    </div>
+                    <div id="modal-student-list" class="max-h-60 overflow-y-auto p-2 space-y-1 bg-white"></div>
+                </div>
+            </div>
+            <div class="px-6 py-4 border-t border-slate-200 bg-slate-50 flex justify-end gap-3">
+                <button onclick="closeBulkTransferModal()" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-lg font-medium text-sm transition">Hủy</button>
+                <button onclick="executeBulkTransfer()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-sm transition shadow-md shadow-indigo-600/20"><i class="fas fa-check mr-1"></i> Thực Hiện Chuyển</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -187,6 +225,11 @@
         function resetStudentForm(){_$('student-form').reset();_$('student-id').value='';_$('student-image').value='images/user.jpg';_$('image-preview').src='images/user.jpg';clearAudioFile();_$('form-title').innerHTML='<i class="fas fa-user-plus text-indigo-500"></i> Thêm Bé Vào Danh Sách';_$('submit-btn').innerText="Lưu Học Sinh";_$('cancel-edit-btn').classList.add('hidden');toggleBusRouteInput();isMasterAdmin&&(_$('student-branch').value=localData.branches[0]);updateStudentClassDropdown()}
         function switchTab(e){const t=_$('view-general'),n=_$('view-bus'),o=_$('btn-tab-general'),a=_$('btn-tab-bus');'general'===e?(t.classList.remove('hidden'),n.classList.add('hidden'),o.className="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20",a.className="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800",renderStudents()):'bus'===e&&(t.classList.add('hidden'),n.classList.remove('hidden'),a.className="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-white bg-indigo-600 shadow-lg shadow-indigo-600/20",o.className="w-12 h-12 rounded-xl flex items-center justify-center transition-all text-slate-400 hover:text-white hover:bg-slate-800",renderBusStudents())}
         function toggleBusRouteInput(){const e=_$('student-is-bus').checked,t=_$('bus-route-container');e?t.classList.remove('hidden'):(t.classList.add('hidden'),_$('student-bus-route').value='')}
+        function openBulkTransferModal(){const e=_$('modal-source-class'),t=_$('modal-dest-class');e.innerHTML='<option value="">-- Chọn lớp hiện tại --</option>';t.innerHTML='<option value="">-- Chọn lớp mới --</option>';localData.classes.forEach(n=>{if(!isMasterAdmin&&n.branch!==assignedBranch)return;const o=`${n.branch}|${n.name}`,s=`${n.name} (${n.branch})`;e.innerHTML+=`<option value="${o}">${s}</option>`;t.innerHTML+=`<option value="${o}">${s}</option>`});_$('modal-student-list').innerHTML='<div class="p-4 text-center text-sm text-slate-400">Vui lòng chọn lớp để xem danh sách.</div>';_$('modal-select-all').checked=!1;_$('bulk-transfer-modal').classList.remove('hidden')}
+        function closeBulkTransferModal(){_$('bulk-transfer-modal').classList.add('hidden')}
+        function loadStudentsForTransfer(){const e=_$('modal-source-class').value,t=_$('modal-student-list');_$('modal-select-all').checked=!1;if(!e){t.innerHTML='<div class="p-4 text-center text-sm text-slate-400">Vui lòng chọn lớp để xem danh sách.</div>';return}const[n,o]=e.split('|'),s=localData.students.filter(e=>e.class===o&&e.branch===n);if(0===s.length){t.innerHTML='<div class="p-4 text-center text-sm text-slate-500 font-medium">Lớp này không có học sinh.</div>';return}t.innerHTML='';s.forEach(e=>{const n=e.image||'images/user.jpg';t.innerHTML+=`<label class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded border border-transparent hover:border-slate-200 cursor-pointer transition"><input type="checkbox" value="${e.id}" class="transfer-checkbox w-4 h-4 text-indigo-600 rounded"><img src="${n}" class="w-8 h-8 rounded-full object-cover border border-slate-200"><span class="text-sm font-semibold text-slate-700">${e.name} ${e.nickname?`(${e.nickname})`:''}</span></label>`})}
+        function toggleSelectAllTransfer(){const e=_$('modal-select-all').checked;document.querySelectorAll('.transfer-checkbox').forEach(t=>t.checked=e)}
+        function executeBulkTransfer(){const e=_$('modal-source-class').value,t=_$('modal-dest-class').value;if(!e||!t)return alert('Vui lòng chọn đầy đủ Lớp nguồn và Lớp đích!');if(e===t)return alert('Lớp nguồn và Lớp đích không được trùng nhau!');const[n,o]=t.split('|'),s=document.querySelectorAll('.transfer-checkbox:checked');if(0===s.length)return alert('Chọn ít nhất 1 học sinh!');if(!confirm(`Chuyển ${s.length} học sinh sang ${o} (${n})?`))return;const a=Array.from(s).map(e=>e.value);localData.students.forEach(e=>{if(a.includes(e.id)){e.class=o;e.branch=n}});closeBulkTransferModal();renderStudents();renderBusStudents();alert(`Thành công! Nhớ bấm Đồng bộ lên Server.`)}
     </script>
 </body>
 </html>
