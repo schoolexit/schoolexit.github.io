@@ -79,7 +79,7 @@ window.kindergartenData = {
             "nickname": "suboi",
             "branch": "TanQuy Campus",
             "class": "Panda 1",
-            "image": "images/user.jpg",
+            "image": "images/img_1782793984362.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -90,7 +90,7 @@ window.kindergartenData = {
             "nickname": "Vân Vân",
             "branch": "TanQuy Campus",
             "class": "Panda 1",
-            "image": "images/user.jpg",
+            "image": "images/img_1782793969341.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -101,7 +101,7 @@ window.kindergartenData = {
             "nickname": "Báo đè",
             "branch": "TanQuy Campus",
             "class": "Koala 1",
-            "image": "images/user.jpg",
+            "image": "images/img_1782793933055.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -134,7 +134,7 @@ window.kindergartenData = {
             "nickname": "Bơ",
             "branch": "TanQuy Campus",
             "class": "Koala 1",
-            "image": "images/user.jpg",
+            "image": "images/img_1782793953563.jpg",
             "sound": "sounds/audio_1781585637216.mp3",
             "isBus": false,
             "busRoute": ""
