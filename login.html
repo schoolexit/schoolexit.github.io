@@ -6,16 +6,7 @@
     <title>Đăng Nhập Hệ Thống Bảo Mật</title>
     <script type="text/JavaScript">function killCopy(e){return false}function reEnable(){return true}document.onselectstart=new Function("return false");if(window.sidebar){document.onmousedown=killCopy;document.onclick=reEnable}</script>
     <script language="JavaScript">window.onload=function(){document.addEventListener("contextmenu",function(e){e.preventDefault()},false);document.addEventListener("keydown",function(e){if(e.ctrlKey&&e.shiftKey&&e.keyCode==73){disabledEvent(e)}if(e.ctrlKey&&e.shiftKey&&e.keyCode==74){disabledEvent(e)}if(e.keyCode==83&&(navigator.platform.match("Mac")?e.metaKey:e.ctrlKey)){disabledEvent(e)}if(e.ctrlKey&&e.keyCode==85){disabledEvent(e)}if(event.keyCode==123){disabledEvent(e)}},false);function disabledEvent(e){if(e.stopPropagation){e.stopPropagation()}else if(window.event){window.event.cancelBubble=true}e.preventDefault();return false}};</script>
-    <script>
-        const originalWarn = console.warn;
-        console.warn = function (...args) {
-        if (args[0] && args[0].includes('cdn.tailwindcss.com')) {
-            return;
-        }
-        originalWarn.apply(console, args);
-        };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/cli.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
