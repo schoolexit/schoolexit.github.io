@@ -89,7 +89,7 @@
                         <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1" for="student-branch">Cơ sở (Chi nhánh)</label><select id="student-branch" onchange="updateStudentClassDropdown()" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-indigo-700 bg-indigo-50"></select></div>
                         <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1" for="student-class">Xếp vào Lớp học</label><select id="student-class" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></select></div>
                         <div class="md:col-span-2 p-3 bg-slate-50 border border-slate-200 rounded-lg">
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-2" for="student-image">Ảnh đại diện của bé</label>
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-2" for="student-upload-status">Ảnh đại diện của bé</label>
                             <div class="flex items-center gap-4">
                                 <input type="hidden" id="student-image" value="images/user.jpg">
                                 <img id="image-preview" src="images/user.jpg" alt="Preview" class="w-12 h-12 rounded-full object-cover border border-slate-300 shadow-sm bg-white">
@@ -99,7 +99,7 @@
                             <p id="student-upload-status" class="text-[12px] font-medium text-slate-500 mt-2 hidden"></p>
                         </div>
                         <div class="md:col-span-2 p-3 bg-slate-50 border border-slate-200 rounded-lg">
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-2" for="student-sound">Âm thanh gọi tên (Tùy chọn)</label>
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-2" for="audio-upload-status">Âm thanh gọi tên (Tùy chọn)</label>
                             <div class="flex items-center gap-4">
                                 <input type="hidden" id="student-sound" value="">
                                 <label class="cursor-pointer bg-pink-100 hover:bg-pink-200 text-pink-700 px-4 py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition shadow-sm border border-pink-200 whitespace-nowrap"><i class="fas fa-file-audio"></i> Tải tệp MP3<input type="file" accept="audio/*" class="hidden" onchange="handleAudioUpload(event)"></label>
