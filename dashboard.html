@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Quản Lý Hệ Thống</title>
-    <script>
-    const originalWarn = console.warn;
-    console.warn = function (...args) {if (args[0] && args[0].includes('cdn.tailwindcss.com')) {return;}originalWarn.apply(console, args);};</script>
+    <script>const originalWarn = console.warn;console.warn = function (...args) {if (args[0] && args[0].includes('cdn.tailwindcss.com')) {return;}originalWarn.apply(console, args);};</script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="database.js"></script>
@@ -86,10 +84,10 @@
                     <h2 id="form-title" class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2"><i class="fas fa-user-plus text-indigo-500"></i> Thêm Bé Vào Danh Sách</h2>
                     <form id="student-form" onsubmit="handleStudentSubmit(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <input type="hidden" id="student-id">
-                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1">Họ và tên của bé</label><input type="text" id="student-name" required placeholder="Nhập họ tên đầy đủ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
-                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1">Biệt danh (Nickname)</label><input type="text" id="student-nickname" placeholder="Ví dụ: Su, Bin, Thỏ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
-                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1">Cơ sở (Chi nhánh)</label><select id="student-branch" onchange="updateStudentClassDropdown()" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-indigo-700 bg-indigo-50"></select></div>
-                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1">Xếp vào Lớp học</label><select id="student-class" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></select></div>
+                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1" for="student-name">Họ và tên của bé</label><input type="text" id="student-name" required placeholder="Nhập họ tên đầy đủ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
+                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1" for="student-nickname">Biệt danh (Nickname)</label><input type="text" id="student-nickname" placeholder="Ví dụ: Su, Bin, Thỏ..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></div>
+                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1" for="student-branch">Cơ sở (Chi nhánh)</label><select id="student-branch" onchange="updateStudentClassDropdown()" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-indigo-700 bg-indigo-50"></select></div>
+                        <div><label class="block text-xs font-bold text-slate-600 uppercase mb-1" for="student-class">Xếp vào Lớp học</label><select id="student-class" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"></select></div>
                         <div class="md:col-span-2 p-3 bg-slate-50 border border-slate-200 rounded-lg">
                             <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Ảnh đại diện của bé</label>
                             <div class="flex items-center gap-4">
@@ -116,7 +114,7 @@
                                 <label for="student-is-bus" class="text-sm font-medium text-slate-700 cursor-pointer select-none">Bé về bằng xe buýt trường</label>
                             </div>
                             <div id="bus-route-container" class="hidden">
-                                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Tuyến xe / Tài xế</label>
+                                <label class="block text-xs font-bold text-slate-600 uppercase mb-1" for="student-bus-route">Tuyến xe / Tài xế</label>
                                 <input type="text" id="student-bus-route" placeholder="VD: Tuyến số 1..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
                             </div>
                         </div>
