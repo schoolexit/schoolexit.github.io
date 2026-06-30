@@ -41,6 +41,12 @@ window.kindergartenData = {
             "name": "Koala 1",
             "branch": "VDT Campus",
             "image": "images/img_1781594482576.jpg"
+        },
+        {
+            "id": "cl-1782789219228",
+            "name": "Panda 1",
+            "branch": "VDT Campus",
+            "image": "images/img_1782789215610.jpg"
         }
     ],
     "students": [
