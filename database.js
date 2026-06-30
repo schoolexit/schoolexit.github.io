@@ -46,19 +46,19 @@ window.kindergartenData = {
             "id": "cl-1782789219228",
             "name": "Panda 1",
             "branch": "VDT Campus",
-            "image": "images/img_1782789215610.jpg"
+            "image": "images/img_1781594622803.jpg"
         },
         {
             "id": "cl-1782789297650",
             "name": "Dolphin 1",
             "branch": "VDT Campus",
-            "image": "images/img_1782789293488.jpg"
+            "image": "images/img_1781594690908.jpg"
         },
         {
             "id": "cl-1782789307731",
             "name": "Giraffe 1",
             "branch": "VDT Campus",
-            "image": "images/img_1782789305526.jpg"
+            "image": "images/img_1781594600632.jpg"
         }
     ],
     "students": [
