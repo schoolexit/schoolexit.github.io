@@ -5,11 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no, maximum-scale=1.0, shrink-to-fit=no">
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-16x16.png">
-    <link rel="stylesheet" href="css/cli.css">
+    <script>const originalWarn = console.warn;console.warn = function (...args) {if (args[0] && args[0].includes('cdn.tailwindcss.com')) {return;}originalWarn.apply(console, args);};</script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script src="database.js"></script>
-
     <style>
         body { background: linear-gradient(135deg, #f0fdf4 0%, #e0e7ff 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: sans-serif; -webkit-user-select: none; user-select: none; }
         .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); border: 1px solid rgba(255, 255, 255, 0.5); }
