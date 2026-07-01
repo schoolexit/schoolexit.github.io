@@ -93,7 +93,7 @@ window.kindergartenData = {
         },
         {
             "id": "st-1781164535551",
-            "name": "HUỲNH TRẦN THIÊN AN",
+            "name": "Huỳnh Trần Thiên An",
             "nickname": "suboi",
             "branch": "TanQuy Campus",
             "class": "Panda 1",
