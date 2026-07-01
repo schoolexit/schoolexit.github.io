@@ -64,19 +64,19 @@ window.kindergartenData = {
             "id": "cl-17828882069170.18700691993405727",
             "name": "Panda 1",
             "branch": "HimLam Campus",
-            "image": ""
+            "image": "images/img_1781594622803.jpg"
         },
         {
             "id": "cl-17828882069170.6064161715832719",
             "name": "Dolphin 1",
             "branch": "HimLam Campus",
-            "image": ""
+            "image": "images/img_1781594690908.jpg"
         },
         {
             "id": "cl-17828882069180.0948946666514725",
             "name": "Giraffe 1",
             "branch": "HimLam Campus",
-            "image": ""
+            "image": "images/img_1781594600632.jpg"
         }
     ],
     "students": [
