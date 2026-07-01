@@ -96,7 +96,7 @@ window.kindergartenData = {
             "name": "Huỳnh Trần Thiên An",
             "nickname": "suboi",
             "branch": "TanQuy Campus",
-            "class": "Panda 1",
+            "class": "Koala 1.1",
             "image": "images/img_1782793984362.jpg",
             "sound": "",
             "isBus": false,
