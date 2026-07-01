@@ -83,7 +83,7 @@ window.kindergartenData = {
         {
             "id": "st-1781152929814",
             "name": "Trần Quốc Bảo",
-            "nickname": "ICT",
+            "nickname": "Báo bẻ",
             "branch": "VDT Campus",
             "class": "Koala 1",
             "image": "images/img_1781166511024.jpg",
