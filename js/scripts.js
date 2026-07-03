@@ -1,15 +1,11 @@
   function searchContent() {
-      // Lấy giá trị từ ô tìm kiếm
       const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-      // Lấy tất cả các đoạn văn
       const paragraphs = document.querySelectorAll('#content h3');
       
-      // Xóa bỏ các đánh dấu trước đó
       paragraphs.forEach(paragraph => {
           paragraph.innerHTML = paragraph.textContent;
       });
 
-      // Tìm kiếm và đánh dấu từ khóa
       paragraphs.forEach(paragraph => {
           const text = paragraph.textContent.toLowerCase();
           if (text.includes(searchTerm)) {
@@ -19,7 +15,6 @@
       });
   }
 
-  // div show click
   function openCity(evt, cityName) {
   var i, x, tablinks;
   x = document.getElementsByClassName("city");
@@ -36,7 +31,6 @@
 
   }
 
-// Script to open and close sidebar
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
 }
