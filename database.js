@@ -82,7 +82,7 @@ window.kindergartenData = {
             "id": "cl-17830689211060.16721030270549386",
             "name": "Koala 2",
             "branch": "TanQuy Campus",
-            "image": ""
+            "image": "images/img_1781594482576.jpg"
         }
     ],
     "students": [
