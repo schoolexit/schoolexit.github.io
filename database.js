@@ -126,8 +126,8 @@ window.kindergartenData = {
         },
         {
             "id": "st-1781580563385",
-            "name": "Hà Duy AN",
-            "nickname": "Duy Duy",
+            "name": "Nguyễn Nhựt Anh",
+            "nickname": "Clouis",
             "branch": "TanQuy Campus",
             "class": "Koala 1",
             "image": "images/img_1781580557563.jpg",
