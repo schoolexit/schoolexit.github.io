@@ -77,6 +77,12 @@ window.kindergartenData = {
             "name": "Giraffe 1",
             "branch": "HimLam Campus",
             "image": "images/img_1781594600632.jpg"
+        },
+        {
+            "id": "cl-17830689211060.16721030270549386",
+            "name": "Koala 2",
+            "branch": "TanQuy Campus",
+            "image": ""
         }
     ],
     "students": [
@@ -441,6 +447,17 @@ window.kindergartenData = {
             "image": "images/user.jpg",
             "sound": "",
             "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17830689211060.7360725274956346",
+            "name": "Trần Quốc Bảo",
+            "nickname": "Bảo",
+            "branch": "TanQuy Campus",
+            "class": "Koala 2",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": true,
             "busRoute": ""
         }
     ],
