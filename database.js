@@ -47,6 +47,12 @@ window.kindergartenData = {
             "name": "Giraffe 1",
             "branch": "HimLam Campus",
             "image": "images/img_1781594600632.jpg"
+        },
+        {
+            "id": "cl-1783936323423",
+            "name": "Koala VD",
+            "branch": "VDT Campus",
+            "image": "images/icon/koala.png"
         }
     ],
     "students": [
