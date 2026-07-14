@@ -1,6 +1,12 @@
 window.kindergartenData = {
     "classes": [
         {
+            "id": "cl-1781591664919",
+            "name": "Koala 1",
+            "branch": "HimLam Campus",
+            "image": "images/img_1781594482576.jpg"
+        },
+        {
             "id": "cl-1781720238526",
             "name": "Koala 1",
             "branch": "VDT Campus",
@@ -22,6 +28,24 @@ window.kindergartenData = {
             "id": "cl-1782789307731",
             "name": "Giraffe 1",
             "branch": "VDT Campus",
+            "image": "images/img_1781594600632.jpg"
+        },
+        {
+            "id": "cl-17828882069170.18700691993405727",
+            "name": "Panda 1",
+            "branch": "HimLam Campus",
+            "image": "images/img_1781594622803.jpg"
+        },
+        {
+            "id": "cl-17828882069170.6064161715832719",
+            "name": "Dolphin 1",
+            "branch": "HimLam Campus",
+            "image": "images/img_1781594690908.jpg"
+        },
+        {
+            "id": "cl-17828882069180.0948946666514725",
+            "name": "Giraffe 1",
+            "branch": "HimLam Campus",
             "image": "images/img_1781594600632.jpg"
         },
         {
@@ -192,6 +216,50 @@ window.kindergartenData = {
             "nickname": "Tít",
             "branch": "VDT Campus",
             "class": "Koala 1",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17828882069170.646413288542582",
+            "name": "Phạm Đức Duy",
+            "nickname": "Sâu",
+            "branch": "HimLam Campus",
+            "class": "Dolphin 1",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": true,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17828882069170.966230775174602",
+            "name": "Vũ Phương Thảo",
+            "nickname": "Chanh",
+            "branch": "HimLam Campus",
+            "class": "Dolphin 1",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17828882069180.32802299178254",
+            "name": "Phan Minh Khoa",
+            "nickname": "Thóc",
+            "branch": "HimLam Campus",
+            "class": "Giraffe 1",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": true,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17828882069180.6587304374945395",
+            "name": "Nguyễn Hà An",
+            "nickname": "Na",
+            "branch": "HimLam Campus",
+            "class": "Giraffe 1",
             "image": "images/user.jpg",
             "sound": "",
             "isBus": false,
