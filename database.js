@@ -222,50 +222,6 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-17828882069170.646413288542582",
-            "name": "Phạm Đức Duy",
-            "nickname": "Sâu",
-            "branch": "HimLam Campus",
-            "class": "Dolphin 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": true,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17828882069170.966230775174602",
-            "name": "Vũ Phương Thảo",
-            "nickname": "Chanh",
-            "branch": "HimLam Campus",
-            "class": "Dolphin 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17828882069180.32802299178254",
-            "name": "Phan Minh Khoa",
-            "nickname": "Thóc",
-            "branch": "HimLam Campus",
-            "class": "Giraffe 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": true,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17828882069180.6587304374945395",
-            "name": "Nguyễn Hà An",
-            "nickname": "Na",
-            "branch": "HimLam Campus",
-            "class": "Giraffe 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-17828882069180.059563482387681055",
             "name": "Đặng Anh Tuấn",
             "nickname": "Cua",
