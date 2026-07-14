@@ -101,17 +101,6 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-1781584029404",
-            "name": "Thái Duy Thanh",
-            "nickname": "Duy Thanh",
-            "branch": "HimLam Campus",
-            "class": "Koala 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": true,
-            "busRoute": ""
-        },
-        {
             "id": "st-1781585644915",
             "name": "Đoàn Nguyễn Minh Khôi",
             "nickname": "Bơ",
@@ -230,61 +219,6 @@ window.kindergartenData = {
             "image": "images/user.jpg",
             "sound": "",
             "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17828882069170.011673785306851037",
-            "name": "Hoàng Nhật Minh",
-            "nickname": "Tôm",
-            "branch": "HimLam Campus",
-            "class": "Koala 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": true,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17828882069170.3026401370435936",
-            "name": "Nguyễn Đặng Tường Vy",
-            "nickname": "Dâu",
-            "branch": "HimLam Campus",
-            "class": "Koala 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17828882069170.4030421500354484",
-            "name": "Trần Quốc Anh",
-            "nickname": "Thốc",
-            "branch": "HimLam Campus",
-            "class": "Panda 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": true,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17828882069170.5577322656584394",
-            "name": "Lê Thảo Nguyên",
-            "nickname": "Mít",
-            "branch": "HimLam Campus",
-            "class": "Panda 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17828882069170.646413288542582",
-            "name": "Phạm Đức Duy",
-            "nickname": "Sâu",
-            "branch": "HimLam Campus",
-            "class": "Dolphin 1",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": true,
             "busRoute": ""
         },
         {
