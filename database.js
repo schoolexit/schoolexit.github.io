@@ -321,39 +321,6 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-1784025008015",
-            "name": "TRẦN CƯỜNG",
-            "nickname": "BIN",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025111511",
-            "name": "NHÃ ĐÌNH",
-            "nickname": "NA",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025119773",
-            "name": "HẢI ĐÔNG",
-            "nickname": "XOÀI",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-1784025132189",
             "name": "AN HI",
             "nickname": "AN HI",
@@ -365,64 +332,9 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-1784025146261",
-            "name": "KHÁNH HƯNG",
-            "nickname": "GẤU",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025154911",
-            "name": "CHẤN HƯNG",
-            "nickname": "BI",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025164605",
-            "name": "MINH HY",
-            "nickname": "MÍA",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025230981",
-            "name": "MINH HY",
-            "nickname": "MÍA",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-1784025239804",
             "name": "THANH KHÔI",
             "nickname": "SUN",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025247756",
-            "name": "HẠ LINH",
-            "nickname": "MOON",
             "branch": "HimLam Campus",
             "class": "Koala",
             "image": "images/user.jpg",
@@ -442,31 +354,9 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-1784025260180",
-            "name": "AN MINH",
-            "nickname": "FINN",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-1784025268124",
             "name": "UYÊN MY",
             "nickname": "CLARA",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025276813",
-            "name": "KHANG NHI",
-            "nickname": "CÚN",
             "branch": "HimLam Campus",
             "class": "Koala",
             "image": "images/user.jpg",
@@ -486,42 +376,9 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-1784025294276",
-            "name": "HOÀNG PHÚ",
-            "nickname": "DOLLAR",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025302516",
-            "name": "TRẦN PHƯỚC",
-            "nickname": "BO",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-1784025312092",
             "name": "LÊ QUANG",
             "nickname": "TIN",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025320052",
-            "name": "ANH THƯ",
-            "nickname": "MIA",
             "branch": "HimLam Campus",
             "class": "Koala",
             "image": "images/user.jpg",
@@ -552,28 +409,6 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-1784025359020",
-            "name": "KHẢI UY",
-            "nickname": "SỬU NHI",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1784025366564",
-            "name": "HẠ VY",
-            "nickname": "DỪA",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-17840261114130.6010794691101361",
             "name": "TRẦN CƯỜNG",
             "nickname": "BIN",
@@ -599,17 +434,6 @@ window.kindergartenData = {
             "id": "st-17840261114130.8802236469028762",
             "name": "HẢI ĐÔNG",
             "nickname": "XOÀI",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17840261114130.4324268033625466",
-            "name": "AN HI",
-            "nickname": "",
             "branch": "HimLam Campus",
             "class": "Koala",
             "image": "images/user.jpg",
@@ -651,31 +475,9 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-17840261114130.8163365392782633",
-            "name": "THANH KHÔI",
-            "nickname": "SUN",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-17840261114130.8538922845453933",
             "name": "HẠ LINH",
             "nickname": "MOON",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17840261114130.6366890680740964",
-            "name": "THANH LONG",
-            "nickname": "",
             "branch": "HimLam Campus",
             "class": "Koala",
             "image": "images/user.jpg",
@@ -695,31 +497,9 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-17840261114130.7275288512945408",
-            "name": "UYÊN MY",
-            "nickname": "CLARA",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-17840261114130.851506838349683",
             "name": "KHANG NHI",
             "nickname": "CÚN",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17840261114130.5316728219229461",
-            "name": "THẢO NHI",
-            "nickname": "HANI",
             "branch": "HimLam Campus",
             "class": "Koala",
             "image": "images/user.jpg",
@@ -750,42 +530,9 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-17840261114130.41531248499483164",
-            "name": "LÊ QUANG",
-            "nickname": "TIN",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-17840261114130.37654005702340354",
             "name": "ANH THƯ",
             "nickname": "MIA",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17840261114130.572888785520941",
-            "name": "NHẬT TRÀ",
-            "nickname": "SURI",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-17840261114130.2713888236070314",
-            "name": "ÁNH TUYỀN",
-            "nickname": "",
             "branch": "HimLam Campus",
             "class": "Koala",
             "image": "images/user.jpg",
