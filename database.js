@@ -319,6 +319,17 @@ window.kindergartenData = {
             "sound": "",
             "isBus": true,
             "busRoute": ""
+        },
+        {
+            "id": "st-1784025008015",
+            "name": "TRẦN CƯỜNG",
+            "nickname": "BIN",
+            "branch": "HimLam Campus",
+            "class": "Koala",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
         }
     ],
     "branches": [
