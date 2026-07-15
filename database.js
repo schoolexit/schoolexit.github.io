@@ -4,25 +4,25 @@ window.kindergartenData = {
             "id": "cl-1781591664919",
             "name": "Koala",
             "branch": "HimLam Campus",
-            "image": "images/img_1784023347141.jpg"
+            "image": "images/ico/koala.png"
         },
         {
             "id": "cl-17828882069170.18700691993405727",
             "name": "Panda",
             "branch": "HimLam Campus",
-            "image": "images/img_1784023782557.jpg"
+            "image": "images/ico/panda.png"
         },
         {
             "id": "cl-17828882069170.6064161715832719",
             "name": "Dolphin",
             "branch": "HimLam Campus",
-            "image": "images/img_1784023809329.jpg"
+            "image": "images/ico/dolphin.png"
         },
         {
             "id": "cl-17828882069180.0948946666514725",
             "name": "Giraffe",
             "branch": "HimLam Campus",
-            "image": "images/img_1784023819213.jpg"
+            "image": "images/ico/giraffe.png"
         }
     ],
     "students": [
