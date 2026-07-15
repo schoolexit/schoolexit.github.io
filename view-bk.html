@@ -373,11 +373,11 @@
                     const card = document.createElement('div');
                     card.className = 'responsive'; 
 
-                    const nickHtml = student.name ? `<span class="nick-title">Name: ${student.name}</span>` : '';
+                    const nickHtml = student.nickname ? `<span class="nick-title">Nickname: ${student.nickname}</span>` : '';
                     card.innerHTML = `
                         <div class="gallery">
                             <img src="${getAssetUrl(student.image) || 'images/user.jpg'}" alt="${student.name}" loading="lazy">
-                            <div class="desc"><span>${student.nickname}</span>${nickHtml}</div>
+                            <div class="desc"><span>${student.name}</span>${nickHtml}</div>
                         </div>`;
 
                     card.addEventListener('click', () => {
