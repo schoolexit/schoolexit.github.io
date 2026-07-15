@@ -7,30 +7,6 @@ window.kindergartenData = {
             "image": "images/img_1784023347141.jpg"
         },
         {
-            "id": "cl-1781720238526",
-            "name": "Koala 1",
-            "branch": "VDT Campus",
-            "image": "images/img_1781594482576.jpg"
-        },
-        {
-            "id": "cl-1782789219228",
-            "name": "Panda 1",
-            "branch": "VDT Campus",
-            "image": "images/img_1781594622803.jpg"
-        },
-        {
-            "id": "cl-1782789297650",
-            "name": "Dolphin 1",
-            "branch": "VDT Campus",
-            "image": "images/img_1781594690908.jpg"
-        },
-        {
-            "id": "cl-1782789307731",
-            "name": "Giraffe 1",
-            "branch": "VDT Campus",
-            "image": "images/img_1781594600632.jpg"
-        },
-        {
             "id": "cl-17828882069170.18700691993405727",
             "name": "Panda",
             "branch": "HimLam Campus",
@@ -47,12 +23,6 @@ window.kindergartenData = {
             "name": "Giraffe",
             "branch": "HimLam Campus",
             "image": "images/img_1784023819213.jpg"
-        },
-        {
-            "id": "cl-1783936323423",
-            "name": "Koala VD",
-            "branch": "VDT Campus",
-            "image": "images/icon/koala.png"
         }
     ],
     "students": [
