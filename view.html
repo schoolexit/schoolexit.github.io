@@ -201,13 +201,9 @@
     <script>
         const trinhPhatAmThanh = new Audio();
         let currentBranch = ""; 
-        let isPlayingCustomSound = false; // Biến cờ khóa kiểm soát đọc đè
+        let isPlayingCustomSound = false; // Khóa kiểm soát đọc đè
+        let playCount = 0; // Biến kiểm soát số lần lặp lại của file upload
         const localAssetsMap = new Map(); // Bản đồ ánh xạ tài nguyên Offline
-
-        // Reset cờ khóa khi âm thanh kết thúc
-        trinhPhatAmThanh.onended = () => {
-            isPlayingCustomSound = false;
-        };
 
         document.addEventListener("DOMContentLoaded", () => {
             if (window.location.pathname.endsWith('.html')) {
@@ -389,7 +385,7 @@
                         if (student.nickname) {
                             thongBaoGoc += `, ${student.nickname}`;
                         }
-                        thongBaoGoc += `, lớp ${student.class}.`;
+                        thongBaoGoc += `, lớp ${student.class}`;
 
                         let cauThongBao = `${thongBaoGoc} Xin nhắc lại, ${thongBaoGoc}`;
 
@@ -417,11 +413,11 @@
                 return tenA.localeCompare(tenB, 'vi');
             });
 
-            let cauThongBaoTongHop = "Mời các bạn có tên: ";
+            let cauThongBaoTongHop = "Mời các bạn: ";
             danhSachXeBuyt.forEach((student, index) => {
                 cauThongBaoTongHop += student.name;
                 if (student.nickname) {
-                     cauThongBaoTongHop += `${student.nickname}`;
+                     cauThongBaoTongHop += ` biệt danh ${student.nickname}`;
                 }
                 cauThongBaoTongHop += ` lớp ${student.class}`;
                 
@@ -435,14 +431,15 @@
             phatThanhAIGiongNu(cauThongBaoTongHop);
         }
 
-        // HÀM PHÁT FILE GHI ÂM CHUYÊN DỤNG - ĐÃ KHÓA CHẶT ĐỌC ĐÈ
+        // HÀM PHÁT FILE GHI ÂM CHUYÊN DỤNG - ĐÃ ĐƯỢC THIẾT KẾ ĐỂ ĐỌC LẠI 2 LẦN
         function playClickSound(soundUrl, textBackup) {
-            // Tắt ngay lập tức mọi câu nói AI đang đọc dở
+            // Tắt ngay lập tức mọi câu nói AI đang đọc dở dở ương ương
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
             }
             trinhPhatAmThanh.pause();
             isPlayingCustomSound = false;
+            playCount = 0; // Reset số lần phát lại về 0 mỗi khi nhấp chọn bé mới
 
             let cleanUrl = soundUrl ? soundUrl.trim().replace(/\\/g, '/') : '';
             const resolvedUrl = getAssetUrl(cleanUrl); // Lấy file offline blob nếu đã tải xong
@@ -450,27 +447,44 @@
 
             if (coFileMP3) {
                 trinhPhatAmThanh.src = resolvedUrl;
-                trinhPhatAmThanh.onended = () => { isPlayingCustomSound = false; };
-                isPlayingCustomSound = true; // Kích hoạt cờ khóa
+                
+                // Cấu hình sự kiện lặp lại: Tự động chạy lại lần thứ 2 khi kết thúc lần 1
+                trinhPhatAmThanh.onended = () => {
+                    if (playCount < 1) {
+                        playCount++;
+                        setTimeout(() => {
+                            isPlayingCustomSound = true; // Tiếp tục giữ khóa chống AI đọc đè
+                            trinhPhatAmThanh.play().catch(() => {
+                                isPlayingCustomSound = false;
+                            });
+                        }, 800); // Trì hoãn 0.8 giây giữa hai lần đọc cho tự nhiên, rõ lời
+                    } else {
+                        isPlayingCustomSound = false; // Đã đọc đủ 2 lần -> Giải phóng khóa
+                    }
+                };
+
+                isPlayingCustomSound = true; // Kích hoạt cờ khóa an toàn ngăn chặn AI cất tiếng
                 
                 let playPromise = trinhPhatAmThanh.play();
                 if (playPromise !== undefined) {
                     playPromise.then(() => {
-                        // File ghi âm phát thành công -> Khóa cứng, tắt SpeechSynthesis
+                        // File ghi âm khởi chạy thành công -> Hủy hoàn toàn các luồng AI nền khác
                         if ('speechSynthesis' in window) {
                             window.speechSynthesis.cancel();
                         }
                     }).catch((error) => {
-                        console.warn("Lỗi phát file âm thanh (Có thể file chưa kịp deploy). Đang chuyển sang AI dự phòng:", error);
-                        // Giải phóng Audio và gọi AI đọc thế vai khi file thực sự lỗi
+                        console.warn("Không thể phát được file ghi âm (File bị lỗi). Đang mở AI dự phòng:", error);
+                        // Giải phóng Audio và gọi AI đọc thay thế khi file thực sự lỗi kết nối
                         isPlayingCustomSound = false;
                         trinhPhatAmThanh.pause();
+                        trinhPhatAmThanh.onended = null;
                         trinhPhatAmThanh.removeAttribute('src');
                         trinhPhatAmThanh.load();
                         phatThanhAIGiongNu(textBackup);
                     });
                 }
             } else {
+                // Hoàn toàn không có file ghi âm upload lên -> Chạy thẳng chế độ đọc AI (Đọc 2 lần)
                 phatThanhAIGiongNu(textBackup);
             }
         }
@@ -508,7 +522,6 @@
                 const giongTiengViet = giongNoiHeThong.filter(voice => voice.lang.includes('vi') || voice.lang.includes('VN') || voice.name.includes('Vietnamese'));
 
                 if (giongTiengViet.length > 0) {
-                    // MÀNG LỌC GIỚI TÍNH: Lọc bỏ tuyệt đối các giọng Nam
                     const locGiongNu = giongTiengViet.filter(voice => {
                         let ten = voice.name.toLowerCase();
                         if (ten.includes('microsoft nam') || (ten.includes('male') && !ten.includes('female'))) {
@@ -549,7 +562,6 @@
                             giongChonLoc = locGiongNu[0];
                         }
                     } else {
-                        // Rất hiếm: Nếu máy chỉ có mỗi giọng Nam, lấy tạm để không bị câm
                         giongChonLoc = giongTiengViet[0];
                     }
 
@@ -561,13 +573,13 @@
                 }
             }
 
-            // Gọi Cloud dự phòng nếu trình duyệt hoàn toàn không có engine nội bộ
             if (!daPhatBangGiongCucBo) {
                 mangCloudTTS = text.split(',').filter(c => c.trim().length > 0);
                 docTiepCloudTTS();
             }
         }
 
+        // HÀM PHÁT THANH CLOUD TTS DỰ PHÒNG
         function docTiepCloudTTS() {
             if(mangCloudTTS.length === 0) {
                 trinhPhatAmThanh.onended = () => { isPlayingCustomSound = false; };
