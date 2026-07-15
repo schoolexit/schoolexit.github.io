@@ -87,17 +87,6 @@ window.kindergartenData = {
     ],
     "students": [
         {
-            "id": "st-1784025349892",
-            "name": "ÁNH TUYỀN",
-            "nickname": "ÁNH TUYỀN",
-            "branch": "HimLam Campus",
-            "class": "Koala",
-            "image": "images/user.jpg",
-            "sound": "sounds/audio_1784025963986.mp3",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-17840261114150.6250329142504016",
             "name": "ĐĂNG NHẬT ",
             "nickname": "BẮP",
