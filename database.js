@@ -23,6 +23,30 @@ window.kindergartenData = {
             "name": "Giraffe",
             "branch": "HimLam Campus",
             "image": "images/ico/giraffe.png"
+        },
+        {
+            "id": "cl-1784081169091",
+            "name": "Koala",
+            "branch": "VDT Campus",
+            "image": "images/icon/koala.png"
+        },
+        {
+            "id": "cl-1784081175975",
+            "name": "Panda",
+            "branch": "VDT Campus",
+            "image": "images/icon/panda.png"
+        },
+        {
+            "id": "cl-1784081183907",
+            "name": "Dolphin",
+            "branch": "VDT Campus",
+            "image": "images/icon/dolphin.png"
+        },
+        {
+            "id": "cl-1784081193652",
+            "name": "Giraffe",
+            "branch": "VDT Campus",
+            "image": "images/icon/giraffe.png"
         }
     ],
     "students": [
