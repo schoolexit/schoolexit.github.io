@@ -508,6 +508,7 @@
                 const giongTiengViet = giongNoiHeThong.filter(voice => voice.lang.includes('vi') || voice.lang.includes('VN') || voice.name.includes('Vietnamese'));
 
                 if (giongTiengViet.length > 0) {
+                    // MÀNG LỌC GIỚI TÍNH: Lọc bỏ tuyệt đối các giọng Nam
                     const locGiongNu = giongTiengViet.filter(voice => {
                         let ten = voice.name.toLowerCase();
                         if (ten.includes('microsoft nam') || (ten.includes('male') && !ten.includes('female'))) {
@@ -519,20 +520,36 @@
                     let giongChonLoc = null;
 
                     if (locGiongNu.length > 0) {
+                        // ƯU TIÊN 1: Nữ miền Nam Online (Hoài My, Wavenet-C, Southern) cực hay
                         giongChonLoc = locGiongNu.find(voice => 
                             voice.name.toLowerCase().includes('hoaimy') || 
                             voice.name.toLowerCase().includes('wavenet-c') || 
                             voice.name.toLowerCase().includes('southern')
                         );
 
+                        // ƯU TIÊN 2: Nữ miền Bắc (Microsoft An, Linh, Mai, Wavenet-A, Northern)
+                        if (!giongChonLoc) {
+                            giongChonLoc = locGiongNu.find(voice => 
+                                voice.name.toLowerCase().includes('microsoft an') ||
+                                voice.name.toLowerCase().includes(' an ') ||
+                                voice.name.toLowerCase().includes('linh') ||
+                                voice.name.toLowerCase().includes('mai') ||
+                                voice.name.toLowerCase().includes('wavenet-a') ||
+                                voice.name.toLowerCase().includes('northern')
+                            );
+                        }
+
+                        // ƯU TIÊN 3: Giọng Nữ tiêu chuẩn của Google (Mặc định trên Android/Chrome)
                         if (!giongChonLoc) {
                             giongChonLoc = locGiongNu.find(voice => voice.name.toLowerCase().includes('google'));
                         }
 
+                        // ƯU TIÊN 4 (Cuối cùng): Lấy đại một giọng Nữ Tiếng Việt bất kỳ có trong máy
                         if (!giongChonLoc) {
-                            giongChonLoc = locGiongNu.find(voice => voice.name.toLowerCase().includes('an')) || locGiongNu[0];
+                            giongChonLoc = locGiongNu[0];
                         }
                     } else {
+                        // Rất hiếm: Nếu máy chỉ có mỗi giọng Nam, lấy tạm để không bị câm
                         giongChonLoc = giongTiengViet[0];
                     }
 
@@ -544,6 +561,7 @@
                 }
             }
 
+            // Gọi Cloud dự phòng nếu trình duyệt hoàn toàn không có engine nội bộ
             if (!daPhatBangGiongCucBo) {
                 mangCloudTTS = text.split(',').filter(c => c.trim().length > 0);
                 docTiepCloudTTS();
