@@ -87,6 +87,39 @@ window.kindergartenData = {
     ],
     "students": [
         {
+            "id": "st-17840261114140.567508970839476",
+            "name": "LINH ĐAN",
+            "nickname": "ALICE",
+            "branch": "HimLam Campus",
+            "class": "Giraffe",
+            "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-1784025132189",
+            "name": "AN HI",
+            "nickname": "AN HI",
+            "branch": "HimLam Campus",
+            "class": "Koala",
+            "image": "images/user.jpg",
+            "sound": "sounds/audio_1784025950462.mp3",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-1784025349892",
+            "name": "ÁNH TUYỀN",
+            "nickname": "ÁNH TUYỀN",
+            "branch": "HimLam Campus",
+            "class": "Koala",
+            "image": "images/user.jpg",
+            "sound": "sounds/audio_1784025963986.mp3",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
             "id": "st-17840261114150.6250329142504016",
             "name": "ĐĂNG NHẬT ",
             "nickname": "BẮP",
