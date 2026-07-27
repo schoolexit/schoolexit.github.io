@@ -198,72 +198,69 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16"><path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/><path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/></svg>
         </a>
     </section>
-    <!-- ================= GIAO DIỆN UPLOAD HÀNG LOẠT (ĐẢM BẢO HIỂN THỊ 100%) ================= -->
-    <button onclick="document.getElementById('bulk-upload-modal').style.display='flex'" 
-            style="position: fixed; bottom: 30px; left: 30px; z-index: 99999; background: #4f46e5; color: white; padding: 12px 24px; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.4); border: 2px solid white; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 15px; font-family: sans-serif;">
-        <i class="fas fa-layer-group"></i> Tải Media Hàng Loạt
-    </button>
-
-    <div id="bulk-upload-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.8); z-index: 100000; align-items: center; justify-content: center; font-family: sans-serif;">
-        <div style="background: white; width: 95%; max-width: 600px; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-            <div style="background: #4f46e5; padding: 16px 24px; color: white; font-weight: bold; display: flex; justify-content: space-between; align-items: center; font-size: 18px;">
-                <span><i class="fas fa-magic"></i> Phân Bổ Media Tự Động</span>
-                <button onclick="document.getElementById('bulk-upload-modal').style.display='none'" style="background: transparent; border: none; color: white; font-size: 24px; cursor: pointer; padding: 0;">&times;</button>
-            </div>
-            <div style="padding: 24px;">
-                <div style="background: #eff6ff; color: #1e40af; padding: 16px; border-radius: 12px; font-size: 14px; margin-bottom: 24px; border: 1px solid #bfdbfe; line-height: 1.5;">
-                    <strong>Quy tắc ghép nối:</strong> Đổi tên file trùng với <b>Họ tên</b> hoặc <b>Nickname</b> của bé. Hệ thống tự động khử dấu tiếng Việt và gán file chính xác 100%.
-                </div>
-                <div style="display: flex; gap: 16px;">
-                    <!-- Nút tải ảnh -->
-                    <div style="flex: 1; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 32px 10px; text-align: center; cursor: pointer; position: relative; background: #f8fafc;" onmouseover="this.style.borderColor='#4f46e5'; this.style.backgroundColor='#eef2ff'" onmouseout="this.style.borderColor='#cbd5e1'; this.style.backgroundColor='#f8fafc'">
-                        <i class="fas fa-file-image" style="font-size: 40px; color: #818cf8; margin-bottom: 12px;"></i>
-                        <div style="font-weight: bold; color: #334155; font-size: 14px;">UP ẢNH (.jpg, .png)</div>
-                        <input type="file" multiple accept="image/*" onchange="processBulkUpload(event, 'image')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
-                    </div>
-                    <!-- Nút tải âm thanh -->
-                    <div style="flex: 1; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 32px 10px; text-align: center; cursor: pointer; position: relative; background: #f8fafc;" onmouseover="this.style.borderColor='#ec4899'; this.style.backgroundColor='#fdf2f8'" onmouseout="this.style.borderColor='#cbd5e1'; this.style.backgroundColor='#f8fafc'">
-                        <i class="fas fa-file-audio" style="font-size: 40px; color: #f472b6; margin-bottom: 12px;"></i>
-                        <div style="font-weight: bold; color: #334155; font-size: 14px;">UP ÂM THANH (.mp3)</div>
-                        <input type="file" multiple accept="audio/*" onchange="processBulkUpload(event, 'audio')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
-                    </div>
-                </div>
-                
-                <!-- Thanh tiến trình -->
-                <div id="bulk-progress-container" style="display: none; margin-top: 24px;">
-                    <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; margin-bottom: 8px; color: #334155;">
-                        <span id="bulk-status-text">Đang chuẩn bị...</span>
-                        <span id="bulk-status-count">0/0</span>
-                    </div>
-                    <div style="width: 100%; background: #e2e8f0; height: 12px; border-radius: 20px; overflow: hidden;">
-                        <div id="bulk-progress-bar" style="background: #10b981; width: 0%; height: 100%; transition: width 0.3s ease;"></div>
-                    </div>
-                    <div id="bulk-error-log" style="margin-top: 12px; font-size: 12px; color: #ef4444; max-height: 120px; overflow-y: auto; background: #fef2f2; padding: 10px; border-radius: 8px; display: none; border: 1px solid #fecaca; line-height: 1.6;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ============================================================================== -->
-<script>
+     <script>
         const GITHUB_TOKEN="ghp_"+"HoeNm7xM6HBQUs"+"dLync9S8LYg1JXyM3h030b";const GITHUB_USER="schoolexit";const GITHUB_REPO="schoolexit.github.io";const FILE_PATH="database.js";const UPLOAD_FOLDER_API="images";const IMAGE_PATH_WEB="images";const UPLOAD_FOLDER_AUDIO_API="sounds";const AUDIO_PATH_WEB="sounds";
         const PHAN_QUYEN_CO_SO={'+84868462396':'TanQuy Campus','+84888480605':'HimLam Campus','+84333310277':'VDT Campus'};
         let isMasterAdmin=!1;let assignedBranch=null;
-        
         function boDauTiengViet(str){return str?str.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase().trim():''}
         
         (function checkSecurity(){const e=sessionStorage.getItem('HL_ADMIN_SESSION'),t=sessionStorage.getItem('HL_ADMIN_PHONE');if(e!=='AUTHENTICATED_OK'||!t){alert('\x43\x1ea\x63\x6e\x68\x20\x62\x61\x6f\x20\x62\x61\x6f\x20\x6d\x61\x74\x3a\x20\x56\x75\x69\x20\x6c\x6f\x6e\x67\x20\x64\x61\x6e\x67\x20\x6e\x68\x61\x70\x20\x64\x65\x20\x74\x72\x75\x79\x20\x63\x61\x70\x2e');window.location.replace('login');return}if(t==='MASTER_KEY')isMasterAdmin=!0;else{assignedBranch=PHAN_QUYEN_CO_SO[t];if(!assignedBranch){alert(`Tài khoản có số điện thoại ${t} chưa được phân quyền quản lý cơ sở nào!`);sessionStorage.clear();window.location.replace('login')}}})();
         let localData=window.kindergartenData||{branches:[],classes:[],students:[]};if(!localData.branches||0===localData.branches.length)localData.branches=["TanQuy Campus"];
         const _$=e=>document.getElementById(e);
 
-        function renderBranches(){if(!isMasterAdmin)return;const e=_$('branch-list'),t=_$('class-branch'),n=_$('student-branch');e.innerHTML='';t.innerHTML='';n.innerHTML='';localData.branches.forEach((o,a)=>{const s=0===a;e.innerHTML+=`<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${o}</span>${s?`<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>`:`<button type="button" onclick="deleteBranch('${o}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;t.innerHTML+=`<option value="${o}">${o}</option>`;n.innerHTML+=`<option value="${o}">${o}</option>`})}
-        
-        document.addEventListener('DOMContentLoaded',()=>{
-            if(!isMasterAdmin){_$('branch-management-block').style.display='none';_$('dashboard-title-branch').innerText=`(Chỉ hiển thị dữ liệu của: ${assignedBranch})`;const e=_$('class-branch'),t=_$('student-branch');e.innerHTML=`<option value="${assignedBranch}">${assignedBranch}</option>`;e.disabled=!0;t.innerHTML=`<option value="${assignedBranch}">${assignedBranch}</option>`;t.disabled=!0}
-            else{renderBranches()}
-            renderClasses();renderStudents();renderBusStudents();
-        });
+        // HÀM TỰ ĐỘNG CẤY GIAO DIỆN UPLOAD HÀNG LOẠT VÀO LỚP NGOÀI CÙNG
+        function createBulkUploadUI() {
+            if(document.getElementById('khu-vuc-upload-hang-loat')) return;
+            const container = document.createElement('div');
+            container.id = 'khu-vuc-upload-hang-loat';
+            container.innerHTML = `
+                <button onclick="document.getElementById('bulk-upload-modal').style.display='flex'" style="position: fixed; bottom: 30px; left: 30px; z-index: 2147483647; background: #4f46e5; color: white; padding: 14px 28px; border-radius: 50px; font-weight: bold; box-shadow: 0 10px 25px rgba(79,70,229,0.5); border: 2px solid white; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 16px; font-family: sans-serif; transition: 0.3s;">
+                    <i class="fas fa-layer-group"></i> Tải Media Hàng Loạt
+                </button>
+                <div id="bulk-upload-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); z-index: 2147483647; align-items: center; justify-content: center; font-family: sans-serif; backdrop-filter: blur(5px);">
+                    <div style="background: white; width: 95%; max-width: 600px; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                        <div style="background: #4f46e5; padding: 18px 24px; color: white; font-weight: bold; display: flex; justify-content: space-between; align-items: center; font-size: 18px;">
+                            <span><i class="fas fa-magic"></i> Phân Bổ Media Tự Động</span>
+                            <button onclick="document.getElementById('bulk-upload-modal').style.display='none'" style="background: transparent; border: none; color: white; font-size: 28px; cursor: pointer; padding: 0;">&times;</button>
+                        </div>
+                        <div style="padding: 24px;">
+                            <div style="background: #eff6ff; color: #1e40af; padding: 16px; border-radius: 12px; font-size: 14px; margin-bottom: 24px; border: 1px solid #bfdbfe; line-height: 1.6;">
+                                <strong>Quy tắc ghép nối:</strong> Đổi tên file trên máy tính trùng với <b>Họ tên</b> hoặc <b>Nickname</b> của bé. Hệ thống tự động khử dấu tiếng Việt và gán file chính xác 100%.
+                            </div>
+                            <div style="display: flex; gap: 16px;">
+                                <div style="flex: 1; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 32px 10px; text-align: center; cursor: pointer; position: relative; background: #f8fafc;" onmouseover="this.style.borderColor='#4f46e5'; this.style.backgroundColor='#eef2ff'" onmouseout="this.style.borderColor='#cbd5e1'; this.style.backgroundColor='#f8fafc'">
+                                    <i class="fas fa-file-image" style="font-size: 40px; color: #818cf8; margin-bottom: 12px;"></i>
+                                    <div style="font-weight: bold; color: #334155; font-size: 14px;">UP ẢNH (.jpg, .png)</div>
+                                    <input type="file" multiple accept="image/*" onchange="processBulkUpload(event, 'image')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+                                </div>
+                                <div style="flex: 1; border: 2px dashed #cbd5e1; border-radius: 12px; padding: 32px 10px; text-align: center; cursor: pointer; position: relative; background: #f8fafc;" onmouseover="this.style.borderColor='#ec4899'; this.style.backgroundColor='#fdf2f8'" onmouseout="this.style.borderColor='#cbd5e1'; this.style.backgroundColor='#f8fafc'">
+                                    <i class="fas fa-file-audio" style="font-size: 40px; color: #f472b6; margin-bottom: 12px;"></i>
+                                    <div style="font-weight: bold; color: #334155; font-size: 14px;">UP ÂM THANH (.mp3)</div>
+                                    <input type="file" multiple accept="audio/*" onchange="processBulkUpload(event, 'audio')" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+                                </div>
+                            </div>
+                            <div id="bulk-progress-container" style="display: none; margin-top: 24px;">
+                                <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; margin-bottom: 8px; color: #334155;">
+                                    <span id="bulk-status-text">Đang chuẩn bị...</span>
+                                    <span id="bulk-status-count">0/0</span>
+                                </div>
+                                <div style="width: 100%; background: #e2e8f0; height: 14px; border-radius: 20px; overflow: hidden; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);">
+                                    <div id="bulk-progress-bar" style="background: linear-gradient(90deg, #10b981, #059669); width: 0%; height: 100%; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div id="bulk-error-log" style="margin-top: 16px; font-size: 13px; color: #ef4444; max-height: 120px; overflow-y: auto; background: #fef2f2; padding: 12px; border-radius: 8px; display: none; border: 1px solid #fecaca; line-height: 1.6;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(container);
+        }
 
-        // XỬ LÝ UPLOAD HÀNG LOẠT
+        // Bắt buộc gọi tạo UI khi tải trang
+        if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', createBulkUploadUI); } 
+        else { createBulkUploadUI(); }
+
+        // --- CÁC HÀM XỬ LÝ UPLOAD HÀNG LOẠT ---
         async function processBulkUpload(e, type) {
             const files = e.target.files;
             if(!files || files.length === 0) return;
@@ -271,14 +268,14 @@
             if (!currentBranch) return alert("Vui lòng chọn cơ sở đang quản lý trên Giao diện trước!");
             const safeBranchName = currentBranch.trim().replace(/\s+/g, '_');
 
-            _$('bulk-progress-container').classList.remove('hidden');
-            _$('bulk-error-log').innerHTML = ''; _$('bulk-error-log').classList.add('hidden');
+            _$('bulk-progress-container').style.display = 'block';
+            _$('bulk-error-log').innerHTML = ''; _$('bulk-error-log').style.display = 'none';
             const statusText = _$('bulk-status-text'), statusCount = _$('bulk-status-count'), progressBar = _$('bulk-progress-bar');
             let success = 0, fail = 0; const total = files.length;
 
             for (let i = 0; i < total; i++) {
                 const file = files[i];
-                statusText.innerText = `Đang xử lý: ${file.name}...`;
+                statusText.innerText = `Đang tải: ${file.name}...`;
                 statusCount.innerText = `${i+1}/${total}`;
                 progressBar.style.width = `${((i)/total)*100}%`;
 
@@ -291,7 +288,7 @@
                 );
 
                 if(!student) {
-                    _$('bulk-error-log').classList.remove('hidden');
+                    _$('bulk-error-log').style.display = 'block';
                     _$('bulk-error-log').innerHTML += `<div>❌ Bỏ qua <b>${file.name}</b> (Không khớp tên/nickname)</div>`;
                     fail++; continue;
                 }
@@ -332,7 +329,7 @@
                     else student.sound = `${webFolder}/${safeBranchName}/${newFileName}`;
                     success++;
                 } catch(err) {
-                    _$('bulk-error-log').classList.remove('hidden');
+                    _$('bulk-error-log').style.display = 'block';
                     _$('bulk-error-log').innerHTML += `<div>❌ Lỗi tải <b>${file.name}</b> (${err.message})</div>`;
                     fail++;
                 }
@@ -340,8 +337,17 @@
             progressBar.style.width = '100%';
             statusText.innerText = `XONG! Cập nhật: ${success} bé | Bỏ qua: ${fail} file`;
             renderStudents(); renderBusStudents(); e.target.value = "";
-            alert(`🎉 PHÂN BỔ HOÀN TẤT!\n- Đã cập nhật thành công: ${success} bé.\n- Bỏ qua/Lỗi: ${fail} file.\n\n⚠️ NHỚ BẤM NÚT "ĐỒNG BỘ LÊN SERVER" NHÉ!`);
+            alert(`🎉 PHÂN BỔ HOÀN TẤT!\n- Cập nhật thành công: ${success} bé.\n- Bỏ qua/Lỗi: ${fail} file.\n\n⚠️ NHỚ BẤM NÚT "ĐỒNG BỘ LÊN SERVER" NHÉ!`);
         }
+
+        // --- CÁC HÀM HOẠT ĐỘNG CHÍNH ---
+        function renderBranches(){if(!isMasterAdmin)return;const e=_$('branch-list'),t=_$('class-branch'),n=_$('student-branch');e.innerHTML='';t.innerHTML='';n.innerHTML='';localData.branches.forEach((o,a)=>{const s=0===a;e.innerHTML+=`<div class="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200"><span class="text-sm font-bold text-slate-700">${o}</span>${s?`<span class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">TanQuy Campus</span>`:`<button type="button" onclick="deleteBranch('${o}')" class="text-rose-500 hover:text-rose-700 p-1"><i class="fas fa-trash-alt text-xs"></i></button>`}</div>`;t.innerHTML+=`<option value="${o}">${o}</option>`;n.innerHTML+=`<option value="${o}">${o}</option>`})}
+        
+        document.addEventListener('DOMContentLoaded',()=>{
+            if(!isMasterAdmin){_$('branch-management-block').style.display='none';_$('dashboard-title-branch').innerText=`(Chỉ hiển thị dữ liệu của: ${assignedBranch})`;const e=_$('class-branch'),t=_$('student-branch');e.innerHTML=`<option value="${assignedBranch}">${assignedBranch}</option>`;e.disabled=!0;t.innerHTML=`<option value="${assignedBranch}">${assignedBranch}</option>`;t.disabled=!0}
+            else{renderBranches()}
+            renderClasses();renderStudents();renderBusStudents();
+        });
 
         async function handleImageUpload(e,t){const n=e.target.files[0];if(!n)return;const o='class'===t,a=_$(o?'class-upload-status':'student-upload-status'),s=_$(o?'class-logo':'student-image'),r=_$(o?'class-logo-preview':'image-preview');const currentBranch=isMasterAdmin?_$(o?'class-branch':'student-branch').value:assignedBranch;if(!currentBranch)return alert("Vui lòng chọn cơ sở trước khi tải ảnh!");const safeBranchName=currentBranch.trim().replace(/\s+/g,'_');a.classList.remove('hidden');a.innerHTML='<i class="fas fa-spinner fa-spin text-indigo-500"></i> Đang nén ảnh...';const l=new FileReader;l.onload=function(e){const t=new Image;t.onload=async function(){const e=document.createElement('canvas'),n=300,o=300;let l=t.width,c=t.height;l>c?l>n&&(c*=n/l,l=n):c>o&&(l*=o/c,c=o);e.width=l;e.height=c;const d=e.getContext('2d');d.drawImage(t,0,0,l,c);const u=e.toDataURL('image/jpeg',.7).split(',')[1],i=`img_${Date.now()}.jpg`,m=`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${UPLOAD_FOLDER_API}/${safeBranchName}/${i}`;try{const e=await fetch(m,{method:'PUT',headers:{Authorization:`Bearer ${GITHUB_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Upload ảnh cơ sở ${currentBranch}`,content:u})});if(!e.ok)throw new Error((await e.json()).message);s.value=`${IMAGE_PATH_WEB}/${safeBranchName}/${i}`;r.src=`data:image/jpeg;base64,${u}`;a.innerHTML='<span class="text-emerald-600"><i class="fas fa-check"></i> Đã tải xong!</span>';setTimeout(()=>a.classList.add('hidden'),3e3)}catch(e){a.innerHTML=`<span class="text-rose-500">Lỗi: ${e.message}</span>`}};t.src=e.target.result};l.readAsDataURL(n)}
         async function handleAudioUpload(e){const t=e.target.files[0];if(!t)return;const n=_$('audio-upload-status'),o=_$('student-sound'),a=_$('audio-file-name'),s=_$('btn-clear-audio');const currentBranch=isMasterAdmin?_$('student-branch').value:assignedBranch;if(!currentBranch)return alert("Vui lòng chọn cơ sở trước!");const safeBranchName=currentBranch.trim().replace(/\s+/g,'_');if(t.size>1048576)return alert('Lỗi: File quá lớn (> 1MB).');n.classList.remove('hidden');n.innerHTML='<i class="fas fa-spinner fa-spin text-pink-500"></i> Đang tải âm thanh...';const r=new FileReader;r.onload=async function(e){const r=e.target.result.split(',')[1],l=t.name.split('.').pop().toLowerCase(),c=`audio_${Date.now()}.${l}`,d=`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${UPLOAD_FOLDER_AUDIO_API}/${safeBranchName}/${c}`;try{const e=await fetch(d,{method:'PUT',headers:{Authorization:`Bearer ${GITHUB_TOKEN}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Upload âm thanh cơ sở ${currentBranch}`,content:r})});if(!e.ok)throw new Error((await e.json()).message);o.value=`${AUDIO_PATH_WEB}/${safeBranchName}/${c}`;a.innerText=c;a.classList.replace('text-slate-700','text-pink-600');s.classList.remove('hidden');n.innerHTML='<span class="text-emerald-600"><i class="fas fa-check"></i> Tải xong!</span>';setTimeout(()=>n.classList.add('hidden'),3e3)}catch(e){n.innerHTML=`<span class="text-rose-500">Lỗi: ${e.message}</span>`}};r.readAsDataURL(t)}
