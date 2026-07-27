@@ -1499,7 +1499,7 @@ window.kindergartenData = {
             "nickname": "BỐI",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/user.jpg",
+            "image": "images/img_1785117420416.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
