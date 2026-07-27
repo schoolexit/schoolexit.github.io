@@ -1290,7 +1290,7 @@ window.kindergartenData = {
             "nickname": "ANGEL",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785115354441.jpg",
+            "image": "images/img_1785116499171.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
