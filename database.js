@@ -125,7 +125,7 @@ window.kindergartenData = {
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
             "image": "images/user.jpg",
-            "sound": "sounds/TanQuy_Campus/DOLPHIN/audio_bulk_1785148508205.mp3",
+            "sound": "sounds/TanQuy_Campus/DOLPHIN/audio_bulk_1785149992297.mp3",
             "isBus": false,
             "busRoute": ""
         },
