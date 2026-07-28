@@ -781,7 +781,7 @@ window.kindergartenData = {
         {
             "id": "st-17849521403940.9112930173600199",
             "name": "HẠ BĂNG",
-            "nickname": "LINEN",
+            "nickname": "LAI NẦN",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
             "image": "images/user.jpg",
