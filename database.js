@@ -1191,7 +1191,7 @@ window.kindergartenData = {
             "nickname": "NAGA",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137634055.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212212068.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
