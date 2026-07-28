@@ -388,7 +388,7 @@ window.kindergartenData = {
             "nickname": "CAFE",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137495390.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212283604.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -674,7 +674,7 @@ window.kindergartenData = {
             "nickname": "IVY",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137511598.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212281861.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -707,7 +707,7 @@ window.kindergartenData = {
             "nickname": "KAKA",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137526692.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212286949.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -894,7 +894,7 @@ window.kindergartenData = {
             "nickname": "MÂY",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137551606.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212288577.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1004,7 +1004,7 @@ window.kindergartenData = {
             "nickname": "MILO",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137586368.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212292532.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1048,7 +1048,7 @@ window.kindergartenData = {
             "nickname": "",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137597911.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212294029.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1070,7 +1070,7 @@ window.kindergartenData = {
             "nickname": "MIU",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137611554.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212303985.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1103,7 +1103,7 @@ window.kindergartenData = {
             "nickname": "MOCHI",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137622662.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212285280.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1125,7 +1125,7 @@ window.kindergartenData = {
             "nickname": "MOON",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137234423.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_1785212249172.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1191,7 +1191,7 @@ window.kindergartenData = {
             "nickname": "NAGA",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212212068.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212295729.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1202,7 +1202,7 @@ window.kindergartenData = {
             "nickname": "NẤM",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137645082.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212297199.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1378,7 +1378,7 @@ window.kindergartenData = {
             "nickname": "SA SA",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137657574.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212290311.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1466,7 +1466,7 @@ window.kindergartenData = {
             "nickname": "STEVEN",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137668467.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212298916.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1565,7 +1565,7 @@ window.kindergartenData = {
             "nickname": "TÁO",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137679411.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212301939.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1576,7 +1576,7 @@ window.kindergartenData = {
             "nickname": "",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137690987.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212300577.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
