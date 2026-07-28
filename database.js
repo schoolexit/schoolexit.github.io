@@ -102,7 +102,7 @@ window.kindergartenData = {
             "nickname": "ANGEL",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/user.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212418079.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -157,7 +157,7 @@ window.kindergartenData = {
             "nickname": "BẮP",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138017328.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212406254.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -289,7 +289,7 @@ window.kindergartenData = {
             "nickname": "BON",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138031144.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212402812.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -509,7 +509,7 @@ window.kindergartenData = {
             "nickname": "ĐẬU",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138047151.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212397691.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -531,7 +531,7 @@ window.kindergartenData = {
             "nickname": "ENYA",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138057928.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212399073.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -861,7 +861,7 @@ window.kindergartenData = {
             "nickname": "MATCHA",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138085944.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212404523.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1081,7 +1081,7 @@ window.kindergartenData = {
             "nickname": "MIU",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138123563.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212401175.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1136,7 +1136,7 @@ window.kindergartenData = {
             "nickname": "MOON",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138134248.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212421164.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1224,7 +1224,7 @@ window.kindergartenData = {
             "nickname": "",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138160721.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212407884.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1290,7 +1290,7 @@ window.kindergartenData = {
             "nickname": "PHILIP",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138175189.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212396075.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1301,7 +1301,7 @@ window.kindergartenData = {
             "nickname": "PIN",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138187985.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212409929.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1323,7 +1323,7 @@ window.kindergartenData = {
             "nickname": "RAYAN",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138201340.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212411553.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1367,7 +1367,7 @@ window.kindergartenData = {
             "nickname": "RUN",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138215398.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212413023.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1444,7 +1444,7 @@ window.kindergartenData = {
             "nickname": "SOPHIE",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138228096.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212414737.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1532,7 +1532,7 @@ window.kindergartenData = {
             "nickname": "SỮA",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138238552.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212416517.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1609,7 +1609,7 @@ window.kindergartenData = {
             "nickname": "TIGER",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138250741.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212419695.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
