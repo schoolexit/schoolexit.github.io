@@ -278,7 +278,7 @@ window.kindergartenData = {
             "nickname": "BO",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785205029795.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211856350.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -443,7 +443,7 @@ window.kindergartenData = {
             "nickname": "DÂU",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785205031523.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211858557.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -542,7 +542,7 @@ window.kindergartenData = {
             "nickname": "ETHAN",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137433728.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211843378.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -685,7 +685,7 @@ window.kindergartenData = {
             "nickname": "JASON",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137380378.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211845130.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -696,7 +696,7 @@ window.kindergartenData = {
             "nickname": "JJ",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137369201.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211846520.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -938,7 +938,7 @@ window.kindergartenData = {
             "nickname": "MÌ",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137258019.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211860279.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1092,7 +1092,7 @@ window.kindergartenData = {
             "nickname": "MOCHI",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/user.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211849753.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1147,7 +1147,7 @@ window.kindergartenData = {
             "nickname": "MỠ",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137269932.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211841436.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1422,7 +1422,7 @@ window.kindergartenData = {
             "nickname": "SHUSHI",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137289200.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211851429.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1587,7 +1587,7 @@ window.kindergartenData = {
             "nickname": "TEN",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137310823.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211847980.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1686,7 +1686,7 @@ window.kindergartenData = {
             "nickname": "TONI",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137342668.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211854767.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1785,7 +1785,7 @@ window.kindergartenData = {
             "nickname": "WIN",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137464475.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211853172.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
