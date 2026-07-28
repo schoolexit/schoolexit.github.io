@@ -583,7 +583,7 @@ window.kindergartenData = {
         {
             "id": "st-17849521403940.3640066331180366",
             "name": "GIA KHÁNH",
-            "nickname": "GOLD",
+            "nickname": "",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
             "image": "images/TanQuy_Campus/GIRAFFE/img_bulk_1785212457164.jpg",
@@ -594,7 +594,7 @@ window.kindergartenData = {
         {
             "id": "st-17849521403950.5887736328104836",
             "name": "TRẦN HẠO",
-            "nickname": "GOLD",
+            "nickname": "",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
             "image": "images/img_1785138623448.jpg",
