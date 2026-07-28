@@ -597,7 +597,7 @@ window.kindergartenData = {
             "nickname": "",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/img_1785138623448.jpg",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222587476.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1037,7 +1037,7 @@ window.kindergartenData = {
             "nickname": "",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/img_1785138683878.jpg",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222420215.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1158,7 +1158,7 @@ window.kindergartenData = {
             "nickname": "MỠ MỠ",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/img_1785138924330.jpg",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222407657.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1246,7 +1246,7 @@ window.kindergartenData = {
             "nickname": "OLIU",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/user.jpg",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222555287.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1312,7 +1312,7 @@ window.kindergartenData = {
             "nickname": "POOH",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/img_1785138742961.jpg",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222476012.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1400,7 +1400,7 @@ window.kindergartenData = {
             "nickname": "SARAH",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/img_1785138782101.jpg",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222542798.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1774,7 +1774,7 @@ window.kindergartenData = {
             "nickname": "WILL",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/img_1785138834141.jpg",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222603482.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1807,7 +1807,7 @@ window.kindergartenData = {
             "nickname": "XOÀI",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/img_1785138843184.jpg",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222618731.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
