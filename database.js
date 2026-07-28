@@ -333,7 +333,7 @@ window.kindergartenData = {
             "nickname": "BƠ",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/user.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_1785212362374.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -916,7 +916,7 @@ window.kindergartenData = {
             "nickname": "MÂY MÂY",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/img_1785137569398.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_1785212349285.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
