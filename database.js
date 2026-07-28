@@ -278,7 +278,7 @@ window.kindergartenData = {
             "nickname": "BO",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137421085.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785205029795.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -443,7 +443,7 @@ window.kindergartenData = {
             "nickname": "DÂU",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/img_1785137063706.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_bulk_1785205031523.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
