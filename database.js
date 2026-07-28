@@ -608,7 +608,7 @@ window.kindergartenData = {
             "nickname": "HANA",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/TanQuy_Campus/PANDA/img_bulk_1785212458837.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_1785223172411.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -993,7 +993,7 @@ window.kindergartenData = {
             "nickname": "MILK",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/user.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_1785223131145.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1752,7 +1752,7 @@ window.kindergartenData = {
             "nickname": "VI",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/user.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_1785223154021.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
