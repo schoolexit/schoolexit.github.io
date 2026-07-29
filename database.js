@@ -592,6 +592,17 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
+            "id": "st-17849521403950.5887736328104836",
+            "name": "TRẦN HẠO",
+            "nickname": "",
+            "branch": "TanQuy Campus",
+            "class": "GIRAFFE",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222587476.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
             "id": "st-17849521403940.8133566476564161",
             "name": "HY ANH",
             "nickname": "HANA",
@@ -746,17 +757,6 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-17849521403940.9112930173600199",
-            "name": "HẠ BĂNG",
-            "nickname": "LAI NẦN",
-            "branch": "TanQuy Campus",
-            "class": "GIRAFFE",
-            "image": "images/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-17849521403950.44146729726942324",
             "name": "LILY",
             "nickname": "",
@@ -774,6 +774,17 @@ window.kindergartenData = {
             "branch": "HimLam Campus",
             "class": "Dolphin",
             "image": "images/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17849521403940.9112930173600199",
+            "name": "HẠ BĂNG",
+            "nickname": "LAI NẦN",
+            "branch": "TanQuy Campus",
+            "class": "GIRAFFE",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785309623720.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -842,17 +853,6 @@ window.kindergartenData = {
             "image": "images/user.jpg",
             "sound": "",
             "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1785306844095",
-            "name": "Nguyễn Thanh Như",
-            "nickname": "Master",
-            "branch": "VDT Campus",
-            "class": "Koala",
-            "image": "images/VDT_Campus/Koala/img_1785306842519.jpg",
-            "sound": "",
-            "isBus": true,
             "busRoute": ""
         },
         {
@@ -1736,17 +1736,6 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-17849521403950.5887736328104836",
-            "name": "TRẦN HẠO",
-            "nickname": "",
-            "branch": "TanQuy Campus",
-            "class": "GIRAFFE",
-            "image": "images/TanQuy_Campus/GIRAFFE/img_1785222587476.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-17841757528820.04963608333481684",
             "name": "TUẤN ANH",
             "nickname": "",
@@ -1849,14 +1838,6 @@ window.kindergartenData = {
     "branches": [
         "TanQuy Campus",
         "HimLam Campus",
-        "VDT Campus",
-        "BinhTho Campus",
-        "CongHoa Campus",
-        "LTK Campus",
-        "NQH Campus",
-        "NgoQuyen Campus",
-        "PXL Campus",
-        "VTT Campus",
-        "TruongDinh Campus"
+        "VDT Campus"
     ]
 };
