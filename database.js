@@ -1345,7 +1345,7 @@ window.kindergartenData = {
             "nickname": "RIO",
             "branch": "TanQuy Campus",
             "class": "KOALA",
-            "image": "images/user.jpg",
+            "image": "images/TanQuy_Campus/KOALA/img_1785309801203.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
