@@ -1419,7 +1419,7 @@ window.kindergartenData = {
         {
             "id": "st-17849521403930.23130850105970435",
             "name": "HOÀI ANH",
-            "nickname": "SHUSHI",
+            "nickname": "SHU SHI",
             "branch": "TanQuy Campus",
             "class": "KOALA",
             "image": "images/TanQuy_Campus/KOALA/img_bulk_1785211851429.jpg",
