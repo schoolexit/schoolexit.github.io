@@ -209,7 +209,7 @@ window.kindergartenData = {
         {
             "id": "st-17849521403940.887872675180363",
             "name": "DUY ANH",
-            "nickname": "BENNY",
+            "nickname": "BEN NỲ",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
             "image": "images/TanQuy_Campus/GIRAFFE/img_1785222373510.jpg",
@@ -528,7 +528,7 @@ window.kindergartenData = {
         {
             "id": "st-17849521403940.36567363991288404",
             "name": "AN VI",
-            "nickname": "ENYA",
+            "nickname": "EN YA",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
             "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212399073.jpg",
@@ -1396,8 +1396,8 @@ window.kindergartenData = {
         },
         {
             "id": "st-17849521403950.5454042397364339",
-            "name": "SALAMA SARAH",
-            "nickname": "SARAH",
+            "name": "SARAH",
+            "nickname": "",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
             "image": "images/TanQuy_Campus/GIRAFFE/img_1785222542798.jpg",
