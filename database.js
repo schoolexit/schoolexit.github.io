@@ -1517,7 +1517,7 @@ window.kindergartenData = {
         },
         {
             "id": "st-17849521403940.8903438196858867",
-            "name": "RAYAN",
+            "name": "RÂY ẦN",
             "nickname": "",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
