@@ -1838,6 +1838,14 @@ window.kindergartenData = {
     "branches": [
         "TanQuy Campus",
         "HimLam Campus",
-        "VDT Campus"
+        "VDT Campus",
+        "BinhTho Campus",
+        "CongHoa Campus",
+        "LTK Campus",
+        "NQH Campus",
+        "NgoQuyen Campus",
+        "PXL Campus",
+        "VTT Campus",
+        "TruongDinh Campus"
     ]
 };
