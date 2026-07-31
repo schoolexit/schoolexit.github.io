@@ -790,17 +790,6 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-17849521403940.5143246050005833",
-            "name": "ÂN HY",
-            "nickname": "",
-            "branch": "TanQuy Campus",
-            "class": "DOLPHIN",
-            "image": "images/user.jpg",
-            "sound": "sounds/TanQuy_Campus/DOLPHIN/audio_bulk_1785149992297.mp3",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-17849521403950.6109171689513386",
             "name": "NHẬT HY",
             "nickname": "BAY",
@@ -1730,7 +1719,7 @@ window.kindergartenData = {
             "nickname": "TIN",
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
-            "image": "images/img_1785138263810.jpg",
+            "image": "images/TanQuy_Campus/DOLPHIN/img_1785467889578.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
