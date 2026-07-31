@@ -71,6 +71,12 @@ window.kindergartenData = {
             "name": "GIRAFFE",
             "branch": "TanQuy Campus",
             "image": "images/icon/giraffe.png"
+        },
+        {
+            "id": "cl-1785468672639",
+            "name": "GIRAFFE 1",
+            "branch": "TanQuy Campus",
+            "image": "images/icon/giraffe.png"
         }
     ],
     "students": [
@@ -882,7 +888,7 @@ window.kindergartenData = {
             "name": "KHẢI AN",
             "nickname": "BỐI",
             "branch": "TanQuy Campus",
-            "class": "GIRAFFE",
+            "class": "GIRAFFE 1",
             "image": "images/TanQuy_Campus/GIRAFFE/img_bulk_1785212460500.jpg",
             "sound": "",
             "isBus": false,
