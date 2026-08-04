@@ -828,7 +828,7 @@ window.kindergartenData = {
             "nickname": "BI",
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
-            "image": "images/user.jpg",
+            "image": "images/TanQuy_Campus/GIRAFFE/img_1785816486752.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -994,7 +994,7 @@ window.kindergartenData = {
             "branch": "TanQuy Campus",
             "class": "DOLPHIN",
             "image": "images/TanQuy_Campus/DOLPHIN/img_bulk_1785212397691.jpg",
-            "sound": "sounds/TanQuy_Campus/DOLPHIN/audio_1785467979172.mp3",
+            "sound": "sounds/TanQuy_Campus/DOLPHIN/audio_1785817880257.mp3",
             "isBus": false,
             "busRoute": ""
         },
@@ -1575,7 +1575,7 @@ window.kindergartenData = {
             "name": "ÁNH DƯƠNG",
             "nickname": "SAM",
             "branch": "TanQuy Campus",
-            "class": "KOALA",
+            "class": "PANDA",
             "image": "images/user.jpg",
             "sound": "",
             "isBus": false,
@@ -1830,6 +1830,17 @@ window.kindergartenData = {
             "branch": "TanQuy Campus",
             "class": "KOALA",
             "image": "images/TanQuy_Campus/KOALA/img_1785295742328.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-1785816815162",
+            "name": "KHÁNH LINH",
+            "nickname": "SAM",
+            "branch": "TanQuy Campus",
+            "class": "GIRAFFE",
+            "image": "images/TanQuy_Campus/KOALA/img_1785816565335.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
