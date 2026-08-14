@@ -1576,7 +1576,7 @@ window.kindergartenData = {
             "nickname": "SAM",
             "branch": "TanQuy Campus",
             "class": "PANDA",
-            "image": "images/TanQuy_Campus/PANDA/img_1786672389218.jpg",
+            "image": "images/TanQuy_Campus/PANDA/img_1786672476832.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
@@ -1841,17 +1841,6 @@ window.kindergartenData = {
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
             "image": "images/TanQuy_Campus/KOALA/img_1785816565335.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
-            "id": "st-1786672370844",
-            "name": "ANGELINE ĐỖ",
-            "nickname": "NGHÉ",
-            "branch": "TanQuy Campus",
-            "class": "GIRAFFE",
-            "image": "images/icon/user.jpg",
             "sound": "",
             "isBus": false,
             "busRoute": ""
