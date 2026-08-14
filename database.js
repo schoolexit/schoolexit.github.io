@@ -1852,7 +1852,7 @@ window.kindergartenData = {
             "branch": "TanQuy Campus",
             "class": "GIRAFFE",
             "image": "",
-            "sound": "",
+            "sound": "sounds/TanQuy_Campus/GIRAFFE/audio_1786675183054.mp3",
             "isBus": false,
             "busRoute": ""
         }
