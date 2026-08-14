@@ -1855,6 +1855,28 @@ window.kindergartenData = {
             "sound": "sounds/TanQuy_Campus/GIRAFFE/audio_1786675183054.mp3",
             "isBus": false,
             "busRoute": ""
+        },
+        {
+            "id": "st-1786690705678",
+            "name": "LÂM HOÀNG NHƯ Ý",
+            "nickname": "DỨA",
+            "branch": "TanQuy Campus",
+            "class": "KOALA",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-1786690726070",
+            "name": "NGUYỄN ÂN HY",
+            "nickname": "ÂN HY",
+            "branch": "TanQuy Campus",
+            "class": "DOLPHIN",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
         }
     ],
     "branches": [
