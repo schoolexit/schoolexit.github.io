@@ -1844,6 +1844,17 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": ""
+        },
+        {
+            "id": "st-1786673550475",
+            "name": "ANGELINE ĐỖ",
+            "nickname": "NGHÉ",
+            "branch": "TanQuy Campus",
+            "class": "GIRAFFE",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
         }
     ],
     "branches": [
