@@ -1858,7 +1858,7 @@ window.kindergartenData = {
         },
         {
             "id": "st-1786690705678",
-            "name": "LÂM HOÀNG NHƯ Ý",
+            "name": "NHƯ Ý",
             "nickname": "DỨA",
             "branch": "TanQuy Campus",
             "class": "KOALA",
