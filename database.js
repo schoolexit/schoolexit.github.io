@@ -1864,7 +1864,6 @@ window.kindergartenData = {
         "BinhTho Campus",
         "CongHoa Campus",
         "NQH Campus",
-        "NgoQuyen Campus",
         "PXL Campus",
         "VTT Campus",
         "TruongDinh Campus"
