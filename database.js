@@ -71,6 +71,30 @@ window.kindergartenData = {
             "name": "GIRAFFE",
             "branch": "TanQuy Campus",
             "image": "images/icon/giraffe.png"
+        },
+        {
+            "id": "cl-1787561262194",
+            "name": "Koala",
+            "branch": "NgoQuyen Campus",
+            "image": "images/icon/koala.png"
+        },
+        {
+            "id": "cl-1787561266197",
+            "name": "Panda",
+            "branch": "NgoQuyen Campus",
+            "image": "images/icon/panda.png"
+        },
+        {
+            "id": "cl-1787561272740",
+            "name": "Dolphin",
+            "branch": "NgoQuyen Campus",
+            "image": "images/icon/dolphin.png"
+        },
+        {
+            "id": "cl-1787561277516",
+            "name": "Giraffe",
+            "branch": "NgoQuyen Campus",
+            "image": "images/icon/giraffe.png"
         }
     ],
     "students": [
