@@ -1905,6 +1905,127 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
+            "id": "st-17876257027170.4089616531936161",
+            "name": "Lê Ngọc Phương Linh",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.6214473316542942",
+            "name": "Lê Ngọc Đăng Khoa",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.24052566656830698",
+            "name": "Lê Bùi Minh Khánh",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.5336620095468081",
+            "name": "Tô Hoàng Long",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.8247999113224991",
+            "name": "Lê Nguyễn An Diệp",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.5770321002591894",
+            "name": "Lê Nguyễn Tường Minh",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.8672211712984128",
+            "name": "Trương Nguyễn Như Yên",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.9632764309447633",
+            "name": "Trần Ngọc Linh Lam",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.518660030092348",
+            "name": "Nguyễn Trần Đình Long",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.18033777824355124",
+            "name": "Lã Minh Châu",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
+            "id": "st-17876257027170.08938904111681512",
+            "name": "Võ Ngọc Minh Anh",
+            "nickname": "",
+            "branch": "LTK Campus",
+            "class": "Koala",
+            "image": "",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
+        },
+        {
             "id": "st-17876257027170.2963168166548168",
             "name": "Lương Cảnh Huy",
             "nickname": "Cảnh Huy",
@@ -2097,7 +2218,7 @@ window.kindergartenData = {
             "nickname": "Amy",
             "branch": "LTK Campus",
             "class": "Giraffe",
-            "image": "images/LTK_Campus/Giraffe/img_1787626493210.jpg",
+            "image": "",
             "sound": "",
             "isBus": false,
             "busRoute": ""
