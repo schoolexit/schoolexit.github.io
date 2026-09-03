@@ -2593,17 +2593,6 @@ window.kindergartenData = {
             "busRoute": ""
         },
         {
-            "id": "st-1788399910260",
-            "name": "HOÀNG QUÂN",
-            "nickname": "KHOAI TÂY",
-            "branch": "TanQuy Campus",
-            "class": "KOALA",
-            "image": "images/icon/user.jpg",
-            "sound": "",
-            "isBus": false,
-            "busRoute": ""
-        },
-        {
             "id": "st-1788399932371",
             "name": "VIỆT ANH",
             "nickname": "WIN",
