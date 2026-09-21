@@ -2635,6 +2635,17 @@ window.kindergartenData = {
             "sound": "",
             "isBus": false,
             "busRoute": ""
+        },
+        {
+            "id": "st-1789973422878",
+            "name": "Phạm Bảo An",
+            "nickname": "E MI",
+            "branch": "TanQuy Campus",
+            "class": "KOALA",
+            "image": "images/icon/user.jpg",
+            "sound": "",
+            "isBus": false,
+            "busRoute": ""
         }
     ],
     "branches": [
