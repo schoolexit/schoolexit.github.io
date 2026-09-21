@@ -2639,7 +2639,7 @@ window.kindergartenData = {
         {
             "id": "st-1789973422878",
             "name": "PHẠM BẢO AN",
-            "nickname": "E MI",
+            "nickname": "EMI",
             "branch": "TanQuy Campus",
             "class": "KOALA",
             "image": "images/icon/user.jpg",
